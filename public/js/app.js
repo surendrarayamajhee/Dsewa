@@ -288,11 +288,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-<<<<<<< HEAD
-exports.push([module.i, "\nelement.style[data-v-fa6affac] {\r\n    width: 200px;\r\n    height: 180px;\n}\n.container.grid-list-xl .layout .flex[data-v-fa6affac] {\r\n    padding: 12px;\r\n    padding-top: 12px;\r\n    padding-right: 12px;\r\n    padding-bottom: 12px;\r\n    padding-left: 12px;\n}\n.flex.lg3[data-v-fa6affac] {\r\n    flex-basis: 25%;\r\n    flex-grow: 0;\r\n    max-width: 25%;\n}\n.flex[data-v-fa6affac] {\r\n    flex: 1 1 auto;\n}\n.flex.sm6[data-v-fa6affac] {\r\n    flex-basis: 50%;\r\n    flex-grow: 0;\r\n    max-width: 50%;\n}\n.container.grid-list-xl :not(:only-child) .layout[data-v-fa6affac]:last-child {\r\n    margin-bottom: -12px;\n}\n.container.grid-list-xl :not(:only-child) .layout[data-v-fa6affac]:first-child {\r\n    margin-top: -12px;\n}\n.container.grid-list-xl .layout[data-v-fa6affac]:only-child {\r\n    margin: -12px;\n}\n.v-application .text-sm-center[data-v-fa6affac] {\r\n    text-align: center!important;\n}\n.v-application .py-3[data-v-fa6affac] {\r\n    padding-top: 12px!important;\r\n    padding-bottom: 12px!important;\n}\n.v-application .indigo[data-v-fa6affac] {\r\n    background-color: #3f51b5!important;\r\n    border-color: #3f51b5!important;\n}\n.v-application .white--text[data-v-fa6affac] {\r\n    color: #fff!important;\r\n    caret-color: #fff!important;\n}\n.v-application .ma-0[data-v-fa6affac] {\r\n    margin: 0!important;\n}\n.v-application .align-center[data-v-fa6affac] {\r\n    align-items: center!important;\n}\n.v-application .ma-0[data-v-fa6affac] {\r\n    margin: 0!important;\n}\n.v-application .align-center[data-v-fa6affac] {\r\n    align-items: center!important;\n}\n.v-application .justify-center[data-v-fa6affac] {\r\n    justify-content: center!important;\n}\n.layout.column[data-v-fa6affac] {\r\n    flex-direction: column;\n}\n.theme--light.v-card[data-v-fa6affac] {\r\n    background-color: #fff;\r\n    color: rgba(0,0,0,.87);\n}\n.theme--light.v-sheet[data-v-fa6affac] {\r\n    background-color: #fff;\r\n    border-color: #fff;\r\n    color: rgba(0,0,0,.87);\n}\n.v-card[data-v-fa6affac] {\r\n    box-shadow: 0 1px 1px 0 rgba(60,64,67,.08), 0 1px 3px 1px rgba(60,64,67,.16);\n}\n.v-card[data-v-fa6affac] {\r\n    max-width: 50%;\r\n    outline: none;\r\n    overflow-wrap: break-word;\r\n    text-decoration: none;\r\n    transition-property: box-shadow,opacity;\r\n    white-space: normal;\r\n    word-break: break-word;\r\n    box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);\n}\n.v-sheet[data-v-fa6affac] {\r\n    display: block;\r\n    border-radius: 4px;\r\n    position: relative;\r\n    transition: box-shadow .28s cubic-bezier(.4,0,.2,1);\r\n    will-change: box-shadow;\n}\r\n", ""]);
-=======
 exports.push([module.i, "\nelement.style[data-v-fa6affac] {\r\n    width: 200px;\r\n    height: 180px;\n}\n.container.grid-list-xl .layout .flex[data-v-fa6affac] {\r\n    padding: 12px;\r\n    padding-top: 12px;\r\n    padding-right: 12px;\r\n    padding-bottom: 12px;\r\n    padding-left: 12px;\n}\n.flex.lg3[data-v-fa6affac] {\r\n    flex-basis: 25%;\r\n    flex-grow: 0;\r\n    max-width: 25%;\n}\n.flex.sm6[data-v-fa6affac] {\r\n    flex-basis: 50%;\r\n    flex-grow: 0;\r\n    max-width: 50%;\n}\n.theme--light.v-card[data-v-fa6affac] {\r\n    background-color: #fff;\r\n    color: rgba(0,0,0,.87);\n}\n.theme--light.v-sheet[data-v-fa6affac] {\r\n    background-color: #fff;\r\n    border-color: #fff;\r\n    color: rgba(0,0,0,.87);\n}\n.v-card[data-v-fa6affac] {\r\n    box-shadow: 0 1px 1px 0 rgba(60,64,67,.08), 0 1px 3px 1px rgba(60,64,67,.16);\n}\n.v-card[data-v-fa6affac] {\r\n    max-width: 100%;\r\n    outline: none;\r\n    overflow-wrap: break-word;\r\n    text-decoration: none;\r\n    transition-property: box-shadow,opacity;\r\n    white-space: normal;\r\n    word-break: break-word;\r\n    box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);\n}\n.v-sheet[data-v-fa6affac] {\r\n    display: block;\r\n    border-radius: 4px;\r\n    position: relative;\r\n    transition: box-shadow .28s cubic-bezier(.4,0,.2,1);\r\n    will-change: box-shadow;\n}\n.theme--light.v-card>.v-card__text[data-v-fa6affac] {\r\n    color: rgba(0,0,0,.54);\n}\n.v-application .pa-0[data-v-fa6affac] {\r\n    padding: 0!important;\n}\r\n", ""]);
->>>>>>> edb7409483b55fa01333e151a51741b6ef27aa22
 
 // exports
 
@@ -5919,11 +5915,7 @@ var staticRenderFns = [
     return _c("div", { staticClass: "row" }, [
       _c("div", { staticClass: "flex lg3 sm6 xs12" }, [
         _c("div", { staticClass: "v-card v-sheet theme--light" }, [
-<<<<<<< HEAD
-          _c("div", { staticClass: "v-card__text pa-0" }, [
-=======
           _c("div", { attrs: { "c;appear-class": "v-card__text pa-0" } }, [
->>>>>>> edb7409483b55fa01333e151a51741b6ef27aa22
             _c("div", { staticClass: "container pa-0" }, [
               _c("div", { staticClass: "layout row ma-0" }, [
                 _c("div", { staticClass: "sm6 xs6 flex" }, [
@@ -5934,39 +5926,6 @@ var staticRenderFns = [
                         "layout column ma-0 justify-center align-center"
                     },
                     [
-<<<<<<< HEAD
-                      _c(
-                        "span",
-                        {
-                          staticStyle: {
-                            "font-size": "48px",
-                            color: "Dodgerblue"
-                          }
-                        },
-                        [
-                          _c("i", {
-                            staticClass: "fas fa-cart-plus",
-                            staticStyle: { "font-size": "56px" },
-                            attrs: { "aria-hidden": "true" }
-                          })
-                        ]
-                      )
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "div",
-                    {
-                      staticClass:
-                        "sm6 xs6 flex text-sm-center py-3 white--text indigo"
-                    },
-                    [
-                      _c("div", { staticClass: "headline" }, [_vm._v("100+")]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "caption" }, [_vm._v("Orders")])
-                    ]
-                  )
-=======
                       _c("i", {
                         staticClass: "fas fa-cart-plus",
                         attrs: { "aria-hidden": "true" }
@@ -5979,7 +5938,6 @@ var staticRenderFns = [
                   _c("div", { staticClass: "headline" }, [_vm._v("100")]),
                   _vm._v(" "),
                   _c("span", { staticClass: "caption" }, [_vm._v("Orders")])
->>>>>>> edb7409483b55fa01333e151a51741b6ef27aa22
                 ])
               ])
             ])
