@@ -4,98 +4,30 @@
         <div class="row justify-content-center">
             <div class="container-fluid mt-3">
                 <div class="row">
-                    <div class="col-xl-3 col-lg-6" style="width: 200px; height:180px;">
-                        <div class="card card-stats mb-4 mb-xl-0" style="width: 200px; height:180px;">
-                            <div class="card-body">
-                                <div class="row">
-                                    <div class="col">
-                                        <h5 class="card-title text-uppercase text-muted mb-0">Orders</h5>
-                                            <span class="h4 font-weight-bold mb-0">350,897</span>
-                                    </div>
-                                    <div class="col-auto">
-                                        <div class="icon icon-shape bg-danger text-white rounded-circle shadow">
-                                            <i class="fas fa-cart-plus"> 
-                                            </i>
+                    <div class="flex lg3 sm6 xs12">
+                        <div class="v-card v-sheet theme--light">
+                            <div class="v-card__text pa-0">
+                                <div class="container pa-0">
+                                    <div class="layout row ma-0">
+                                        <div class="sm6 xs6 flex">
+                                            <div class="layout column ma-0 justify-center align-center">
+                                                <span style="font-size: 48px; color: Dodgerblue;">
+                                                <i aria-hidden="true" class="fas fa-cart-plus" style="font-size: 56px;"></i>
+                                                </span>
+                                            </div>
+                                            <div class="sm6 xs6 flex text-sm-center py-3 white--text indigo">
+                                            <div class="headline">100+</div>
+                                            <span class="caption">Orders</span>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                                <p class="mt-3 mb-0 text-muted text-sm">
-                                    <span class="text-success mr-2"><i class="fa fa-arrow-up"></i> 3.48%</span>
-                                    <span class="text-nowrap">Since last month</span>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-xl-3 col-lg-6" style="width: 200px; height:180px;">
-                        <div class="card card-stats mb-4 mb-xl-0" style="width: 200px; height:180px;">
-                            <div class="card-body">
-                                <div class="row">
-                                    <div class="col">
-                                        <h5 class="card-title text-uppercase text-muted mb-0"></h5>
-                                            <span class="h4 font-weight-bold mb-0">350,897</span>
-                                    </div>
-                                    <div class="col-auto">
-                                        <div class="icon icon-shape bg-danger text-white rounded-circle shadow">
-                                            <i class="fas fa-cart-plus"> 
-                                            </i>
-                                        </div>
-                                    </div>
-                                </div>
-                                <p class="mt-3 mb-0 text-muted text-sm">
-                                    <span class="text-success mr-2"><i class="fa fa-arrow-up"></i> 3.48%</span>
-                                    <span class="text-nowrap">Since last month</span>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-xl-3 col-lg-6" style="width: 200px; height:180px;">
-                        <div class="card card-stats mb-4 mb-xl-0" style="width: 200px; height:180px;">
-                            <div class="card-body">
-                                <div class="row">
-                                    <div class="col">
-                                        <h5 class="card-title text-uppercase text-muted mb-0">Orders</h5>
-                                            <span class="h4 font-weight-bold mb-0">350,897</span>
-                                    </div>
-                                    <div class="col-auto">
-                                        <div class="icon icon-shape bg-danger text-white rounded-circle shadow">
-                                            <i class="fas fa-cart-plus"> 
-                                            </i>
-                                        </div>
-                                    </div>
-                                </div>
-                                <p class="mt-3 mb-0 text-muted text-sm">
-                                    <span class="text-success mr-2"><i class="fa fa-arrow-up"></i> 3.48%</span>
-                                    <span class="text-nowrap">Since last month</span>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-xl-3 col-lg-6" style="width: 200px; height:180px;">
-                        <div class="card card-stats mb-4 mb-xl-0" style="width: 200px; height:180px;">
-                            <div class="card-body">
-                                <div class="row">
-                                    <div class="col">
-                                        <h5 class="card-title text-uppercase text-muted mb-0">Orders</h5>
-                                            <span class="h4 font-weight-bold mb-0">350,897</span>
-                                    </div>
-                                    <div class="col-auto">
-                                        <div class="icon icon-shape bg-danger text-white rounded-circle shadow">
-                                            <i class="fas fa-cart-plus"> 
-                                            </i>
-                                        </div>
-                                    </div>
-                                </div>
-                                <p class="mt-3 mb-0 text-muted text-sm">
-                                    <span class="text-success mr-2"><i class="fa fa-arrow-up"></i> 3.48%</span>
-                                    <span class="text-nowrap">Since last month</span>
-                                </p>
                             </div>
                         </div>
                     </div>
                 </div>
+
+              
 
                     <!-- <div class="col-lg-3 col-sm-6">
                         <div class="card gradient-1">
@@ -243,7 +175,7 @@
                     </div> -->
                 
 
-                <div class="row">
+                <!-- <div class="row">
                     <div class="col-lg-12">
                         <div class="row">
                             <div class="col-12">
@@ -285,20 +217,12 @@
                             </div>
                         </div>
                     </div>
-                </div>
-
+                </div> -->
+        
                 
 
                 <div class="row">
-                        <div class="col-lg-6 col-md-12">
-                            <div class="card">
-                                <div class="card-body">
-                                    <h4 class="card-title">Order Summary</h4>
-                                    <div id="morris-bar-chart"></div>
-                                </div>
-                            </div>
-                            
-                        </div>    
+                          
                         <div class="col-lg-3 col-md-6">
                             <div class="card card-widget">
                                 <div class="card-body">
@@ -748,6 +672,97 @@
 element.style {
     width: 200px;
     height: 180px;
+}
+.container.grid-list-xl .layout .flex {
+    padding: 12px;
+    padding-top: 12px;
+    padding-right: 12px;
+    padding-bottom: 12px;
+    padding-left: 12px;
+}
+.flex.lg3 {
+    flex-basis: 25%;
+    flex-grow: 0;
+    max-width: 25%;
+}
+.flex {
+    flex: 1 1 auto;
+} 
+.flex.sm6 {
+    flex-basis: 50%;
+    flex-grow: 0;
+    max-width: 50%;
+} 
+.container.grid-list-xl :not(:only-child) .layout:last-child {
+    margin-bottom: -12px;
+}
+.container.grid-list-xl :not(:only-child) .layout:first-child {
+    margin-top: -12px;
+}
+.container.grid-list-xl .layout:only-child {
+    margin: -12px;
+}
+.v-application .text-sm-center {
+    text-align: center!important;
+}
+.v-application .py-3 {
+    padding-top: 12px!important;
+    padding-bottom: 12px!important;
+}
+.v-application .indigo {
+    background-color: #3f51b5!important;
+    border-color: #3f51b5!important;
+}
+.v-application .white--text {
+    color: #fff!important;
+    caret-color: #fff!important;
+}
+.v-application .ma-0 {
+    margin: 0!important;
+}
+.v-application .align-center {
+    align-items: center!important;
+}
+.v-application .ma-0 {
+    margin: 0!important;
+}
+.v-application .align-center {
+    align-items: center!important;
+}
+.v-application .justify-center {
+    justify-content: center!important;
+}
+.layout.column {
+    flex-direction: column;
+}
+.theme--light.v-card {
+    background-color: #fff;
+    color: rgba(0,0,0,.87);
+}
+.theme--light.v-sheet {
+    background-color: #fff;
+    border-color: #fff;
+    color: rgba(0,0,0,.87);
+}
+.v-card {
+    box-shadow: 0 1px 1px 0 rgba(60,64,67,.08), 0 1px 3px 1px rgba(60,64,67,.16);
+}
+.v-card {
+    max-width: 50%;
+    outline: none;
+    overflow-wrap: break-word;
+    text-decoration: none;
+    transition-property: box-shadow,opacity;
+    white-space: normal;
+    word-break: break-word;
+    box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
+}
+.v-sheet {
+    display: block;
+    border-radius: 4px;
+    position: relative;
+    transition: box-shadow .28s cubic-bezier(.4,0,.2,1);
+    will-change: box-shadow;
 }
 </style>>
 
