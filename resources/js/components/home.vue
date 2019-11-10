@@ -70,19 +70,11 @@
                         </div>
                     </div>
                 </div> -->
-
+        
                 
 
                 <div class="row">
-                        <div class="col-lg-6 col-md-12">
-                            <div class="card">
-                                <div class="card-body">
-                                    <h4 class="card-title">Order Summary</h4>
-                                    <div id="morris-bar-chart"></div>
-                                </div>
-                            </div>
-                            
-                        </div>    
+                          
                         <div class="col-lg-3 col-md-6">
                             <div class="card card-widget">
                                 <div class="card-body">
