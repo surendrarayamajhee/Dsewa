@@ -5962,16 +5962,6 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-lg-6 col-md-12" }, [
-        _c("div", { staticClass: "card" }, [
-          _c("div", { staticClass: "card-body" }, [
-            _c("h4", { staticClass: "card-title" }, [_vm._v("Order Summary")]),
-            _vm._v(" "),
-            _c("div", { attrs: { id: "morris-bar-chart" } })
-          ])
-        ])
-      ]),
-      _vm._v(" "),
       _c("div", { staticClass: "col-lg-3 col-md-6" }, [
         _c("div", { staticClass: "card card-widget" }, [
           _c("div", { staticClass: "card-body" }, [
