@@ -5937,7 +5937,7 @@ var staticRenderFns = [
                       {
                         staticClass: "card-title text-uppercase text-muted mb-0"
                       },
-                      [_vm._v("Orders")]
+                      [_vm._v("Orders ")]
                     ),
                     _vm._v(" "),
                     _c("span", { staticClass: "h2 font-weight-bold mb-0" }, [
@@ -5946,21 +5946,7 @@ var staticRenderFns = [
                   ]),
                   _vm._v(" "),
                   _c("div", { staticClass: "col-auto" }, [
-                    _c(
-                      "div",
-                      {
-                        staticClass:
-                          "icon icon-shape bg-danger text-white rounded-circle shadow"
-                      },
-                      [
-                        _c("i", { staticClass: "fas fa-cart-plus" }, [
-                          _c("img", {
-                            staticStyle: { width: "243px", height: "80px" },
-                            attrs: { src: "images/order.png", align: "center" }
-                          })
-                        ])
-                      ]
-                    )
+                    _c("i", { staticClass: "fas fa-cart-arrow-down" })
                   ])
                 ]),
                 _vm._v(" "),
