@@ -398,6 +398,15 @@ element.style {
                 <ul class="metismenu" id="menu">
                     <!-- <li class="nav-label">Dashboard</li> -->
                     <li>
+                    <div class="v-sheet v-sheet--tile theme--dark v-toolbar darken-1">
+                    <h4>Vendor</h4>
+                        <div class="v-toolbar__content" style="height:64px;"><h2>
+                            <img src="images/nas.png" height="56px" alt="vendor logo"><span align="center">NAS</span></h2>
+                            
+                        </div>
+                    <div>
+                    </li>
+                    <li>
                         <a class="has-arrow" href="javascript:void()" aria-expanded="false">
                             <i class="icon-speedometer menu-icon"></i><span class="nav-text">Dashboard</span>
                         </a>

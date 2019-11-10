@@ -6,175 +6,25 @@
                 <div class="row">
                     <div class="flex lg3 sm6 xs12">
                         <div class="v-card v-sheet theme--light">
-                            <div class="v-card__text pa-0">
+                            <div c;appear-class="v-card__text pa-0">
                                 <div class="container pa-0">
                                     <div class="layout row ma-0">
                                         <div class="sm6 xs6 flex">
                                             <div class="layout column ma-0 justify-center align-center">
-                                                <span style="font-size: 48px; color: Dodgerblue;">
-                                                <i aria-hidden="true" class="fas fa-cart-plus" style="font-size: 56px;"></i>
-                                                </span>
+                                                <i aria-hidden="true" class="fas fa-cart-plus"></i>
                                             </div>
-                                            <div class="sm6 xs6 flex text-sm-center py-3 white--text indigo">
-                                            <div class="headline">100+</div>
+                                        </div>
+                                        <div class="sm6 xs6 flex">
+                                            <div class="headline">100</div>
                                             <span class="caption">Orders</span>
-                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-
-              
-
-                    <!-- <div class="col-lg-3 col-sm-6">
-                        <div class="card gradient-1">
-                            <div class="card-body">
-                                <h3 class="card-title text-white">Orders</h3>
-                                <div class="d-inline-block">
-                                    <h2 class="text-white">4565</h2>
-                                    <p class="text-white mb-0">Jan - March 2019</p>
-                                </div>
-                                <span class="float-right display-5 opacity-5"><i class="fa fa-order"></i></span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-sm-6">
-                        <div class="card gradient-2">
-                            <div class="card-body">
-                                <h3 class="card-title text-white">Order Delivered</h3>
-                                <div class="d-inline-block">
-                                    <h2 class="text-white">$ 8541</h2>
-                                    <p class="text-white mb-0">Jan - March 2019</p>
-                                </div>
-                                <span class="float-right display-5 opacity-5"><i class="fa fa-money"></i></span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-sm-6">
-                        <div class="card gradient-3">
-                            <div class="card-body" style="width:237px; height:163px;">
-                                <h3 class="card-title text-white">Order in delivery process</h3>
-                                <div class="d-inline-block">
-                                    <h2 class="text-white">4565</h2>
-                                    <p class="text-white mb-0">Jan - March 2019</p>
-                                </div>
-                                <span class="float-right display-5 opacity-5"><i class="fa fa-users"></i></span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-sm-6">
-                        <div class="card gradient-4">
-                            <div class="card-body" style="width:237px; height:163px;">
-                                <h3 class="card-title text-white">Order in return process</h3>
-                                <div class="d-inline-block">
-                                    <h2 class="text-white">99%</h2>
-                                    <p class="text-white mb-0">Jan - March 2019</p>
-                                </div>
-                                <span class="float-right display-5 opacity-5"><i class="fa fa-heart"></i></span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-sm-6">
-                        <div class="card gradient-5">
-                            <div class="card-body">
-                                <h3 class="card-title text-white">Return Order Delivered</h3>
-                                <div class="d-inline-block">
-                                    <h2 class="text-white">4565</h2>
-                                    <p class="text-white mb-0">Jan - March 2019</p>
-                                </div>
-                                <span class="float-right display-5 opacity-5"><i class="fa fa-shopping-cart"></i></span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-sm-6">
-                        <div class="card gradient-6">
-                            <div class="card-body">
-                                <h3 class="card-title text-white">Exchanged Order</h3>
-                                <div class="d-inline-block">
-                                    <h2 class="text-white">$ 8541</h2>
-                                    <p class="text-white mb-0">Jan - March 2019</p>
-                                </div>
-                                <span class="float-right display-5 opacity-5"><i class="fa fa-money"></i></span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-sm-6">
-                        <div class="card gradient-7">
-                            <div class="card-body">
-                                <h3 class="card-title text-white">Refund Order</h3>
-                                <div class="d-inline-block">
-                                    <h2 class="text-white">4565</h2>
-                                    <p class="text-white mb-0">Jan - March 2019</p>
-                                </div>
-                                <span class="float-right display-5 opacity-5"><i class="fa fa-users"></i></span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-sm-6">
-                        <div class="card gradient-8">
-                            <div class="card-body">
-                                <h3 class="card-title text-white">Canceled</h3>
-                                <div class="d-inline-block">
-                                    <h2 class="text-white">99%</h2>
-                                    <p class="text-white mb-0">Jan - March 2019</p>
-                                </div>
-                                <span class="float-right display-5 opacity-5"><i class="fa fa-heart"></i></span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-sm-6">
-                        <div class="card gradient-9">
-                            <div class="card-body">
-                                <h3 class="card-title text-white">Pending CoD Amount</h3>
-                                <div class="d-inline-block">
-                                    <h2 class="text-white">4565</h2>
-                                    <p class="text-white mb-0">Jan - March 2019</p>
-                                </div>
-                                <span class="float-right display-5 opacity-5"><i class="fa fa-shopping-cart"></i></span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-sm-6">
-                        <div class="card gradient-3">
-                            <div class="card-body">
-                                <h3 class="card-title text-white">Last COD Date</h3>
-                                <div class="d-inline-block">
-                                    <h2 class="text-white">$ 8541</h2>
-                                    <p class="text-white mb-0">Jan - March 2019</p>
-                                </div>
-                                <span class="float-right display-5 opacity-5"><i class="fa fa-money"></i></span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-sm-6">
-                        <div class="card gradient-2">
-                            <div class="card-body">
-                                <h3 class="card-title text-white">Last Cod Amount</h3>
-                                <div class="d-inline-block">
-                                    <h2 class="text-white">4565</h2>
-                                    <p class="text-white mb-0">Jan - March 2019</p>
-                                </div>
-                                <span class="float-right display-5 opacity-5"><i class="fa fa-users"></i></span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-sm-6">
-                        <div class="card gradient-1">
-                            <div class="card-body">
-                                <h3 class="card-title text-white">Received Amount</h3>
-                                <div class="d-inline-block">
-                                    <h2 class="text-white">99%</h2>
-                                    <p class="text-white mb-0">Jan - March 2019</p>
-                                </div>
-                                <span class="float-right display-5 opacity-5"><i class="fa fa-heart"></i></span>
-                            </div>
-                        </div>
-                    </div> -->
                 
-
+                </div>
                 <!-- <div class="row">
                     <div class="col-lg-12">
                         <div class="row">
@@ -685,55 +535,10 @@ element.style {
     flex-grow: 0;
     max-width: 25%;
 }
-.flex {
-    flex: 1 1 auto;
-} 
 .flex.sm6 {
     flex-basis: 50%;
     flex-grow: 0;
     max-width: 50%;
-} 
-.container.grid-list-xl :not(:only-child) .layout:last-child {
-    margin-bottom: -12px;
-}
-.container.grid-list-xl :not(:only-child) .layout:first-child {
-    margin-top: -12px;
-}
-.container.grid-list-xl .layout:only-child {
-    margin: -12px;
-}
-.v-application .text-sm-center {
-    text-align: center!important;
-}
-.v-application .py-3 {
-    padding-top: 12px!important;
-    padding-bottom: 12px!important;
-}
-.v-application .indigo {
-    background-color: #3f51b5!important;
-    border-color: #3f51b5!important;
-}
-.v-application .white--text {
-    color: #fff!important;
-    caret-color: #fff!important;
-}
-.v-application .ma-0 {
-    margin: 0!important;
-}
-.v-application .align-center {
-    align-items: center!important;
-}
-.v-application .ma-0 {
-    margin: 0!important;
-}
-.v-application .align-center {
-    align-items: center!important;
-}
-.v-application .justify-center {
-    justify-content: center!important;
-}
-.layout.column {
-    flex-direction: column;
 }
 .theme--light.v-card {
     background-color: #fff;
@@ -748,7 +553,7 @@ element.style {
     box-shadow: 0 1px 1px 0 rgba(60,64,67,.08), 0 1px 3px 1px rgba(60,64,67,.16);
 }
 .v-card {
-    max-width: 50%;
+    max-width: 100%;
     outline: none;
     overflow-wrap: break-word;
     text-decoration: none;
@@ -763,6 +568,12 @@ element.style {
     position: relative;
     transition: box-shadow .28s cubic-bezier(.4,0,.2,1);
     will-change: box-shadow;
+}
+.theme--light.v-card>.v-card__text {
+    color: rgba(0,0,0,.54);
+}
+.v-application .pa-0 {
+    padding: 0!important;
 }
 </style>>
 
