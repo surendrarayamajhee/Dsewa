@@ -5978,6 +5978,64 @@ var staticRenderFns = [
             ]
           )
         ]
+      ),
+      _vm._v(" "),
+      _c(
+        "div",
+        {
+          staticClass: "col-xl-3 col-lg-6",
+          staticStyle: { width: "200px", height: "180px" }
+        },
+        [
+          _c(
+            "div",
+            {
+              staticClass: "card card-stats mb-4 mb-xl-0",
+              staticStyle: { width: "200px", height: "180px" }
+            },
+            [
+              _c("div", { staticClass: "card-body" }, [
+                _c("div", { staticClass: "row" }, [
+                  _c("div", { staticClass: "col" }, [
+                    _c(
+                      "h5",
+                      {
+                        staticClass: "card-title text-uppercase text-muted mb-0"
+                      },
+                      [_vm._v("Orders")]
+                    ),
+                    _vm._v(" "),
+                    _c("span", { staticClass: "h2 font-weight-bold mb-0" }, [
+                      _vm._v("350,897")
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col-auto" }, [
+                    _c(
+                      "div",
+                      {
+                        staticClass:
+                          "icon icon-shape bg-danger text-white rounded-circle shadow"
+                      },
+                      [_c("i", { staticClass: "fas fa-cart-plus" })]
+                    )
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("p", { staticClass: "mt-3 mb-0 text-muted text-sm" }, [
+                  _c("span", { staticClass: "text-success mr-2" }, [
+                    _c("i", { staticClass: "fa fa-arrow-up" }),
+                    _vm._v(" 3.48%")
+                  ]),
+                  _vm._v(" "),
+                  _c("span", { staticClass: "text-nowrap" }, [
+                    _vm._v("Since last month")
+                  ])
+                ])
+              ])
+            ]
+          )
+        ]
       )
     ])
   },
