@@ -6145,8 +6145,14 @@ var staticRenderFns = [
             ]
           )
         ]
-      ),
-      _vm._v(" "),
+      )
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "row" }, [
       _c(
         "div",
         {
@@ -6338,9 +6344,6 @@ var staticRenderFns = [
               _c("div", { staticClass: "card-body" }, [
                 _c("div", { staticClass: "row" }, [
                   _c("div", { staticClass: "col" }, [
-                    _vm._v(
-                      "\r\n<<<<<<< HEAD\r\n                                        "
-                    ),
                     _c(
                       "h5",
                       {
@@ -6357,9 +6360,6 @@ var staticRenderFns = [
                   _c("div", { staticClass: "col-auto" }, [
                     _c("i", { staticClass: "fas fa-cart-arrow-down" }),
                     _vm._v(" "),
-                    _vm._v(
-                      "\r\n=======\r\n                                        "
-                    ),
                     _c(
                       "h5",
                       {
@@ -6381,9 +6381,6 @@ var staticRenderFns = [
                           "icon icon-shape bg-danger text-white rounded-circle shadow"
                       },
                       [_c("i", { staticClass: "fas fa-cart-plus" })]
-                    ),
-                    _vm._v(
-                      "\r\n>>>>>>> e790898de99f98c968e3e625925693a365d2d936\r\n                                    "
                     )
                   ])
                 ]),
@@ -6403,110 +6400,6 @@ var staticRenderFns = [
           )
         ]
       )
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-lg-12" }, [
-        _c("div", { staticClass: "row" }, [
-          _c("div", { staticClass: "col-12" }, [
-            _c("div", { staticClass: "card" }, [
-              _c(
-                "div",
-                {
-                  staticClass: "card-body pb-0 d-flex justify-content-between"
-                },
-                [
-                  _c("div", [
-                    _c("h4", { staticClass: "mb-1" }, [
-                      _vm._v("Product Sales")
-                    ]),
-                    _vm._v(" "),
-                    _c("p", [_vm._v("Total Earnings of the Month")]),
-                    _vm._v(" "),
-                    _c("h3", { staticClass: "m-0" }, [_vm._v("$ 12,555")])
-                  ]),
-                  _vm._v(" "),
-                  _c("div", [
-                    _c("ul", [
-                      _c("li", { staticClass: "d-inline-block mr-3" }, [
-                        _c(
-                          "a",
-                          { staticClass: "text-dark", attrs: { href: "#" } },
-                          [_vm._v("Day")]
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("li", { staticClass: "d-inline-block mr-3" }, [
-                        _c(
-                          "a",
-                          { staticClass: "text-dark", attrs: { href: "#" } },
-                          [_vm._v("Week")]
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("li", { staticClass: "d-inline-block" }, [
-                        _c(
-                          "a",
-                          { staticClass: "text-dark", attrs: { href: "#" } },
-                          [_vm._v("Month")]
-                        )
-                      ])
-                    ])
-                  ])
-                ]
-              ),
-              _vm._v(" "),
-              _c("div", { staticClass: "chart-wrapper" }, [
-                _c("canvas", { attrs: { id: "chart_widget_2" } })
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "card-body" }, [
-                _c("div", { staticClass: "d-flex justify-content-between" }, [
-                  _c("div", { staticClass: "w-100 mr-2" }, [
-                    _c("h6", [_vm._v("Pixel 2")]),
-                    _vm._v(" "),
-                    _c(
-                      "div",
-                      {
-                        staticClass: "progress",
-                        staticStyle: { height: "6px" }
-                      },
-                      [
-                        _c("div", {
-                          staticClass: "progress-bar bg-danger",
-                          staticStyle: { width: "40%" }
-                        })
-                      ]
-                    )
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "ml-2 w-100" }, [
-                    _c("h6", [_vm._v("iPhone X")]),
-                    _vm._v(" "),
-                    _c(
-                      "div",
-                      {
-                        staticClass: "progress",
-                        staticStyle: { height: "6px" }
-                      },
-                      [
-                        _c("div", {
-                          staticClass: "progress-bar bg-primary",
-                          staticStyle: { width: "80%" }
-                        })
-                      ]
-                    )
-                  ])
-                ])
-              ])
-            ])
-          ])
-        ])
-      ])
     ])
   },
   function() {

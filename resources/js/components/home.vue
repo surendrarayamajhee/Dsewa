@@ -172,7 +172,7 @@
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col">
-<<<<<<< HEAD
+
                                         <h5 class="card-title text-uppercase text-muted mb-0">Orders </h5>
                                             <span class="h2 font-weight-bold mb-0">350,897</span>
                                     </div>
@@ -180,7 +180,6 @@
                                         <!-- <div class="icon icon-shape bg-danger text-white rounded-circle shadow"> -->
                                           <i class="fas fa-cart-arrow-down"></i>
                                         <!-- </div> -->
-=======
                                         <h5 class="card-title text-uppercase text-muted mb-0">Orders</h5>
                                             <span class="h4 font-weight-bold mb-0">350,897</span>
                                     </div>
@@ -189,7 +188,6 @@
                                             <i class="fas fa-cart-plus"> 
                                             </i>
                                         </div>
->>>>>>> e790898de99f98c968e3e625925693a365d2d936
                                     </div>
                                 </div>
                                 <p class="mt-3 mb-0 text-muted text-sm">
@@ -346,7 +344,7 @@
                 </div>
                 
 
-                <div class="row">
+                <!-- <div class="row">
                     <div class="col-lg-12">
                         <div class="row">
                             <div class="col-12">
@@ -388,7 +386,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> -->
 
                 
 
