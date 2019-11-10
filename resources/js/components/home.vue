@@ -6,15 +6,17 @@
                 <div class="row">
                     <div class="flex lg3 sm6 xs12">
                         <div class="v-card v-sheet theme--light">
-                            <div c;appear-class="v-card__text pa-0">
+                            <div class="v-card__text pa-0">
                                 <div class="container pa-0">
-                                    <div class="layout row ma-0">
-                                        <div class="sm6 xs6 flex">
+                                    <div class="f2">
+                                        <div class="focus">
                                             <div class="layout column ma-0 justify-center align-center">
+                                                <span style="font-size: 48px; color: Dodgerblue;">
                                                 <i aria-hidden="true" class="fas fa-cart-plus"></i>
+                                                </span>
                                             </div>
                                         </div>
-                                        <div class="sm6 xs6 flex">
+                                        <div class="focus">
                                             <div class="headline">100</div>
                                             <span class="caption">Orders</span>
                                         </div>
@@ -531,13 +533,7 @@ element.style {
     width: 200px;
     height: 180px;
 }
-.container.grid-list-xl .layout .flex {
-    padding: 12px;
-    padding-top: 12px;
-    padding-right: 12px;
-    padding-bottom: 12px;
-    padding-left: 12px;
-}
+
 .flex.lg3 {
     flex-basis: 25%;
     flex-grow: 0;
@@ -582,6 +578,21 @@ element.style {
 }
 .v-application .pa-0 {
     padding: 0!important;
+}
+.container.grid-list-xl .layout .flex {
+    padding: 12px;
+    padding-top: 12px;
+    padding-right: 12px;
+    padding-bottom: 12px;
+    padding-left: 12px;
+}
+.focus{
+    width:124.13px;
+    height:80px;
+}
+.f2{
+    width: 172px;
+    height: 80px;
 }
 </style>>
 
