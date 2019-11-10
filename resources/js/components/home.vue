@@ -4,7 +4,7 @@
         <div class="row justify-content-center">
             <div class="container-fluid mt-3">
                 <div class="row">
-                    <!-- <div class="flex lg3 sm6 xs12">
+                    <div class="flex lg3 sm6 xs12">
                         <div class="v-card v-sheet theme--light">
                             <div c;appear-class="v-card__text pa-0">
                                 <div class="container pa-0">
@@ -14,14 +14,15 @@
                                                 <i aria-hidden="true" class="fas fa-cart-plus"></i>
                                             </div>
                                         </div>
-                                        <div>
-
+                                        <div class="sm6 xs6 flex">
+                                            <div class="headline">100</div>
+                                            <span class="caption">Orders</span>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div> -->
+                    </div>
                 
                 </div>
                 <!-- <div class="row">
@@ -529,6 +530,58 @@
 element.style {
     width: 200px;
     height: 180px;
+}
+.container.grid-list-xl .layout .flex {
+    padding: 12px;
+    padding-top: 12px;
+    padding-right: 12px;
+    padding-bottom: 12px;
+    padding-left: 12px;
+}
+.flex.lg3 {
+    flex-basis: 25%;
+    flex-grow: 0;
+    max-width: 25%;
+}
+.flex.sm6 {
+    flex-basis: 50%;
+    flex-grow: 0;
+    max-width: 50%;
+}
+.theme--light.v-card {
+    background-color: #fff;
+    color: rgba(0,0,0,.87);
+}
+.theme--light.v-sheet {
+    background-color: #fff;
+    border-color: #fff;
+    color: rgba(0,0,0,.87);
+}
+.v-card {
+    box-shadow: 0 1px 1px 0 rgba(60,64,67,.08), 0 1px 3px 1px rgba(60,64,67,.16);
+}
+.v-card {
+    max-width: 100%;
+    outline: none;
+    overflow-wrap: break-word;
+    text-decoration: none;
+    transition-property: box-shadow,opacity;
+    white-space: normal;
+    word-break: break-word;
+    box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
+}
+.v-sheet {
+    display: block;
+    border-radius: 4px;
+    position: relative;
+    transition: box-shadow .28s cubic-bezier(.4,0,.2,1);
+    will-change: box-shadow;
+}
+.theme--light.v-card>.v-card__text {
+    color: rgba(0,0,0,.54);
+}
+.v-application .pa-0 {
+    padding: 0!important;
 }
 </style>>
 
