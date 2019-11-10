@@ -96,7 +96,8 @@
                             </div>
                         </div>
                     </div>
-
+                </div>
+                <div class="row">
                     <div class="col-xl-3 col-lg-6" style="width: 200px; height:180px;">
                         <div class="card card-stats mb-4 mb-xl-0" style="width: 200px; height:180px;">
                             <div class="card-body">
