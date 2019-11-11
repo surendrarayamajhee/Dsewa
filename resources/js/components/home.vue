@@ -16,12 +16,13 @@
                                                 </span>
                                             </div>
                                         </div>
-                                        <div class="focus">
+                                       <!-- <div class="focus">
                                             <div class="headline">100</div>
                                             <span class="caption">Orders</span>
-                                        </div>
+                                        </div> -->
                                     </div>
                                 </div>
+                                
                             </div>
                         </div>
                     </div>

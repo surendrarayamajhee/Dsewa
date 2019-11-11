@@ -5943,12 +5943,6 @@ var staticRenderFns = [
                       )
                     ]
                   )
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "focus" }, [
-                  _c("div", { staticClass: "headline" }, [_vm._v("100")]),
-                  _vm._v(" "),
-                  _c("span", { staticClass: "caption" }, [_vm._v("Orders")])
                 ])
               ])
             ])
