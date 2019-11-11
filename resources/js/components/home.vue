@@ -46,6 +46,29 @@
                         </div>
                         <div class="headline">
                             <div>Orders</div>
+=======
+                <div class="row">
+                    <div class="flex lg3 sm6 xs12">
+                        <div class="v-card v-sheet theme--light">
+                            <div class="v-card__text pa-0">
+                                <div class="container pa-0">
+                                    <div class="f2">
+                                        <div class="focus">
+                                            <div class="layout column ma-0 justify-center align-center">
+                                                <span style="font-size: 48px; color: Dodgerblue;">
+                                                <i aria-hidden="true" class="fas fa-cart-plus"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                       <!-- <div class="focus">
+                                            <div class="headline">100</div>
+                                            <span class="caption">Orders</span>
+                                        </div> -->
+                                    </div>
+                                </div>
+                                
+                            </div>
+>>>>>>> 99c9d30037a482050a3affc56f2cc1463a9d4867
                         </div>
                     </div>
                 </div>

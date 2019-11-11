@@ -397,14 +397,15 @@ element.style {
             <div class="nk-nav-scroll" style="width:auto; height: 3388.330px">
                 <ul class="metismenu" id="menu">
                     <!-- <li class="nav-label">Dashboard</li> -->
-                    <li>
-                    <div class="v-sheet v-sheet--tile theme--dark v-toolbar darken-1">
-                    <h4>Vendor</h4>
-                        <div class="v-toolbar__content" style="height:64px;"><h2>
-                            <img src="images/nas.png" height="56px" alt="vendor logo"><span align="center">NAS</span></h2>
+                    
+                    <li class="mega-menu mega-menu-sm" style="padding-left: 1px;">
+                    <!-- <span class="nav-text" style="padding-left: 25px;">Vendor</span> -->
+                    <a class="" href="javascript:void()" aria-expanded="false">
+                    <img src="images/nas.png" style="width:40px; height:40px;"> <span class="nav-text" style="padding-left: 5px; font-weight:bold; font-size:20px;">NAS</span>
+                        <!-- <a class="" href="javascript:void()" aria-expanded="false"> -->
                             
-                        </div>
-                    <div>
+                     </a>   
+                        
                     </li>
                     <li>
                         <a class="has-arrow" href="javascript:void()" aria-expanded="false">
