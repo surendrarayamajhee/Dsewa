@@ -46,7 +46,6 @@
                         </div>
                         <div class="headline">
                             <div>Orders</div>
-=======
                 <div class="row">
                     <div class="flex lg3 sm6 xs12">
                         <div class="v-card v-sheet theme--light">
@@ -68,7 +67,6 @@
                                 </div>
                                 
                             </div>
->>>>>>> 99c9d30037a482050a3affc56f2cc1463a9d4867
                         </div>
                     </div>
                 </div>
