@@ -122,7 +122,7 @@ element.style {
     padding: 0;
 }
 .header .header-content {
-    height: 100%;
+    height: 80%;
     background-color: royalblue;
 }
 [data-headerbg="color_1"] .header {
