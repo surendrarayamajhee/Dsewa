@@ -5573,8 +5573,6 @@ var render = function() {
         _c("div", { staticClass: "container-fluid mt-3" }, [
           _vm._m(0),
           _vm._v(" "),
-          _vm._m(1),
-          _vm._v(" "),
           _c("div", { staticClass: "row" }, [
             _c("div", { staticClass: "col-lg-3 col-sm-6" }, [
               _c("div", { staticClass: "card" }, [
@@ -5660,7 +5658,7 @@ var render = function() {
                   _c("div", { staticClass: "active-member" }, [
                     _c("div", { staticClass: "table-responsive" }, [
                       _c("table", { staticClass: "table table-xs mb-0" }, [
-                        _vm._m(2),
+                        _vm._m(1),
                         _vm._v(" "),
                         _c("tbody", [
                           _c("tr", [
@@ -5674,13 +5672,13 @@ var render = function() {
                             _vm._v(" "),
                             _c("td", [_vm._v("iPhone X")]),
                             _vm._v(" "),
+                            _vm._m(2),
+                            _vm._v(" "),
                             _vm._m(3),
                             _vm._v(" "),
                             _vm._m(4),
                             _vm._v(" "),
-                            _vm._m(5),
-                            _vm._v(" "),
-                            _vm._m(6)
+                            _vm._m(5)
                           ]),
                           _vm._v(" "),
                           _c("tr", [
@@ -5694,13 +5692,13 @@ var render = function() {
                             _vm._v(" "),
                             _c("td", [_vm._v("Pixel 2")]),
                             _vm._v(" "),
+                            _vm._m(6),
+                            _vm._v(" "),
                             _vm._m(7),
                             _vm._v(" "),
                             _vm._m(8),
                             _vm._v(" "),
-                            _vm._m(9),
-                            _vm._v(" "),
-                            _vm._m(10)
+                            _vm._m(9)
                           ]),
                           _vm._v(" "),
                           _c("tr", [
@@ -5714,13 +5712,13 @@ var render = function() {
                             _vm._v(" "),
                             _c("td", [_vm._v("OnePlus")]),
                             _vm._v(" "),
+                            _vm._m(10),
+                            _vm._v(" "),
                             _vm._m(11),
                             _vm._v(" "),
                             _vm._m(12),
                             _vm._v(" "),
-                            _vm._m(13),
-                            _vm._v(" "),
-                            _vm._m(14)
+                            _vm._m(13)
                           ]),
                           _vm._v(" "),
                           _c("tr", [
@@ -5734,13 +5732,13 @@ var render = function() {
                             _vm._v(" "),
                             _c("td", [_vm._v("Galaxy")]),
                             _vm._v(" "),
+                            _vm._m(14),
+                            _vm._v(" "),
                             _vm._m(15),
                             _vm._v(" "),
                             _vm._m(16),
                             _vm._v(" "),
-                            _vm._m(17),
-                            _vm._v(" "),
-                            _vm._m(18)
+                            _vm._m(17)
                           ]),
                           _vm._v(" "),
                           _c("tr", [
@@ -5754,13 +5752,13 @@ var render = function() {
                             _vm._v(" "),
                             _c("td", [_vm._v("Moto Z2")]),
                             _vm._v(" "),
+                            _vm._m(18),
+                            _vm._v(" "),
                             _vm._m(19),
                             _vm._v(" "),
                             _vm._m(20),
                             _vm._v(" "),
-                            _vm._m(21),
-                            _vm._v(" "),
-                            _vm._m(22)
+                            _vm._m(21)
                           ]),
                           _vm._v(" "),
                           _c("tr", [
@@ -5774,13 +5772,13 @@ var render = function() {
                             _vm._v(" "),
                             _c("td", [_vm._v("Notebook Asus")]),
                             _vm._v(" "),
+                            _vm._m(22),
+                            _vm._v(" "),
                             _vm._m(23),
                             _vm._v(" "),
                             _vm._m(24),
                             _vm._v(" "),
-                            _vm._m(25),
-                            _vm._v(" "),
-                            _vm._m(26)
+                            _vm._m(25)
                           ])
                         ])
                       ])
@@ -5792,7 +5790,7 @@ var render = function() {
           ]),
           _vm._v(" "),
           _c("div", { staticClass: "row" }, [
-            _vm._m(27),
+            _vm._m(26),
             _vm._v(" "),
             _c("div", { staticClass: "col-xl-3 col-lg-6 col-sm-6 col-xxl-6" }, [
               _c("div", { staticClass: "card" }, [
@@ -5800,7 +5798,23 @@ var render = function() {
                   _c("h4", { staticClass: "card-title" }, [_vm._v("Activity")]),
                   _vm._v(" "),
                   _c("div", { attrs: { id: "activity" } }, [
-                    _vm._m(28),
+                    _vm._m(27),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      { staticClass: "media border-bottom-1 pt-3 pb-3" },
+                      [
+                        _c("img", {
+                          staticClass: "mr-3 rounded-circle",
+                          attrs: { width: "35", src: "images/avatar/2.jpg" }
+                        }),
+                        _vm._v(" "),
+                        _vm._m(28),
+                        _c("span", { staticClass: "text-muted " }, [
+                          _vm._v("April 24, 2018")
+                        ])
+                      ]
+                    ),
                     _vm._v(" "),
                     _c(
                       "div",
@@ -5866,29 +5880,13 @@ var render = function() {
                       ]
                     ),
                     _vm._v(" "),
-                    _c(
-                      "div",
-                      { staticClass: "media border-bottom-1 pt-3 pb-3" },
-                      [
-                        _c("img", {
-                          staticClass: "mr-3 rounded-circle",
-                          attrs: { width: "35", src: "images/avatar/2.jpg" }
-                        }),
-                        _vm._v(" "),
-                        _vm._m(33),
-                        _c("span", { staticClass: "text-muted " }, [
-                          _vm._v("April 24, 2018")
-                        ])
-                      ]
-                    ),
-                    _vm._v(" "),
                     _c("div", { staticClass: "media pt-3 pb-3" }, [
                       _c("img", {
                         staticClass: "mr-3 rounded-circle",
                         attrs: { width: "35", src: "images/avatar/3.jpg" }
                       }),
                       _vm._v(" "),
-                      _vm._m(34),
+                      _vm._m(33),
                       _c("span", { staticClass: "text-muted " }, [
                         _vm._v("April 24, 2018")
                       ])
@@ -5898,59 +5896,16 @@ var render = function() {
               ])
             ]),
             _vm._v(" "),
-            _vm._m(35)
+            _vm._m(34)
           ]),
           _vm._v(" "),
-          _vm._m(36)
+          _vm._m(35)
         ])
       ])
     ])
   ])
 }
 var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "flex lg3 sm6 xs12" }, [
-        _c("div", { staticClass: "v-card v-sheet theme--light" }, [
-          _c("div", { staticClass: "v-card__text pa-0" }, [
-            _c("div", { staticClass: "container pa-0" }, [
-              _c("div", { staticClass: "f2" }, [
-                _c("div", { staticClass: "focus" }, [
-                  _c(
-                    "div",
-                    {
-                      staticClass:
-                        "layout column ma-0 justify-center align-center"
-                    },
-                    [
-                      _c(
-                        "span",
-                        {
-                          staticStyle: {
-                            "font-size": "48px",
-                            color: "Dodgerblue"
-                          }
-                        },
-                        [
-                          _c("i", {
-                            staticClass: "fas fa-cart-plus",
-                            attrs: { "aria-hidden": "true" }
-                          })
-                        ]
-                      )
-                    ]
-                  )
-                ])
-              ])
-            ])
-          ])
-        ])
-      ])
-    ])
-  },
   function() {
     var _vm = this
     var _h = _vm.$createElement
