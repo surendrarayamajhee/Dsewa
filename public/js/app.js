@@ -5607,9 +5607,7 @@ var staticRenderFns = [
                   _c("div", { staticClass: "Cart" }, [
                     _c(
                       "span",
-                      {
-                        staticStyle: { "font-size": "3em", color: "lightgreen" }
-                      },
+                      { staticStyle: { "font-size": "3em", color: "green" } },
                       [_c("i", { staticClass: "fas fa-clipboard-check" })]
                     )
                   ]),
@@ -5623,7 +5621,7 @@ var staticRenderFns = [
                   _c("div", { staticClass: "Cart" }, [
                     _c(
                       "span",
-                      { staticStyle: { "font-size": "3em", color: "yellow" } },
+                      { staticStyle: { "font-size": "3em", color: "black" } },
                       [_c("i", { staticClass: "fas fa-shipping-fast" })]
                     )
                   ]),

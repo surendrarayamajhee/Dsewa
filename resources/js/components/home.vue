@@ -20,7 +20,7 @@
                         <!-- second-box -->
                     <div class="flex-container">
                         <div class="Cart">
-                            <span style="font-size:3em; color: lightgreen;">
+                            <span style="font-size:3em; color: green;">
                             <i class="fas fa-clipboard-check"></i>
                             </span>
                         </div>
@@ -31,7 +31,7 @@
                         <!-- Third-Box -->
                     <div class="flex-container">
                         <div class="Cart">
-                            <span style="font-size:3em; color: yellow;">
+                            <span style="font-size:3em; color: black;">
                             <i class="fas fa-shipping-fast"></i>
                             </span>
                         </div>
