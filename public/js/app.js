@@ -288,7 +288,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\nelement.style[data-v-fa6affac] {\r\n    width: 200px;\r\n    height: 180px;\n}\n.flex-container[data-v-fa6affac] {\r\n  display: flex;\r\n  flex-wrap: nowrap;\r\n  background-color:white;\r\n  box-shadow: 3px 3px 5px 6px #ccc;\n}\n.flex-container > div[data-v-fa6affac] {\r\n  background-color: white;\r\n  width: 100px;\r\n  margin: 10px;\r\n  text-align: center;\r\n  line-height: 75px;\r\n  font-size: 30px;\n}\n.headline[data-v-fa6affac] {\r\n    line-height: 2rem;\r\n    font-family: Roboto,sans-serif!important;\r\n    background-color: royalblue;\n}\n.Cart[data-v-fa6affac] {\r\n    text-align: center;\r\n    color: white;\n}\r\n\r\n", ""]);
+exports.push([module.i, "\nelement.style[data-v-fa6affac] {\r\n    width: 200px;\r\n    height: 180px;\n}\n.flex-container[data-v-fa6affac] {\r\n  display: flex;\r\n  flex-wrap: nowrap;\r\n  background-color:white;\r\n  box-shadow: 3px 3px 5px 6px #ccc;\r\n  margin: 10px;\r\n  padding: 4px;\r\n  padding-left: 7px;\n}\n.flex-container > div[data-v-fa6affac] {\r\n  background-color: white;\r\n  width: 100px;\r\n  height: 80px;\r\n  margin: 10px;\r\n  text-align: center;\r\n  -webkit-box-decoration-break: clone;\r\n          box-decoration-break: clone;\n}\n.headline[data-v-fa6affac] {\r\n    padding-top: 10px;\r\n    line-height: 1rem;\r\n    font-family: 'Times New Roman', Times, serif;\r\n    font-size: 18px;\r\n    background-color: royalblue;\n}\n.Cart[data-v-fa6affac] {\r\n    padding-top: 2%;\r\n    text-align: center;\r\n    color: white;\n}\r\n\r\n", ""]);
 
 // exports
 
@@ -5587,14 +5587,19 @@ var staticRenderFns = [
                     _c(
                       "span",
                       {
-                        staticStyle: { "font-size": "1em", color: "royalblue" }
+                        staticStyle: { "font-size": "3em", color: "royalblue" }
                       },
                       [_c("i", { staticClass: "fas fa-cart-plus" })]
                     )
                   ]),
                   _vm._v(" "),
                   _c("div", { staticClass: "headline" }, [
-                    _c("div", [_vm._v("Orders")])
+                    _c("span", [_vm._v("Orders")]),
+                    _c("br"),
+                    _vm._v(" "),
+                    _c("span", { staticStyle: { "font-weight": "bold" } }, [
+                      _vm._v("100+")
+                    ])
                   ])
                 ]),
                 _vm._v(" "),
@@ -5603,14 +5608,14 @@ var staticRenderFns = [
                     _c(
                       "span",
                       {
-                        staticStyle: { "font-size": "1em", color: "royalblue" }
+                        staticStyle: { "font-size": "3em", color: "lightgreen" }
                       },
-                      [_c("i", { staticClass: "fas fa-cart-plus" })]
+                      [_c("i", { staticClass: "fas fa-clipboard-check" })]
                     )
                   ]),
                   _vm._v(" "),
                   _c("div", { staticClass: "headline" }, [
-                    _c("div", [_vm._v("Orders")])
+                    _c("span", [_vm._v("Order Delivered")])
                   ])
                 ]),
                 _vm._v(" "),
@@ -5618,15 +5623,13 @@ var staticRenderFns = [
                   _c("div", { staticClass: "Cart" }, [
                     _c(
                       "span",
-                      {
-                        staticStyle: { "font-size": "1em", color: "royalblue" }
-                      },
-                      [_c("i", { staticClass: "fas fa-cart-plus" })]
+                      { staticStyle: { "font-size": "3em", color: "yellow" } },
+                      [_c("i", { staticClass: "fas fa-shipping-fast" })]
                     )
                   ]),
                   _vm._v(" "),
                   _c("div", { staticClass: "headline" }, [
-                    _c("div", [_vm._v("Orders")])
+                    _c("span", [_vm._v("Orders In Delivery Process")])
                   ])
                 ]),
                 _vm._v(" "),
@@ -5634,15 +5637,69 @@ var staticRenderFns = [
                   _c("div", { staticClass: "Cart" }, [
                     _c(
                       "span",
-                      {
-                        staticStyle: { "font-size": "1em", color: "royalblue" }
-                      },
-                      [_c("i", { staticClass: "fas fa-cart-plus" })]
+                      { staticStyle: { "font-size": "3em", color: "orange" } },
+                      [_c("i", { staticClass: "fas fa-undo-alt" })]
                     )
                   ]),
                   _vm._v(" "),
                   _c("div", { staticClass: "headline" }, [
-                    _c("div", [_vm._v("Orders")])
+                    _c("span", [_vm._v("Order In Return Process")])
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "flex-container" }, [
+                  _c("div", { staticClass: "Cart" }, [
+                    _c(
+                      "span",
+                      { staticStyle: { "font-size": "3em", color: "green" } },
+                      [_c("i", { staticClass: "fas fa-people-carry" })]
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "headline" }, [
+                    _c("span", [_vm._v("Return Order Delivered")])
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "flex-container" }, [
+                  _c("div", { staticClass: "Cart" }, [
+                    _c(
+                      "span",
+                      { staticStyle: { "font-size": "3em", color: "skyblue" } },
+                      [_c("i", { staticClass: "fas fa-exchange-alt" })]
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "headline" }, [
+                    _c("span", [_vm._v("Exchange Order")])
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "flex-container" }, [
+                  _c("div", { staticClass: "Cart" }, [
+                    _c(
+                      "span",
+                      { staticStyle: { "font-size": "3em", color: "grey" } },
+                      [_c("i", { staticClass: "fas fa-hand-holding-usd" })]
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "headline" }, [
+                    _c("span", [_vm._v("Refund Order")])
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "flex-container" }, [
+                  _c("div", { staticClass: "Cart" }, [
+                    _c(
+                      "span",
+                      { staticStyle: { "font-size": "3em", color: "red" } },
+                      [_c("i", { staticClass: "far fa-times-circle" })]
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "headline" }, [
+                    _c("span", [_vm._v("Canceled")])
                   ])
                 ])
               ]
