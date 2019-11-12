@@ -7,7 +7,7 @@
                     <!-- first-box -->
                    <div class="flex-container">
                         <div class="Cart">
-                            <span style="font-size: 3em; color: royalblue;">
+                            <span style="font-size: 1em; color: royalblue;">
                             <i class="fas fa-cart-plus"></i>
                             </span>
                         </div>
@@ -18,7 +18,7 @@
                         <!-- second-box -->
                     <div class="flex-container">
                         <div class="Cart">
-                            <span style="font-size: 3em; color: royalblue;">
+                            <span style="font-size: 1em; color: royalblue;">
                             <i class="fas fa-cart-plus"></i>
                             </span>
                         </div>
@@ -29,7 +29,7 @@
                         <!-- Third-Box -->
                     <div class="flex-container">
                         <div class="Cart">
-                            <span style="font-size: 3em; color: royalblue;">
+                            <span style="font-size: 1em; color: royalblue;">
                             <i class="fas fa-cart-plus"></i>
                             </span>
                         </div>
@@ -40,7 +40,7 @@
                         <!-- Fouth-Box -->
                     <div class="flex-container">
                         <div class="Cart">
-                            <span style="font-size: 3em; color: royalblue;">
+                            <span style="font-size: 1em; color: royalblue;">
                             <i class="fas fa-cart-plus"></i>
                             </span>
                         </div>

@@ -5587,7 +5587,7 @@ var staticRenderFns = [
                     _c(
                       "span",
                       {
-                        staticStyle: { "font-size": "3em", color: "royalblue" }
+                        staticStyle: { "font-size": "1em", color: "royalblue" }
                       },
                       [_c("i", { staticClass: "fas fa-cart-plus" })]
                     )
@@ -5603,7 +5603,7 @@ var staticRenderFns = [
                     _c(
                       "span",
                       {
-                        staticStyle: { "font-size": "3em", color: "royalblue" }
+                        staticStyle: { "font-size": "1em", color: "royalblue" }
                       },
                       [_c("i", { staticClass: "fas fa-cart-plus" })]
                     )
@@ -5619,7 +5619,7 @@ var staticRenderFns = [
                     _c(
                       "span",
                       {
-                        staticStyle: { "font-size": "3em", color: "royalblue" }
+                        staticStyle: { "font-size": "1em", color: "royalblue" }
                       },
                       [_c("i", { staticClass: "fas fa-cart-plus" })]
                     )
@@ -5635,7 +5635,7 @@ var staticRenderFns = [
                     _c(
                       "span",
                       {
-                        staticStyle: { "font-size": "3em", color: "royalblue" }
+                        staticStyle: { "font-size": "1em", color: "royalblue" }
                       },
                       [_c("i", { staticClass: "fas fa-cart-plus" })]
                     )
