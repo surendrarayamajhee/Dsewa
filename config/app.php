@@ -122,7 +122,7 @@ return [
     'key' => env('APP_KEY'),
 
     'cipher' => 'AES-256-CBC',
-
+    // 'timezone'  => 'Asia/Kathmandu',
     /*
     |--------------------------------------------------------------------------
     | Autoloaded Service Providers
@@ -174,6 +174,9 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+        Zizaco\Entrust\EntrustServiceProvider::class,
+//         Maatwebsite\Excel\ExcelServiceProvider::class,
+
 
     ],
 
@@ -225,6 +228,8 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
+        'Entrust'   => Zizaco\Entrust\EntrustFacade::class,
+//         'Excel' => Maatwebsite\Excel\Facades\Excel::class,
 
     ],
 

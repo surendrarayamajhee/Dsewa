@@ -1,325 +1,488 @@
 <template>
-    <div class="content-body">
-            <div class="container-fluid mt-3">
-                <div class="row justify-content-center">
-                            <div class="container" style="width:auto; min-height:700px;">
-                                <div class="card-body">
-                                    <div class="card-header">
-                                     <h2 class="card-title text-black" align="center" >Create New Packets</h2>
-                                    </div>
-                            
-                            <div class="card-body">
-                             <form>
-                                  <div class="row">
-                                     <div class="form-group col-md-6">
-                                         <label class="mr-sm-2">Phone-Number</label>
-                                             <div dir="auto" class="v-select vs--single vs--searchable">
-                                                 <div class="vs__dropdown-toggle">
-                                                     <div class="vs__selected-options">
-                                                         <input placeholder="select phone no" aria-label="search for option" role="combobox" type="serach" autocomplete="off" class="vs__search">
-                                                     </div>
-                                                     <div class="vs__actions">
-                                                         <button type="button" title="clear selection" class="vs__clear" style="display:none;">
-                                                             <svg></svg>
-                                                         </button>
-                                                         <div class="vs__spinner" style="display:none;">Loading.......</div>
-                                                     </div>
-                                                </div>
-                                                <!--  -->
-                                                </div>
-                                                <!-- -->
-                                                <div class="modal-footer">
-                                                        <button class="btn btn-primary" style="border:1px solid black;">
-                                                            New Customer
-                                                        </button>
-                                                    </div>
-                                            </div>
-                                     <hr>
-                                     <h6></h6>
-                                     <div class="form-group col-md-6">
-                                     <label class="mr-sm-2">Products Discription</label>
-                                          <div class="col-lg-6">
-                                                <textarea class="form-control h-150px" rows="6" id="comment" placeholder="Discription write here"></textarea>
-                                           </div>
-                                     </div>
-                                     <div class="form-group col-md-6">
-                                         <label for="municipality">Handling</label>
-                                         <select name="handling" class="form-control" >
-                                             <option value disabled="desable">Select</option>
-                                                    <option value="NON_FRAGILE" selected="selected">Non-Fragile</option>
-                                                    <option value="FRAGILE">Fragile</option>
-                                                    
-
-                                         </select>
-                                     </div>
-                                     <div class="form-group col-md-6">
-                                         <label for="mobile2">COD value</label>
-                                         <input type="number" placeholder="COD Value" name="cod" min="0" class="form-control">
-                                     </div>
-                                     <div class="form-group col-md-6">
-                                         <label class="mobile2">Unit/Weight (In Kg)</label>
-                                         <input type="number" placeholder="Unit/Weight (In Kg)" name="Weight" min="1" class="form-control">
-                                     </div>
-                                     <div class="form-group col-md-6">
-                                         <label class="mobile2">Customer's Expected Delivery Date</label>
-                                         <input type="date" class="form-control" name="expected_date">
-                                     </div>
-                                     <div class="form-group col-md-6">
-                                        <label for="mobile2">Product type</label>
-                                            <select multiple="multiple" class="form-control" id="sel2">
-                                                <option value disabled="desable">Select Products</option>
-                                                    <option value="test">test</option>
-                                                    <option value="show">show</option>
-                                                    <option value="T-Shirt">T-Shirt</option>
-                                                    <option value="glass">glass</option>
-                                                    <option value="shoes">shoes</option>
-                                                    <option value="Document">Document</option>
-                                            </select>
-                                     </div>
-                                     <div class="form-group col-md-6">
-                                         <label for="mobile2">Vendor Order ID</label>
-                                         <input type="text" placeholder="Vendor Order id" class="form-control">
-                                     </div>
-                                 </div>
-                                 <button class="btn btn-primary btn-load" style="border:1px solid black;">
-                                     <span class>Submit</span>
-                                 </button>
-                            </form>
-                            </div>
-                            </div> 
-                            <!-- <div class="model2">
-                                <form>
-                                    <div id="new_picup" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" class="modal fade bd-example-modal-lg" style="display:none;" aria-hidden="true">
-                                        <div role="document" class="modal-dialog modal-lg">
-                                            <div class="modal-content">
-                                                <div class="modal-header">
-                                                <h5 id="exampleModalScrollableTitle" class="modal-title">Add  New Customer</h5>
-                                                <button type="button" data-dismiss="modal" aria-label="Close" class="close">
-                                                    <span aria-hidden="true">*</span>
-                                                </button>
-                                                </div>    
-                                                <div class="modal-body">
-                                                    <div class="row">
-                                                        <div class="col-md-4">
-                                                            <div class="form-group">
-                                                                <label for="name">First Name</label>
-                                                                <input type="text" placeholder="First Name" name="First_Name" class="form-control">
-                                                               
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-md-4">
-                                                            <div class="form-group">
-                                                                <label for="name">Last Name</label>
-                                                                <input type="text" placeholder="Last Name" name="last_Name" class="form-control">
-                                                            
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-md-4">
-                                                            <div class="form-group">
-                                                                <label>State</label>
-                                                                <select class="form-control">
-                                                                    <option value selected="selected" disabled="disabled">Select</option>
-                                                                    <option value="532">Gandaki</option>
-                                                                    <option >Karnali</option>
-                                                                    <option >Province1</option>
-                                                                    <option >Province2</option>
-                                                                    <option >Province3</option>
-                                                                    <option >Province5</option>
-                                                                    <option >Sudur Paschim</option>
-                                                                </select>
-                                                              
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-md-4">
-                                                            <div class="form-group">
-                                                                <label for="district">District</label>
-                                                                <select id="district" name="district" class="form-control">
-                                                                    <option>Select</option>
-                                                                    <option >Gandaki</option>
-                                                                    <option >Karnali</option>
-                                                                    <option >Province1</option>
-                                                                    <option >Province2</option>
-                                                                    <option >Province3</option>
-                                                                    <option >Province5</option>
-                                                                    <option >Sudur Paschim</option>
-                                                                </select>
-                                                               
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-md-4">
-                                                            <div class="form-group">
-                                                                <label for="municipality">municipality</label>
-                                                                <select id="municipality" name="municipality" class="form-control">
-                                                                    <option>Select</option>
-                                                                    
-                                                                </select>
-                                                               
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-md-4">
-                                                            <div class="form-group">
-                                                                <label for="municipality">Ward_No</label>
-                                                                <select id="tole" name="Ward-No" class="form-control">
-                                                                    <option>Select</option>
-                                                                    
-                                                                </select>
-                                                               
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-md-4">
-                                                            <div class="form-group">
-                                                                <label for="area">Area</label>
-                                                                <div>
-                                                                <select id="tole" name="area" class="form-control">
-                                                                    <option>Select</option>
-                                                                    
-                                                                </select>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-md-4">
-                                                            <div class="form-group">
-                                                                <label for="discription">Discription</label>
-                                                                <div>
-                                                                <input type="text" placeholder="Discription/state" name="discription" class="form-control">
-                                                              
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-md-4">
-                                                            <div class="form-group">
-                                                                <label for="mobile">Mobile Number</label>
-                                                                <div>
-                                                                <input type="number" placeholder="Mobile Number" name="phone1" class="form-control">
-                                                               
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-md-4">
-                                                            <div class="form-group">
-                                                                 <label for="mobile2">Mobile Number 2</label>
-                                                                <div>
-                                                                <input type="number" placeholder="Mobile Number 2" name="phone2" class="form-control">
-                                                              
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="modal-footer">
-                                                        <button type="button" data-dismiss="modal" class="btn btn-secondary">Close</button>
-                                                        <button class="btn btn-primary">
-                                                            "Submit"
-                                                        </button>
-                                                    </div>   
-                                                  </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                     </form> -->
+<div class="content-body">
+<div class="row justify-content-center">
+  <div class="container">
+    <div class="card">
+      <div class="card-header">
+        <h2>
+          <center>Create New Packet</center>
+        </h2>
+      </div>
+      <div class="card-body">
+        <form
+          @submit.prevent="onsubmitpicup"
+          @keydown="picup.errors.clear($event.target.name)"
+          @click="picup.errors.clear($event.target.name)"
+        >
+          <div class="row">
+            <div class="form-group col-md-6">
+              <label for="phone-number">Phone Number</label>
+              <v-select
+                :options="usersphone"
+                label="phone1"
+                placeholder="Select Phone No"
+                v-model="selected"
+                @input="setuseraddressid($event)"
+              >
+                <template slot="selected-option" slot-scope="option">
+                  <div class="flex">
+                    <div class="col">
+                      <span>{{ option.phone1 }} -> {{ option.first_name }} {{ option.last_name }}</span>
                     </div>
-                </div>
-            </div>
-        </div>
-    </template>
-<style> 
-.justify-content-center {
-    justify-content: center !important;
-    width: auto;
-    min-height: 700px;   
-}
- .v-select , .v-select *{
-     box-sizing: border-box;
-     position: relative;
-     font-family: inherit;
- }
- .vs__dropdown-toggle {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    display: flex;
-    padding: 0 0 4px;
-    background: none;
-    border: 1px solid rgba(60,60,60,.26);
-    border-radius: 4px;
-    white-space: normal;
-}
- .vs--searchable .vs__dropdown-toggle{
-cursor:text;
- }
- .v-select, .v-select * {
-    box-sizing: border-box;
-}
+                  </div>
+                </template>
+                <template slot="option" slot-scope="option">
+                  <span>{{ option.phone1 }} -> {{ option.first_name }} {{ option.last_name }}</span>
+                </template>
+              </v-select>
 
- .vs__search, .vs__search:focus {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    line-height: 1.4;
-    font-size: 1em;
-    border: 1px solid transparent;
-    border-left: none;
-    outline: none;
-    margin: 4px 0 0;
-    padding: 0 7px;
-    background: none;
-    box-shadow: none;
-    width: 0;
-    max-width: 100%;
-    flex-grow: 1;
+              <span
+                class="help is-danger"
+                v-if="picup.errors.has('useraddress_id')"
+                v-text="picup.errors.get('useraddress_id')"
+              ></span>
+              <button
+                type="button"
+                class="btn btn-primary pickup-btn"
+                data-toggle="modal"
+                @click="newPickUp"
+              >New Customer</button>
+            </div>
+
+            <hr />
+            <h6></h6>
+            <div class="form-group col-md-6">
+              <label for="mobile2">Product Description</label>
+
+              <textarea
+                type="text"
+                class="form-control"
+                placeholder="Description"
+                rows="4"
+                name="description"
+                v-model="picup.description"
+                :class="{ 'is-invalid': picup.errors.has('description') }"
+              ></textarea>
+              <span
+                class="help is-danger"
+                v-if="picup.errors.has('description')"
+                v-text="picup.errors.get('description')"
+              ></span>
+            </div>
+
+            <div class="form-group col-md-6">
+              <label for="municipality">Handling</label>
+              <select
+                class="form-control"
+                name="handling"
+                v-model="picup.handling"
+                :class="{ 'is-invalid': picup.errors.has('handling') }"
+              >
+                <option value disabled>Select</option>
+                <option value="NON_FRAGILE" selected>Non-Fragile</option>
+
+                <option value="FRAGILE">Fragile</option>
+              </select>
+              <span
+                class="help is-danger"
+                v-if="picup.errors.has('handling')"
+                v-text="picup.errors.get('handling')"
+              ></span>
+            </div>
+
+            <div class="form-group col-md-6">
+              <label for="mobile2">COD Value</label>
+
+              <input
+                type="number"
+                class="form-control"
+                placeholder="COD Value"
+                name="cod"
+                min="0"
+                v-model="picup.cod"
+                :class="{ 'is-invalid': picup.errors.has('cod') }"
+              />
+              <span
+                class="help is-danger"
+                v-if="picup.errors.has('cod')"
+                v-text="picup.errors.get('cod')"
+              ></span>
+            </div>
+            <div class="form-group col-md-6">
+              <label for="mobile2">Unit/Weight (In Kg)</label>
+
+              <input
+                type="number"
+                class="form-control"
+                placeholder="Unit/Weight"
+                name="weight"
+                min="1"
+                v-model="picup.weight"
+                :class="{ 'is-invalid': picup.errors.has('weight') }"
+              />
+              <span
+                class="help is-danger"
+                v-if="picup.errors.has('weight')"
+                v-text="picup.errors.get('weight')"
+              ></span>
+            </div>
+
+            <div class="form-group col-md-6" style="position: relative">
+              <label for="mobile2">Customer's Expected Delivery date</label>
+
+              <date-picker
+                name="expected_date"
+                v-model="picup.expected_date"
+                :config="options"
+                :class="{ 'is-invalid': picup.errors.has('expected_date') }"
+              ></date-picker>
+              <span
+                class="help is-danger"
+                v-if="picup.errors.has('expected_date')"
+                v-text="picup.errors.get('expected_date')"
+              ></span>
+            </div>
+            <div class="form-group col-md-6">
+              <label for="municipality">Product Type</label>
+              <select
+                class="form-control"
+                name="product_type"
+                multiple="multiple"
+                v-model="picup.product_type"
+              >
+                <option value disabled>Select</option>
+                <option
+                  v-for="product in products"
+                  :value="product.name"
+                  :key="product.id"
+                >{{ product.name }}</option>
+              </select>
+              <span
+                class="help is-danger"
+                v-if="picup.errors.has('product_type')"
+                v-text="picup.errors.get('product_type')"
+              ></span>
+            </div>
+            <div class="form-group col-md-6">
+              <label for="mobile2">Vendor Order Id</label>
+
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Vendor Order Id"
+                v-model="picup.vendor_order_id"
+                :class="{ 'is-invalid': picup.errors.has('vendor_order_id') }"
+              />
+              <span
+                class="help is-danger"
+                v-if="picup.errors.has('vendor_order_id')"
+                v-text="picup.errors.get('vendor_order_id')"
+              ></span>
+            </div>
+          </div>
+          <button class="btn btn-primary btn-load" :disabled="submit_loading">
+            <span :class="{ 'spinner-border spinner-border-sm': submit_loading }"></span> Submit
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <!-- {{--  second model start  --}}-->
+    <div class="model2">
+      <form
+        @submit.prevent="onSubmitUserAddress"
+        @keydown="address.errors.clear($event.target.name)"
+      >
+        <div
+          class="modal fade bd-example-modal-lg"
+          id="new_picup"
+          tabindex="-1"
+          role="dialog"
+          aria-labelledby="exampleModalScrollableTitle"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalScrollableTitle">Add New Customer</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+
+              <div class="modal-body">
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="name">First Name</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        placeholder="First Name"
+                        name="first_name"
+                        v-model="address.first_name"
+                        :class="{ 'is-invalid': address.errors.has('first_name') }"
+                      />
+                      <span
+                        class="help is-danger"
+                        v-if="address.errors.has('first_name')"
+                        v-text="address.errors.get('first_name')"
+                      ></span>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="name">last Name</label>
+
+                      <input
+                        type="text"
+                        class="form-control"
+                        placeholder="last Name"
+                        name="last_name"
+                        v-model="address.last_name"
+                        :class="{ 'is-invalid': address.errors.has('last_name') }"
+                      />
+                      <span
+                        class="help is-danger"
+                        v-if="address.errors.has('last_name')"
+                        v-text="address.errors.get('last_name')"
+                      ></span>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="form-group">
+                      <label>State</label>
+                      <select
+                        class="form-control"
+                        v-model="address.state"
+                        @change="getAddressbyDistrict"
+                        :class="{ 'is-invalid': address.errors.has('state') }"
+                      >
+                        <option value>select</option>
+                        <option
+                          v-for="state in states"
+                          :key="state.id"
+                          :value="state.id"
+                        >{{ state.address }}</option>
+                      </select>
+                      <span
+                        class="help is-danger"
+                        v-if="address.errors.has('state')"
+                        v-text="address.errors.get('state')"
+                      ></span>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="form-group">
+                      <label for="district">District</label>
+                      <select
+                        class="form-control"
+                        id="district"
+                        name="district"
+                        v-model="address.district"
+                        @change="changeAddressMunicipality"
+                        :class="{ 'is-invalid': address.errors.has('district') }"
+                      >
+                        <option value>select</option>
+                        <option
+                          v-for="district in districts"
+                          :key="district.id"
+                          :value="district.id"
+                        >{{ district.address }}</option>
+                      </select>
+                      <span
+                        class="help is-danger"
+                        v-if="address.errors.has('district')"
+                        v-text="address.errors.get('district')"
+                      ></span>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="form-group">
+                      <label for="municipality">Municipality</label>
+                      <select
+                        class="form-control"
+                        id="municipality"
+                        name="municipality"
+                        v-model="address.municipality"
+                        @change="changeAddressWardno"
+                        :class="{ 'is-invalid': address.errors.has('municipality') }"
+                      >
+                        <option value>select</option>
+                        <option
+                          v-for="municipality in municipalitys"
+                          :key="municipality.id"
+                          :value="municipality.id"
+                        >{{ municipality.address }}</option>
+                      </select>
+                      <span
+                        class="help is-danger"
+                        v-if="address.errors.has('municipality')"
+                        v-text="address.errors.get('municipality')"
+                      ></span>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="form-group">
+                      <label for="municipality">Ward No</label>
+                      <select
+                        class="form-control"
+                        id="tole"
+                        name="ward_no"
+                        @change="changeAddressArea"
+                        v-model="address.ward_no"
+                        :class="{ 'is-invalid': address.errors.has('ward_no') }"
+                      >
+                        <option disabled value>select</option>
+                        <option
+                          v-for="ward in wards"
+                          :key="ward.id"
+                          :value="ward.id"
+                          :disabled="ward.name"
+                        >{{ ward.address }}</option>
+                      </select>
+                      <span
+                        class="help is-danger"
+                        v-if="address.errors.has('ward_no')"
+                        v-text="address.errors.get('ward_no')"
+                      ></span>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="area">Area</label>
+                      <div>
+                        <select
+                          class="form-control"
+                          id="tole"
+                          name="area"
+                          v-model="address.area"
+                          :class="{ 'is-invalid': address.errors.has('area') }"
+                        >
+                          <option value>select</option>
+                          <option
+                            v-for="area in areas"
+                            :key="area.id"
+                            :value="area.id"
+                          >{{ area.address }}</option>
+                        </select>
+                        <span
+                          class="help is-danger"
+                          v-if="address.errors.has('area')"
+                          v-text="address.errors.get('area')"
+                        ></span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="description">Description</label>
+                      <div>
+                        <input
+                          type="text"
+                          class="form-control"
+                          placeholder="Description/Street"
+                          name="description"
+                          v-model="address.description"
+                          :class="{ 'is-invalid': address.errors.has('description') }"
+                        />
+                        <span
+                          class="help is-danger"
+                          v-if="address.errors.has('description')"
+                          v-text="address.errors.get('description')"
+                        ></span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="mobile">Mobile Number</label>
+                      <div>
+                        <input
+                          type="number"
+                          class="form-control"
+                          placeholder="Mobile Number"
+                          name="phone1"
+                          v-model="address.phone1"
+                          :class="{ 'is-invalid': address.errors.has('phone1') }"
+                        />
+                        <span
+                          class="help is-danger"
+                          v-if="address.errors.has('phone1')"
+                          v-text="address.errors.get('phone1')"
+                        ></span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="mobile2">Mobile Number2</label>
+                      <div>
+                        <input
+                          type="number"
+                          class="form-control"
+                          placeholder="Mobile Number 2"
+                          name="phone2"
+                          v-model="address.phone2"
+                          :class="{ 'is-invalid': address.errors.has('phone2') }"
+                        />
+                        <span
+                          class="help is-danger"
+                          v-if="address.errors.has('phone2')"
+                          v-text="address.errors.get('phone2')"
+                        ></span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+                  <button class="btn btn-primary" :disabled="submituser">
+                    <span :class="{ 'spinner-border spinner-border-sm': submituser }"></span>Submit
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+
+      <!-- {{ --2ndmodelend-- }} -->
+    </div>
+  </div>
+</div>
+</div>
+</template>
+
+<style scoped>
+.content-body {
+    margin-left: 15.1875rem;
+    z-index: 0;
 }
-.v-btn:not(.v-btn--round).v-size--large {
-    height: 44px;
-    min-width: 78px;
-    padding: 0 19.5555555556px;
+.container-fluid {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
 }
-.v-application .elevation-8 {
-    box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.2), 0px 8px 10px 1px rgba(0, 0, 0, 0.14), 0px 3px 14px 2px rgba(0, 0, 0, 0.12) !important;
-}
-.v-btn:not(.v-btn--disabled) {
-    will-change: box-shadow;
-}
-.v-btn.v-size--large {
-    font-size: 0.875rem;
-}
-.v-btn__content {
-    align-items: center;
-    color: inherit;
+.row {
     display: flex;
-    flex: 1 0 auto;
-    justify-content: inherit;
-    line-height: normal;
-    position: relative;
-}
- [type="search"]{
-     outline-offset: -2px;
- }
- .vs__selected-options {
-    display: flex;
-    flex-basis: 100%;
-    flex-grow: 1;
     flex-wrap: wrap;
-    padding: 0 2px;
-    position: relative;
+    margin-right: -15px;
+    margin-left: -15px;
 }
- .col-lg-6{
-     position: relative;
-     width: 100%;
-     padding-right: 15px;
-     padding-left: 15px;
-     flex: 0 0 50%;
-     max-width: 50%;
- }
- .v-select, .v-select * {
-    box-sizing: border-box;
+.col-12 {
+    flex: 0 0 100%;
+    max-width: 100%;
 }
-.v-select {
-    position: relative;
-    font-family: inherit;
-}
-.btn-primary:not(:disabled):not(.disabled):active, .btn-primary:not(:disabled):not(.disabled).active, .show > .btn-primary.dropdown-toggle {
-    color: #fff;
-    background-color: #0062cc;
-    border-color: #005cbf;
+.card {
+    margin-bottom: 30px;
+    border: 0px;
+    border-radius: 0.625rem;
+    box-shadow: 6px 11px 41px -28px #a99de7;
 }
 .card {
     position: relative;
@@ -332,92 +495,355 @@ cursor:text;
     border: 1px solid rgba(0, 0, 0, 0.125);
     border-radius: 0.25rem;
 }
-.vs__actions {
-    display: flex;
-    align-items: center;
-    padding: 4px 6px 0 3px;
+.card .card-body {
+    padding: 1.88rem 1.81rem;
 }
-.vs__open-indicator {
-    fill: rgba(60,60,60,.5);
-    transform: scale(1);
-    transition: transform .15s cubic-bezier(1,-.115,.975,.855);
-    transition-timing-function: cubic-bezier(1,-.115,.975,.855);
+.card-body {
+    flex: 1 1 auto;
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: auto;
+    padding: 1.25rem;
 }
-svg {
-    overflow: hidden;
-    vertical-align: middle;
+.card-title {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 18px;
 }
-button, input {
-    overflow: visible;
+.card-title {
+    margin-bottom: 0.75rem;
 }
-input {
-    text-rendering: auto;
-    color: initial;
-    letter-spacing: normal;
-    word-spacing: normal;
-    text-transform: none;
-    text-indent: 0px;
-    text-shadow: none;
+.table-responsive {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+}
+.content-body .container-fluid {
+    padding: 15px 30px 0;
+}
+.container-fluid {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+.col-md-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+}
+.dataTables_length {
+    margin-top: 10px;
+}
+.dataTables_length {
     display: inline-block;
-    text-align: start;
-    -webkit-appearance: textfield;
-    background-color: white;
-    -webkit-rtl-ordering: logical;
-    cursor: text;
-    margin: 0em;
-    font: 400 13.3333px Arial;
-    padding: 1px 0px;
-    border-width: 2px;
-    border-style: inset;
-    border-color: initial;
-    border-image: initial;
 }
-:root {
-    --blue: #007bff;
-    --indigo: #6610f2;
-    --purple: #6f42c1;
-    --pink: #e83e8c;
-    --red: #dc3545;
-    --orange: #fd7e14;
-    --yellow: #ffc107;
-    --green: #28a745;
-    --teal: #20c997;
-    --cyan: #17a2b8;
-    --white: #fff;
-    --gray: #6c757d;
-    --gray-dark: #343a40;
-    --primary: #007bff;
-    --secondary: #6c757d;
-    --success: #28a745;
-    --info: #17a2b8;
-    --warning: #ffc107;
-    --danger: #dc3545;
-    --light: #f8f9fa;
-    --dark: #343a40;
-    --breakpoint-xs: 0;
-    --breakpoint-sm: 576px;
-    --breakpoint-md: 768px;
-    --breakpoint-lg: 992px;
-    --breakpoint-xl: 1200px;
-    --font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-    --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-}
-.btn {
+div.dataTables_wrapper div.dataTables_length select {
+    width: 75px;
     display: inline-block;
-    font-weight: 400;
-    color: #212529;
-    text-align: center;
-    vertical-align: middle;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
+}
+.dataTables_length select {
     background-color: transparent;
-    border: 1px solid black;
-    padding: 0.375rem 0.75rem;
-    font-size: 1rem;
-    line-height: 1.5;
-    border-radius: 0.25rem;
-    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    background-position: center bottom, center calc(100% - 1px);
+    background-repeat: no-repeat;
+    background-size: 0 2px, 100% 1px;
+    border: 0 none;
+    padding-bottom: 5px;
+    transition: background 0s ease-out 0s;
+}
+.form-control-sm {
+    min-height: 36px;
+}
+.form-control {
+    border-radius: 0;
+    box-shadow: none;
+    height: 45px;
+}
+.col-md-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+}
+.dataTables_filter {
+    float: right;
+    margin-top: 10px;
+}
+div.dataTables_wrapper div.dataTables_filter {
+    text-align: right;
+}
+.container {
+    max-width: 100%;
 }
 </style>
+<script>
+// import pickup from "./PickUpOrder";
+export default {
+  data() {
+    return {
+      show: true,
+      picup: new Form({
+        useraddress_id: "",
+        description: "",
+        handling: "NON_FRAGILE",
+        product_type: [],
+        cod: "",
+        expected_date: "",
+        order_pickup_point: "",
+        weight: 1,
+        vendor_order_id: ""
+      }),
+      address: new Form({
+        first_name: "",
+        last_name: "",
+        state: "",
+        district: "",
+        municipality: "",
+        area: "",
+        ward_no: "",
+        description: "",
+        phone1: "",
+        phone2: ""
+      }),
+      pickupaddresses: {},
+      usersphone: [],
+      districts: {},
+      municipalitys: {},
+      wards: {},
+      areas: {},
+      options: {
+        format: "YYYY-MM-DD h:mm:ss",
+        useCurrent: true,
+        showClear: true,
+        showClose: true
+      },
+      products: {},
+      submit_loading: false,
+      submituser: false,
+      edit: false,
+      selected: "",
+      states: {}
+    };
+  },
+
+  created() {
+    this.$root["loading"] = true;
+
+    this.fetchall();
+    this.$root["loading"] = false;
+  },
+  methods: {
+    rrreset() {
+      console.log("sdcsd");
+      // this.picup.order_pickup_point = e.id;
+      this.selected = {
+        id: 1,
+        phone1: "9801907043",
+        first_name: "Sisam",
+        last_name: "Kc"
+      };
+    },
+    setuseraddressid(e) {
+      if (e) {
+        this.picup.useraddress_id = e.id;
+      } else {
+        this.picup.useraddress_id = "";
+      }
+    },
+    fetchall() {
+      this.fetchUsersphone();
+      this.getAddressbystate();
+      this.getAddressbyDistrict();
+      this.producttypebyvendor();
+      this.getVendorpicupaddress();
+    },
+    newPickUp() {
+      this.address.reset();
+      this.picup.reset();
+      this.edit = false;
+      this.address.errors.clear();
+      $("#new_picup").modal("show");
+    },
+
+    fetchUsersphone() {
+      axios
+        .get("api/getusersphone")
+        .then(({ data }) => (this.usersphone = data))
+        .catch(res => {
+          this.error(res.data.error);
+        });
+    },
+
+    onSubmitUserAddress() {
+      this.submituser = true;
+      var submit = "";
+      if (this.edit) {
+        submit = this.address.put(
+          "/api/useraddressupdate/" + this.picup.useraddress_id
+        );
+      } else {
+        submit = this.address.post("/api/useraddress/store");
+      }
+      submit
+        .then(res => {
+          if (res.status == 200) {
+            $("#new_picup").modal("hide");
+            this.success(res.data.success);
+            if (!this.edit) {
+              this.selected = res.data.id;
+              this.picup.useraddress_id = res.data.id.id;
+            }
+            this.fetchall();
+            this.address.reset();
+          }
+          if (res.data.error) {
+            this.error(res.data.error);
+          }
+          this.submituser = false;
+        })
+        .catch(res => {
+          this.submituser = false;
+        });
+    },
+    onsubmitpicup() {
+      this.submit_loading = true;
+      this.picup
+        .post("/api/pickupStore")
+        .then(res => {
+          if (res.status == 200) {
+            $("#exampleModalScrollable").modal("hide");
+
+            this.picup.reset();
+            this.picup.useraddress_id = null;
+            this.selected = null;
+            // console.log(res.data.success)
+            this.success(res.data.success);
+            this.fetchall();
+          }
+          if (res.data.error) {
+            this.error(res.data.error);
+          }
+          this.submit_loading = false;
+        })
+        .catch(res => {
+          this.submit_loading = false;
+        });
+    },
+    fillUserAddress() {
+      this.edit = true;
+
+      axios
+        .get("api/useraddress", {
+          params: { id: this.picup.useraddress_id }
+        })
+        .then(data => {
+          this.address.fill(data.data);
+
+          this.getAddressbyDistrict();
+          this.getAddressbyDistrict();
+          this.changeAddressMunicipality();
+          this.changeAddressWardno();
+          this.changeAddressArea();
+          $("#new_picup").modal("show");
+        })
+        .catch(res => {
+          this.error(res.data.error);
+        });
+    },
+    updateComponent() {
+      var self = this;
+      self.show = false;
+
+      Vue.nextTick(function() {
+        self.show = true;
+      });
+    },
+    getAddressbystate() {
+      axios
+        .get("api/getaddressbystate")
+        .then(res => {
+          this.states = res.data;
+        })
+        .catch(res => {
+          this.error(res.data.error);
+        });
+    },
+    getAddressbyDistrict() {
+      axios
+        .get("api/changeaddress/" + this.address.state)
+
+        .then(res => {
+          this.districts = res.data;
+        })
+        .catch(res => {
+          this.error(res.data.error);
+        });
+    },
+    changeAddressMunicipality() {
+      axios
+        .get("api/changeaddress/" + this.address.district)
+        .then(res => {
+          this.municipalitys = res.data;
+          // console.log(this.municipalitys)
+        })
+        .catch(res => {
+          this.error(res.data.error);
+        });
+    },
+    changeAddressWardno() {
+      axios
+        .get("api/changeaddress2/" + this.address.municipality)
+        .then(res => {
+          this.wards = res.data;
+        })
+        .catch(res => {
+          this.error(res.data.error);
+        });
+    },
+    changeAddressArea() {
+      axios
+        .get("api/changeaddress/" + this.address.ward_no)
+        .then(res => {
+          this.areas = res.data;
+        })
+        .catch(res => {
+          this.error(res.data.error);
+        });
+    },
+    getVendorpicupaddress() {
+      axios
+        .get("api/get-default-vendoraddress")
+        .then(res => {
+          this.pickupaddresses = res.data;
+        })
+        .catch(res => {});
+    },
+    success(success) {
+      Toast.fire({
+        type: "success",
+        title: success
+      });
+      // Try me!
+    },
+    error(error) {
+      Swal.fire({
+        position: "center",
+        type: "error",
+        title: error,
+        showConfirmButton: false,
+        timer: 1500
+      });
+    },
+    producttypebyvendor() {
+      axios
+        .get("api/producttypebyvendor")
+        .then(res => {
+          this.products = res.data;
+        })
+        .catch(res => {
+          this.error(res.data.error);
+        });
+    }
+  }
+};
+</script>
