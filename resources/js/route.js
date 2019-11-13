@@ -4,7 +4,7 @@ Vue.use(VueRouter)
 const routes = [{
     //new order
         path: "/",
-        name: "dashboard",
+        name: "home",
         component: require('./components/home').default
     },
    
@@ -98,12 +98,12 @@ const routes = [{
                                                                         name: "Logout",
                                                                         component: require('./components/Logout').default
                                                                     },
-                                                                    // {
-                                                                    //     //new order
-                                                                    //         path: "/newcustomer",
-                                                                    //         name: "newcustomer",
-                                                                    //         component: require('./components/newcustomer').default
-                                                                    //     },                 
+                                                                   //  {
+                                                                       //new order
+                                                                       //      path: "/popup",
+                                                                         //    name: "popup",
+                                                                       //      component: require('./components/popup').default
+                                                                      //   },                 
 
 
 

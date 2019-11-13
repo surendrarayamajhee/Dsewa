@@ -22399,7 +22399,7 @@ Vue.use(vue_router__WEBPACK_IMPORTED_MODULE_0__["default"]);
 var routes = [{
   //new order
   path: "/",
-  name: "dashboard",
+  name: "home",
   component: __webpack_require__(/*! ./components/home */ "./resources/js/components/home.vue")["default"]
 }, {
   //new order
@@ -22476,12 +22476,12 @@ var routes = [{
   path: "/Logout",
   name: "Logout",
   component: __webpack_require__(/*! ./components/Logout */ "./resources/js/components/Logout.vue")["default"]
-} // {
-//     //new order
-//         path: "/newcustomer",
-//         name: "newcustomer",
-//         component: require('./components/newcustomer').default
-//     },                 
+} //  {
+//new order
+//      path: "/popup",
+//    name: "popup",
+//      component: require('./components/popup').default
+//   },                 
 ];
 var router = new vue_router__WEBPACK_IMPORTED_MODULE_0__["default"]({
   mode: 'history',
