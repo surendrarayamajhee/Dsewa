@@ -1,4 +1,6 @@
 <template>
+<div class="content-body">
+<div class="row justify-content-center">
   <div class="container">
     <div class="card">
       <div class="card-header">
@@ -450,8 +452,130 @@
       <!-- {{ --2ndmodelend-- }} -->
     </div>
   </div>
+</div>
+</div>
 </template>
 
+<style scoped>
+.content-body {
+    margin-left: 15.1875rem;
+    z-index: 0;
+}
+.container-fluid {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+.col-12 {
+    flex: 0 0 100%;
+    max-width: 100%;
+}
+.card {
+    margin-bottom: 30px;
+    border: 0px;
+    border-radius: 0.625rem;
+    box-shadow: 6px 11px 41px -28px #a99de7;
+}
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    border-radius: 0.25rem;
+}
+.card .card-body {
+    padding: 1.88rem 1.81rem;
+}
+.card-body {
+    flex: 1 1 auto;
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: auto;
+    padding: 1.25rem;
+}
+.card-title {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 18px;
+}
+.card-title {
+    margin-bottom: 0.75rem;
+}
+.table-responsive {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+}
+.content-body .container-fluid {
+    padding: 15px 30px 0;
+}
+.container-fluid {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+.col-md-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+}
+.dataTables_length {
+    margin-top: 10px;
+}
+.dataTables_length {
+    display: inline-block;
+}
+div.dataTables_wrapper div.dataTables_length select {
+    width: 75px;
+    display: inline-block;
+}
+.dataTables_length select {
+    background-color: transparent;
+    background-position: center bottom, center calc(100% - 1px);
+    background-repeat: no-repeat;
+    background-size: 0 2px, 100% 1px;
+    border: 0 none;
+    padding-bottom: 5px;
+    transition: background 0s ease-out 0s;
+}
+.form-control-sm {
+    min-height: 36px;
+}
+.form-control {
+    border-radius: 0;
+    box-shadow: none;
+    height: 45px;
+}
+.col-md-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+}
+.dataTables_filter {
+    float: right;
+    margin-top: 10px;
+}
+div.dataTables_wrapper div.dataTables_filter {
+    text-align: right;
+}
+.container {
+    max-width: 100%;
+}
+</style>
 <script>
 // import pickup from "./PickUpOrder";
 export default {

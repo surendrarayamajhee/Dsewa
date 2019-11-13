@@ -4,7 +4,7 @@ Vue.use(VueRouter)
 const routes = [{
     //new order
         path: "/",
-        name: "dashboard",
+        name: "home",
         component: require('./components/home').default
     },
    

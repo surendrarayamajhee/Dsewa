@@ -267,6 +267,5 @@ div.dataTables_wrapper div.dataTables_filter {
 .container {
     max-width: 100%;
 }
-</style>>
-
 </style>
+
