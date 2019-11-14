@@ -1,5 +1,6 @@
 <template>
 <div class="content-body">
+  <div class="container-fluid mt-3">      
 <div class="row justify-content-center">
   <div class="container">
     <div class="card">
@@ -454,8 +455,14 @@
   </div>
 </div>
 </div>
+</div>
 </template>
-
+<style>
+.justify-content-center{
+height:700px;
+width: auto;
+}
+</style>
 <style scoped>
 .content-body {
     margin-left: 15.1875rem;

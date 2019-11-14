@@ -138,6 +138,17 @@ element.style {
     margin-left: 15.1875rem;
     transition: all .2s ease;
 }
+[data-headerbg="color_1"] .header {
+    background-color: #fff;
+    height:50px;
+}
+[data-nav-headerbg="color_1"] .nav-header {
+    background-color: #7571f9;
+    height: 50px;
+}
+.content-body .container-fluid[data-v-0f8ffe60] {
+    padding: 0px 30px 0;
+}
 </style>
 
         <title>dSewa(d)</title>
@@ -183,7 +194,7 @@ element.style {
             Nav header start
         ***********************************-->
         <div class="nav-header">
-        <img src="images/D-sewa.png" style="width:243px; height:80px">
+        <img src="images/D-sewa.png" style="width:243px; height:50px;">
             <!-- <div class="brand-logo">
                 <a href="index.html"> 
                
@@ -368,11 +379,11 @@ element.style {
                 <div class="header-right">
                     <div class="input-group icons">
                         
-                        <input type="search" class="form-control" placeholder="Search Dashboard" aria-label="Search Dashboard" style="border-radius:4px;">
+                        <input type="search" class="form-control" placeholder="Search Dashboard" aria-label="Search Dashboard" style="border-radius:4px; height:30px;">
                         <div class="input-group-prepend">
-                            <button>
+                            <!-- <button>
                             <span class="input-group-text bg-transparent border-0 pr-2 pr-sm-3" id="basic-addon1"><i class="mdi mdi-magnify"></i></span>
-                            </button>
+                            </button> -->
                         </div>
                         <div class="drop-down animated flipInX d-md-none">
                             <form action="#">
