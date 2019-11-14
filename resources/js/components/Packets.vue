@@ -459,8 +459,13 @@
 </template>
 <style>
 .justify-content-center{
+<<<<<<< HEAD
 height:700px;
 width: auto;
+=======
+  height: 700px;
+  width: auto;
+>>>>>>> 724ead9509e09a36efe3d59da4eeae57be5110d4
 }
 </style>
 <style scoped>

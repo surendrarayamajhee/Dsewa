@@ -98,12 +98,21 @@ const routes = [{
                                                                         name: "Logout",
                                                                         component: require('./components/Logout').default
                                                                     },
+<<<<<<< HEAD
+                                                                    // {
+                                                                    //     //new order
+                                                                    //         path: "/newcustomer",
+                                                                    //         name: "newcustomer",
+                                                                    //         component: require('./components/newcustomer').default
+                                                                    //     }                
+=======
                                                                    //  {
                                                                        //new order
                                                                        //      path: "/popup",
                                                                          //    name: "popup",
                                                                        //      component: require('./components/popup').default
                                                                       //   },                 
+>>>>>>> 36d1e11949180b1be156bc65de1ece883c1b8e54
 
 
 
