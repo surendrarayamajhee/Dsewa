@@ -453,7 +453,7 @@ element.style {
                     </li>
                     <li>
                         <a class="has-arrow" href="javascript:void()" aria-expanded="false">
-                            <i class="icon-speedometer menu-icon"></i><span class="nav-text">Dashboard</span>
+                            <i class="icon-speedometer menu-icon"><span class="nav-text"><router-link :to="{ name: 'home' }">Dashboard</router-link></span></i>
                         </a>
                         <ul aria-expanded="false">
                         <li><router-link :to="{ name: 'home' }">Home</router-link></li>
@@ -488,7 +488,7 @@ element.style {
                         </a>
                         <ul aria-expanded="false">
                         <li><router-link :to="{ name: 'CustomersList' }">Customers List</router-link></li>
-                        <li><router-link :to="{ name: 'contact' }">Contact us</router-link></li>
+                        <!-- <li><router-link :to="{ name: 'popup' }">popup-form</router-link></li> -->
                             
                         </ul>
                     </li>
