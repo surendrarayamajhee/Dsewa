@@ -103,7 +103,7 @@ const routes = [{
                                                                     //         path: "/newcustomer",
                                                                     //         name: "newcustomer",
                                                                     //         component: require('./components/newcustomer').default
-                                                                    //     },                 
+                                                                    //     }                
 
 
 

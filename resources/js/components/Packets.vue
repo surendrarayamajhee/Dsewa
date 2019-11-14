@@ -455,7 +455,12 @@
 </div>
 </div>
 </template>
-
+<style>
+.justify-content-center{
+  height: 700px;
+  width: auto;
+}
+</style>
 <style scoped>
 .content-body {
     margin-left: 15.1875rem;

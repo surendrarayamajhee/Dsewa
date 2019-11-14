@@ -10,7 +10,52 @@
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
 
 
-        <style>
+ <style>
+
+.search {
+  width: 100%;
+  position: relative;
+  display: flex;
+  align:right;
+}
+.searchTerm {
+  width: 40%;
+  border: 3px solid #00B4CC;
+  border-right: none;
+  padding: 5px;
+  height: 20px;
+  border-radius: 5px 0 0 5px;
+  outline: none;
+  color: #9DBFAF;
+}
+
+.searchTerm:focus{
+  color: #00B4CC;
+}
+
+.searchButton {
+  width: 40px;
+  height: 36px;
+  border: 1px solid #00B4CC;
+  background: #00B4CC;
+  text-align: center;
+  color: #fff;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+/*Resize the wrap to see the search bar change!*/
+.wrap{
+  width: 30%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  header-right: 30px;
+}
+
+
     .nk-sidebar .metismenu {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -140,7 +185,7 @@ element.style {
 }
 </style>
 
-        <title>dSewa(d)</title>
+        <title>Dsewa</title>
 
         <!-- Fonts -->
 <!--
@@ -366,9 +411,8 @@ element.style {
                     </ul>
                 </div>
                 <div class="header-right">
-                    <div class="input-group icons">
-                        
-                        <input type="search" class="form-control" placeholder="Search Dashboard" aria-label="Search Dashboard" style="border-radius:4px;">
+                     <div class="input-group icons">
+                         <input type="search" class="form-control" placeholder="Search Dashboard" aria-label="Search Dashboard" style="border-radius:4px;">
                         <div class="input-group-prepend">
                             <button>
                             <span class="input-group-text bg-transparent border-0 pr-2 pr-sm-3" id="basic-addon1"><i class="mdi mdi-magnify"></i></span>
@@ -378,8 +422,8 @@ element.style {
                             <form action="#">
                                 <input type="text" class="form-control" placeholder="Search">
                             </form>
-                        </div>
-                    </div>
+                        </div> 
+                    </div>  
                 </div>
             </div>
         </div>
@@ -547,4 +591,8 @@ element.style {
     <script src="{{asset('plugins/chartist-plugin-tooltips/js/chartist-plugin-tooltip.min.js')}}"></script>
     </body>
 </html>
+
+
+
+
 
