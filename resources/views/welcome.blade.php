@@ -149,6 +149,11 @@ element.style {
 .content-body .container-fluid[data-v-0f8ffe60] {
     padding: 0px 30px 0;
 }
+.hamburger .toggle-icon {
+    font-size: 1.4rem;
+    line-height: 2rem;
+    color: #fff;
+}
 </style>
 
         <title>dSewa(d)</title>
