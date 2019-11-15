@@ -14,13 +14,9 @@
                         <table class="table table-bordered col-md-6 table-style-vendor-status">
                             <thead>
                                 <tr>
-                                    <th class="__web-inspecttor-hide-shortcut__">
-                                        "
-                                        S.N
-                                        
-                                        "</th>
-                                    <th style="width:20%;">Order Id</th>
-                                    <th style="width;30%;">product</th>
+                                    <th class="__web-inspecttor-hide-shortcut__"> S.N </th>
+                                    <th>Order Id</th>
+                                    <th>product</th>
                                     <th>Status</th>
                                     <th>Comment</th>
                                     <th>Action</th>

@@ -457,18 +457,12 @@
 </div>
 </div>
 </template>
-<style>
-.justify-content-center{
-<<<<<<< HEAD
-height:700px;
-width: auto;
-=======
-  height: 700px;
-  width: auto;
->>>>>>> 724ead9509e09a36efe3d59da4eeae57be5110d4
-}
-</style>
+
 <style scoped>
+.select.form-control[size], select.form-control[multiple] {
+    height: 20px;
+}
+
 .content-body {
     margin-left: 15.1875rem;
     z-index: 0;
@@ -506,6 +500,7 @@ width: auto;
     background-clip: border-box;
     border: 1px solid rgba(0, 0, 0, 0.125);
     border-radius: 0.25rem;
+    margin: -10px;
 }
 .card .card-body {
     padding: 1.88rem 1.81rem;

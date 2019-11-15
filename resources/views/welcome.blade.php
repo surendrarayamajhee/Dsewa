@@ -427,14 +427,8 @@ element.style {
                     </ul>
                 </div>
                 <div class="header-right">
-<<<<<<< HEAD
-                    <div class="input-group icons">
-                        
-                        <input type="search" class="form-control" placeholder="Search Dashboard" aria-label="Search Dashboard" style="border-radius:4px; height:30px;">
-=======
                      <div class="input-group icons">
                          <input type="search" class="form-control" placeholder="Search Dashboard" aria-label="Search Dashboard" style="border-radius:4px;">
->>>>>>> 724ead9509e09a36efe3d59da4eeae57be5110d4
                         <div class="input-group-prepend">
                             <!-- <button>
                             <span class="input-group-text bg-transparent border-0 pr-2 pr-sm-3" id="basic-addon1"><i class="mdi mdi-magnify"></i></span>

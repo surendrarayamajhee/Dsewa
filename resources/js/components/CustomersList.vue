@@ -7,7 +7,7 @@
                         <div class="card-header">
                             <button type="button" data-toggle="modal2" class="btn btn-primary new-user-btn btn-sm" style="float:left; margin-top:0px;">New Customer</button>
                             <h3 class="user-inline">Customer List</h3>
-                            <button type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample" class="btn btn-primary user-search-btn" style="float: right; margin-top: 0px;">Search</button>
+                            <button type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample" class="btn btn-primary user-search-btn" style="float: right; margin-top: -38px;">Search</button>
                             <div id="collapseExample" class="collapse">
                                 <ul class="nav address-nav">
                                     <li class="nav-item">
@@ -242,7 +242,7 @@
             </div>
     </div>
 </template>
-<style>
+<style scoped>
 .card-header:first-child{
     border-radius: calc(0.25rem-1px) 
     calc(0.25rem-1px) 0 0p;
@@ -264,13 +264,42 @@ color:#fff;
 background-color:#007bff;
 border-color: #007bff;
 }
-.btn{
+.btn {
     display: inline-block;
     font-weight: 400;
+    color: #f8f9fa;
+    
     text-align: center;
     vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
     user-select: none;
+    background-color: transparent;
     border: 1px solid transparent;
-
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: 0.25rem;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+.btn[data-v-174508b8] {
+    display: inline-block;
+    font-weight: 400;
+    color: #f8f9fa;
+    background-color: #0062cc;
+    text-align: center;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color: #076ede;
+    border: 1px solid transparent;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: 0.25rem;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 </style>
