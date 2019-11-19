@@ -104,7 +104,7 @@
                             </span>
                         </div>
                         <div class="headline">
-                            <span>Orders</span><br>
+                            <span></span><br>
                             <span style="font-weight: bold;">100+</span>
                         </div>
                     </div>
@@ -205,6 +205,7 @@ element.style {
   margin: 10px;
   padding: 4px;
   padding-left: 7px;
+  width: 23%;
 }
 
 .flex-container > div {
