@@ -5,8 +5,8 @@
                 <div class="container">
                     <div class="card-body">
                         <div class="card-header">
-                            <button type="button" data-toggle="modal2" class="btn btn-primary new-user-btn btn-sm" style="float:left; margin-top:0px;">New Customer</button>
                             <h3 class="user-inline">Customer List</h3>
+                            <button type="button" data-toggle="modal2" class="btn btn-primary pickup-btn" @click="newPickUp" style="float:left; margin-top: -4%;margin-left: 20%;">New Customer</button>
                             <button type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample" class="btn btn-primary user-search-btn" style="float: right; margin-top: -38px;">Search</button>
                             <div id="collapseExample" class="collapse">
                                 <ul class="nav address-nav">
@@ -131,111 +131,271 @@
                       
                   </div>
                  </div>
-                 <div class="mode12">
-                     <form>
-                         <div id="useraddress" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true" class="modal fade bd-example-modal lg">
-                             <div role="document" class="modal-dialog modal-lg">
-                                 <div class="modal-content">
-                                     <div class="modal-header">
-                                         <h5 id="exampleModalScrollableTitle" class="modal-tilte">Add customer</h5>
-                                         <button type="button" data-dismiss="modal" aria-label="Close" class="close">
-                                             <span aria-hidden="true">*</span>
-                                         </button>
-                                     </div>
-                                     <div class="modal-body">
-                                         <div class="row">
-                                             <div class="col-md-6">
-                                                 <div class="form-control">
-                                                    <label for="name">fisrt Name</label>
-                                                    <input type="text" placeholder="first_name" class="form-control">
-                                                    <!-- -->
-                                                 </div>
-                                             </div>
-                                             <div class="col-md-6">
-                                                 <div class="form-control">
-                                                    <label for="name">second Name</label>
-                                                    <input type="text" placeholder="second_name" class="form-control">
-                                                    <!-- -->
-                                                 </div>
-                                             </div>
-                                             <div class="form-group">
-                                                <label for="district">District</label>
-                                                <select id="district" name="district" class="form-control">
-                                                    <option value>select</option>
-                                                    <option value="981">Achham</option>
-                                                    <option value="669">Arghakhachi</option>
-                                                <option value="620">Baglung</option>
-                                                <option value="952">Baitadi</option>
-                                                <option value="929">Bajhang</option>
-                                                <option value="919">Bhajura</option>
-                                                <option value="732">Banke</option>
-                                                <option value="325">Bara</option>
-                                                <option value="741">Bardiya</option>
-                                                <option value="465">Bhaktapur</option>
-                                                <option value="84">bhojpur</option>
-                                                <option value="523">Chitwan</option>
-                                                </select>
-                                             </div>
-                                             <div class="col-md-4"></div>
-                                             <div class="col-md-4">
-                                                 <div class="form-group">
-                                                     <label for="municipalirty">Municipality</label>
-                                                     <select id="municipality" name="municipality" class="form-control">
-                                                        <option value>select</option>
-                                                     </select>
-                                                 </div>
-                                             </div>
-                                             <div class="col-md-4">
-                                                 <div class="form-group">
-                                                     <label for="municipality">Ward_No</label>
-                                                     <select id="tole" name="ward_no" class="form-control">
-                                                         <option disabled="disabled" value>select</option>
-                                                     </select>
-                                                 </div>
-                                             </div>
-                                             <div class="col-md-6">
-                                                 <div class="form-group">
-                                                     <label for="area">Area</label>
-                                                     <div>
-                                                         <select id="tole" name="area" class="form-control">
-                                                             <option value>select</option>
-                                                         </select>
-                                                     </div>
-                                                 </div>
-                                             </div>
-                                             <div class="col-md-6">
-                                                 <div class="form-group">
-                                                     <label for="description">Description</label>
-                                                 <div>
-                                                     <input type="text" placeholder="Description/Street" name="description" class="forom-control">
-                                                     <!--  -->
-                                                 </div>
-                                                 </div>
-                                             </div>
-                                             <div class="col-md-6">
-                                                 <div class="form-group">
-                                                     <label for="mobile2">Mobile Number2</label>
-                                                     <div>
-                                                         <input type="number" placeholder="mobile number2" name="phone2" class="form-control">
-                                                     </div>
-                                                 </div>
-                                             </div>
-                                         </div>
-                                         <div class="modal-footer">
-                                             <button type="button" data-dismiss="modal" class="btn btn-secondary">close</button>
-                                             <button class="btn btn-primary">
-                                                 <span class></span>
-                                                 "
-                                                 submit
-                                                           "
-                                             </button>
-                                         </div>
-                                     </div>
-                                 </div>
-                             </div>
-                         </div>
-                     </form>
-                 </div>
+                 
+                 <!-- {{--  second model start  --}}-->
+    <div class="model2">
+      <form
+        @submit.prevent="onSubmitUserAddress"
+        @keydown="address.errors.clear($event.target.name)"
+      >
+        <div
+          class="modal fade bd-example-modal-lg"
+          id="new_picup"
+          tabindex="-1"
+          role="dialog"
+          aria-labelledby="exampleModalScrollableTitle"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalScrollableTitle">Add New Customer</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+
+              <div class="modal-body">
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="name">First Name</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        placeholder="First Name"
+                        name="first_name"
+                        v-model="address.first_name"
+                        :class="{ 'is-invalid': address.errors.has('first_name') }"
+                      />
+                      <span
+                        class="help is-danger"
+                        v-if="address.errors.has('first_name')"
+                        v-text="address.errors.get('first_name')"
+                      ></span>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="name">last Name</label>
+
+                      <input
+                        type="text"
+                        class="form-control"
+                        placeholder="last Name"
+                        name="last_name"
+                        v-model="address.last_name"
+                        :class="{ 'is-invalid': address.errors.has('last_name') }"
+                      />
+                      <span
+                        class="help is-danger"
+                        v-if="address.errors.has('last_name')"
+                        v-text="address.errors.get('last_name')"
+                      ></span>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="form-group">
+                      <label>State</label>
+                      <select
+                        class="form-control"
+                        v-model="address.state"
+                        @change="getAddressbyDistrict"
+                        :class="{ 'is-invalid': address.errors.has('state') }"
+                      >
+                        <option value>select</option>
+                        <option
+                          v-for="state in states"
+                          :key="state.id"
+                          :value="state.id"
+                        >{{ state.address }}</option>
+                      </select>
+                      <span
+                        class="help is-danger"
+                        v-if="address.errors.has('state')"
+                        v-text="address.errors.get('state')"
+                      ></span>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="form-group">
+                      <label for="district">District</label>
+                      <select
+                        class="form-control"
+                        id="district"
+                        name="district"
+                        v-model="address.district"
+                        @change="changeAddressMunicipality"
+                        :class="{ 'is-invalid': address.errors.has('district') }"
+                      >
+                        <option value>select</option>
+                        <option
+                          v-for="district in districts"
+                          :key="district.id"
+                          :value="district.id"
+                        >{{ district.address }}</option>
+                      </select>
+                      <span
+                        class="help is-danger"
+                        v-if="address.errors.has('district')"
+                        v-text="address.errors.get('district')"
+                      ></span>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="form-group">
+                      <label for="municipality">Municipality</label>
+                      <select
+                        class="form-control"
+                        id="municipality"
+                        name="municipality"
+                        v-model="address.municipality"
+                        @change="changeAddressWardno"
+                        :class="{ 'is-invalid': address.errors.has('municipality') }"
+                      >
+                        <option value>select</option>
+                        <option
+                          v-for="municipality in municipalitys"
+                          :key="municipality.id"
+                          :value="municipality.id"
+                        >{{ municipality.address }}</option>
+                      </select>
+                      <span
+                        class="help is-danger"
+                        v-if="address.errors.has('municipality')"
+                        v-text="address.errors.get('municipality')"
+                      ></span>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="form-group">
+                      <label for="municipality">Ward No</label>
+                      <select
+                        class="form-control"
+                        id="tole"
+                        name="ward_no"
+                        @change="changeAddressArea"
+                        v-model="address.ward_no"
+                        :class="{ 'is-invalid': address.errors.has('ward_no') }"
+                      >
+                        <option disabled value>select</option>
+                        <option
+                          v-for="ward in wards"
+                          :key="ward.id"
+                          :value="ward.id"
+                          :disabled="ward.name"
+                        >{{ ward.address }}</option>
+                      </select>
+                      <span
+                        class="help is-danger"
+                        v-if="address.errors.has('ward_no')"
+                        v-text="address.errors.get('ward_no')"
+                      ></span>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="area">Area</label>
+                      <div>
+                        <select
+                          class="form-control"
+                          id="tole"
+                          name="area"
+                          v-model="address.area"
+                          :class="{ 'is-invalid': address.errors.has('area') }"
+                        >
+                          <option value>select</option>
+                          <option
+                            v-for="area in areas"
+                            :key="area.id"
+                            :value="area.id"
+                          >{{ area.address }}</option>
+                        </select>
+                        <span
+                          class="help is-danger"
+                          v-if="address.errors.has('area')"
+                          v-text="address.errors.get('area')"
+                        ></span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="description">Description</label>
+                      <div>
+                        <input
+                          type="text"
+                          class="form-control"
+                          placeholder="Description/Street"
+                          name="description"
+                          v-model="address.description"
+                          :class="{ 'is-invalid': address.errors.has('description') }"
+                        />
+                        <span
+                          class="help is-danger"
+                          v-if="address.errors.has('description')"
+                          v-text="address.errors.get('description')"
+                        ></span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="mobile">Mobile Number</label>
+                      <div>
+                        <input
+                          type="number"
+                          class="form-control"
+                          placeholder="Mobile Number"
+                          name="phone1"
+                          v-model="address.phone1"
+                          :class="{ 'is-invalid': address.errors.has('phone1') }"
+                        />
+                        <span
+                          class="help is-danger"
+                          v-if="address.errors.has('phone1')"
+                          v-text="address.errors.get('phone1')"
+                        ></span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="mobile2">Mobile Number2</label>
+                      <div>
+                        <input
+                          type="number"
+                          class="form-control"
+                          placeholder="Mobile Number 2"
+                          name="phone2"
+                          v-model="address.phone2"
+                          :class="{ 'is-invalid': address.errors.has('phone2') }"
+                        />
+                        <span
+                          class="help is-danger"
+                          v-if="address.errors.has('phone2')"
+                          v-text="address.errors.get('phone2')"
+                        ></span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+                  <button class="btn btn-primary" :disabled="submituser">
+                    <span :class="{ 'spinner-border spinner-border-sm': submituser }"></span>Submit
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+
+      <!-- {{ --2ndmodelend-- }} -->
+    </div>
                         </div>
                     </div>
                 </div>
@@ -303,3 +463,275 @@ border-color: #007bff;
     transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 </style>
+
+<script>
+// import pickup from "./PickUpOrder";
+export default {
+  data() {
+    return {
+      show: true,
+      picup: new Form({
+        useraddress_id: "",
+        description: "",
+        handling: "NON_FRAGILE",
+        product_type: [],
+        cod: "",
+        expected_date: "",
+        order_pickup_point: "",
+        weight: 1,
+        vendor_order_id: ""
+      }),
+      address: new Form({
+        first_name: "",
+        last_name: "",
+        state: "",
+        district: "",
+        municipality: "",
+        area: "",
+        ward_no: "",
+        description: "",
+        phone1: "",
+        phone2: ""
+      }),
+      pickupaddresses: {},
+      usersphone: [],
+      districts: {},
+      municipalitys: {},
+      wards: {},
+      areas: {},
+      options: {
+        format: "YYYY-MM-DD h:mm:ss",
+        useCurrent: true,
+        showClear: true,
+        showClose: true
+      },
+      products: {},
+      submit_loading: false,
+      submituser: false,
+      edit: false,
+      selected: "",
+      states: {}
+    };
+  },
+
+  created() {
+    this.$root["loading"] = true;
+
+    this.fetchall();
+    this.$root["loading"] = false;
+  },
+  methods: {
+    rrreset() {
+      console.log("sdcsd");
+      // this.picup.order_pickup_point = e.id;
+      this.selected = {
+        id: 1,
+        phone1: "9801907043",
+        first_name: "Sisam",
+        last_name: "Kc"
+      };
+    },
+    setuseraddressid(e) {
+      if (e) {
+        this.picup.useraddress_id = e.id;
+      } else {
+        this.picup.useraddress_id = "";
+      }
+    },
+    fetchall() {
+      this.fetchUsersphone();
+      this.getAddressbystate();
+      this.getAddressbyDistrict();
+      this.producttypebyvendor();
+      this.getVendorpicupaddress();
+    },
+    newPickUp() {
+      this.address.reset();
+      this.picup.reset();
+      this.edit = false;
+      this.address.errors.clear();
+      $("#new_picup").modal("show");
+    },
+
+    fetchUsersphone() {
+      axios
+        .get("api/getusersphone")
+        .then(({ data }) => (this.usersphone = data))
+        .catch(res => {
+          this.error(res.data.error);
+        });
+    },
+
+    onSubmitUserAddress() {
+      this.submituser = true;
+      var submit = "";
+      if (this.edit) {
+        submit = this.address.put(
+          "/api/useraddressupdate/" + this.picup.useraddress_id
+        );
+      } else {
+        submit = this.address.post("/api/useraddress/store");
+      }
+      submit
+        .then(res => {
+          if (res.status == 200) {
+            $("#new_picup").modal("hide");
+            this.success(res.data.success);
+            if (!this.edit) {
+              this.selected = res.data.id;
+              this.picup.useraddress_id = res.data.id.id;
+            }
+            this.fetchall();
+            this.address.reset();
+          }
+          if (res.data.error) {
+            this.error(res.data.error);
+          }
+          this.submituser = false;
+        })
+        .catch(res => {
+          this.submituser = false;
+        });
+    },
+    onsubmitpicup() {
+      this.submit_loading = true;
+      this.picup
+        .post("/api/pickupStore")
+        .then(res => {
+          if (res.status == 200) {
+            $("#exampleModalScrollable").modal("hide");
+
+            this.picup.reset();
+            this.picup.useraddress_id = null;
+            this.selected = null;
+            // console.log(res.data.success)
+            this.success(res.data.success);
+            this.fetchall();
+          }
+          if (res.data.error) {
+            this.error(res.data.error);
+          }
+          this.submit_loading = false;
+        })
+        .catch(res => {
+          this.submit_loading = false;
+        });
+    },
+    fillUserAddress() {
+      this.edit = true;
+
+      axios
+        .get("api/useraddress", {
+          params: { id: this.picup.useraddress_id }
+        })
+        .then(data => {
+          this.address.fill(data.data);
+
+          this.getAddressbyDistrict();
+          this.getAddressbyDistrict();
+          this.changeAddressMunicipality();
+          this.changeAddressWardno();
+          this.changeAddressArea();
+          $("#new_picup").modal("show");
+        })
+        .catch(res => {
+          this.error(res.data.error);
+        });
+    },
+    updateComponent() {
+      var self = this;
+      self.show = false;
+
+      Vue.nextTick(function() {
+        self.show = true;
+      });
+    },
+    getAddressbystate() {
+      axios
+        .get("api/getaddressbystate")
+        .then(res => {
+          this.states = res.data;
+        })
+        .catch(res => {
+          this.error(res.data.error);
+        });
+    },
+    getAddressbyDistrict() {
+      axios
+        .get("api/changeaddress/" + this.address.state)
+
+        .then(res => {
+          this.districts = res.data;
+        })
+        .catch(res => {
+          this.error(res.data.error);
+        });
+    },
+    changeAddressMunicipality() {
+      axios
+        .get("api/changeaddress/" + this.address.district)
+        .then(res => {
+          this.municipalitys = res.data;
+          // console.log(this.municipalitys)
+        })
+        .catch(res => {
+          this.error(res.data.error);
+        });
+    },
+    changeAddressWardno() {
+      axios
+        .get("api/changeaddress2/" + this.address.municipality)
+        .then(res => {
+          this.wards = res.data;
+        })
+        .catch(res => {
+          this.error(res.data.error);
+        });
+    },
+    changeAddressArea() {
+      axios
+        .get("api/changeaddress/" + this.address.ward_no)
+        .then(res => {
+          this.areas = res.data;
+        })
+        .catch(res => {
+          this.error(res.data.error);
+        });
+    },
+    getVendorpicupaddress() {
+      axios
+        .get("api/get-default-vendoraddress")
+        .then(res => {
+          this.pickupaddresses = res.data;
+        })
+        .catch(res => {});
+    },
+    success(success) {
+      Toast.fire({
+        type: "success",
+        title: success
+      });
+      // Try me!
+    },
+    error(error) {
+      Swal.fire({
+        position: "center",
+        type: "error",
+        title: error,
+        showConfirmButton: false,
+        timer: 1500
+      });
+    },
+    producttypebyvendor() {
+      axios
+        .get("api/producttypebyvendor")
+        .then(res => {
+          this.products = res.data;
+        })
+        .catch(res => {
+          this.error(res.data.error);
+        });
+    }
+  }
+};
+</script>

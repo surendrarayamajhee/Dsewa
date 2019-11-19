@@ -18,7 +18,7 @@ const routes = [{
                 //new order
                     path: "/packet-list",
                     name: "pacektList",
-                    component: require('./components/PacketList').default
+                    component: require('./components/packetList').default
                 },
                 {
                     //new order
