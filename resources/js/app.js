@@ -25,6 +25,11 @@ import 'vue-select/dist/vue-select.css';
 import VeeValidate from 'vee-validate';
 Vue.use(VeeValidate)
 
+// import { bulkList } from 'bootstrap-vue'
+// Vue.component('bulkList', require('./components/bulkList.vue').default);
+
+
+
 import BootstrapVue from 'bootstrap-vue'
 Vue.use(BootstrapVue)
 import 'bootstrap/dist/css/bootstrap.css'

@@ -481,9 +481,9 @@ element.style {
                             <i class="icon-globe-alt menu-icon"></i><span class="nav-text">Packets</span>
                         </a>
                         <ul aria-expanded="false">
-                            <li><router-link :to="{ name: 'pacekts' }">New Packets</router-link></li>
-                            <li><router-link :to="{ name: 'pacektList' }">packet list</router-link></li>
-                            <li><router-link :to="{ name: 'bulkList' }">Bulk Packets List</router-link></li>
+                            <li><router-link :to="{ name: 'pacekts' }">New Packet</router-link></li>
+                            <li><router-link :to="{ name: 'pacektList' }">Packet List</router-link></li>
+                            <li><router-link :to="{ name: 'bulkList' }">Bulk Packet List</router-link></li>
                             
                         </ul>
                     </li>
@@ -493,17 +493,17 @@ element.style {
                         </a>
                         <ul aria-expanded="false">
                         <li><router-link :to="{ name: 'OrderList' }">Order List</router-link></li>
-                        <li><router-link :to="{ name: 'OrderStatus' }">OrderStatus</router-link></li>
+                        <li><router-link :to="{ name: 'OrderStatus' }">Order Status</router-link></li>
                         <li><router-link :to="{ name: 'StatuschangeLog' }">Status Change log</router-link></li>
                             
                         </ul>
                     </li>
                     <li class="mega-menu mega-menu-sm">
                         <a class="has-arrow" href="javascript:void()" aria-expanded="false">
-                            <i class="icon-globe-alt menu-icon"></i><span class="nav-text">Customers</span>
+                            <i class="icon-globe-alt menu-icon"></i><span class="nav-text">Customer</span>
                         </a>
                         <ul aria-expanded="false">
-                        <li><router-link :to="{ name: 'CustomersList' }">Customers List</router-link></li>
+                        <li><router-link :to="{ name: 'CustomersList' }">Customer List</router-link></li>
                         <!-- <li><router-link :to="{ name: 'popup' }">popup-form</router-link></li> -->
                             
                         </ul>

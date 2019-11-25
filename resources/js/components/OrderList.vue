@@ -37,12 +37,15 @@
                                                     <table class="table table-striped table-bordered zero-configuration">
                                                         <thead>
                                                             <tr>
-                                                                <th>Name</th>
-                                                                <th>Position</th>
-                                                                <th>Office</th>
-                                                                <th>Age</th>
-                                                                <th>Start date</th>
-                                                                <th>Salary</th>
+                                                                <th>SN</th>
+                                                                <th>Order Id</th>
+                                                                <th>Created Date</th>
+                                                                <th>Receiver</th>
+                                                                <th>COD</th>
+                                                                <th>Branch</th>
+                                                                <th>Delivery Charge</th>
+                                                                <th>Status</th>
+                                                                <th>Last Comment</th>
                                                             </tr>
                                                         </thead>
                                                         <tbody>
@@ -53,50 +56,11 @@
                                                                 <td>61</td>
                                                                 <td>2011/04/25</td>
                                                                 <td>$320,800</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>Garrett Winters</td>
-                                                                <td>Accountant</td>
-                                                                <td>Tokyo</td>
-                                                                 <td>63</td>
-                                                                <td>2011/07/25</td>
-                                                                <td>$170,750</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>Ashton Cox</td>
-                                                                <td>Junior Technical Author</td>
-                                                                <td>San Francisco</td>
-                                                                <td>66</td>
-                                                                <td>2009/01/12</td>
-                                                                <td>$86,000</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>Cedric Kelly</td>
-                                                                <td>Senior Javascript Developer</td>
-                                                                <td>Edinburgh</td>
-                                                                <td>22</td>
-                                                                <td>2012/03/29</td>
-                                                                <td>$433,060</td>
-                                                            </tr>                                           
-                                                            <tr>
-                                                                <td>Timothy Mooney</td>
-                                                                <td>Office Manager</td>
-                                                                <td>London</td>
-                                                                <td>37</td>
-                                                                <td>2008/12/11</td>
-                                                                <td>$136,200</td>
-                                                            </tr>                                                                          
+                                                                <td></td>
+                                                                <td></td>
+                                                                <td></td>
+                                                            </tr>                                                                  
                                                         </tbody>
-                                                        <tfoot>
-                                                            <tr>
-                                                                <th>Name</th>
-                                                                <th>Position</th>
-                                                                <th>Office</th>
-                                                                <th>Age</th>
-                                                                <th>Start date</th>
-                                                                <th>Salary</th>
-                                                            </tr>
-                                                        </tfoot>
                                                     </table>
                                                 </div>
                                             </div>
@@ -106,36 +70,25 @@
                                                         Showing 1 to 10 of 57 entries
                                                     </div>
                                                 </div>
-                                                <div class="col-sm-12 col-md-7">
-                                                    <div class="dataTables_paginate paging_simple_number" id="DataTables_table_0_pagination">
-                                                        <ul class="pagination" style="height: 40px;">
-                                                            <li class="paginate_button page-item previous disabled" id="DataTables_Table_0_previous">
-                                                                <a href="#" aria-controls="DataTables_Table_0" data-dt-idx="0" tabindex="0" class="page-link">Prev</a>
+                                                    <div class="footer">
+                                                        <ul role="menubar" aria-disabled="false" aria-label="Pagination" class="pagination mt-4 b-pagination justify-content-center" pages="">
+                                                            <li role="presentation" aria-hidden="true" class="page-item disabled">
+                                                                <span role="menuitem" aria-label="Go to first page" aria-disabled="true" class="page-link">⏮</span>
                                                             </li>
-                                                            <li class="paginate_button page_item active"> 
-                                                                <a href="#" aria-controls="DataTables_Table_0" data-dt-idx="1" tabindex="0" class="page-link">1</a>
+                                                            <li role="presentation" aria-hidden="true" class="page-item disabled">
+                                                                <span role="menuitem" aria-label="Go to previous page" aria-disabled="true" class="page-link">⏪</span>
                                                             </li>
-                                                            <li class="paginate_button page_item"> 
-                                                                <a href="#" aria-controls="DataTables_Table_0" data-dt-idx="2" tabindex="0" class="page-link">2</a>
+                                                            <li role="presentation" class="page-item active">
+                                                                <a role="menuitemradio" aria-label="Go to page 1" aria-checked="true" aria-posinset="1" aria-setsize="1" tabindex="0" target="_self" href="#" class="page-link">1</a>
+                                                                </li>
+                                                            <li role="presentation" aria-hidden="true" class="page-item disabled">
+                                                                <span role="menuitem" aria-label="Go to next page" aria-disabled="true" class="page-link">⏩</span>
                                                             </li>
-                                                            <li class="paginate_button page_item"> 
-                                                                <a href="#" aria-controls="DataTables_Table_0" data-dt-idx="3" tabindex="0" class="page-link">3</a>
-                                                            </li>
-                                                            <li class="paginate_button page_item"> 
-                                                                <a href="#" aria-controls="DataTables_Table_0" data-dt-idx="4" tabindex="0" class="page-link">4</a>
-                                                            </li>
-                                                            <li class="paginate_button page_item"> 
-                                                                <a href="#" aria-controls="DataTables_Table_0" data-dt-idx="5" tabindex="0" class="page-link">5</a>
-                                                            </li>
-                                                            <li class="paginate_button page_item"> 
-                                                                <a href="#" aria-controls="DataTables_Table_0" data-dt-idx="6" tabindex="0" class="page-link">6</a>
-                                                            </li>
-                                                            <li class="paginate_button page_item next"> 
-                                                                <a href="#" aria-controls="DataTables_Table_0" data-dt-idx="7" tabindex="0" class="page-link">7</a>
+                                                            <li role="presentation" aria-hidden="true" class="page-item disabled">
+                                                                <span role="menuitem" aria-label="Go to last page" aria-disabled="true" class="page-link">⏭</span>
                                                             </li>
                                                         </ul>
-                                                    </div>
-                                                </div>
+                                                  </div>
                                             </div>
                                         </div>
                                     </div>
@@ -266,6 +219,25 @@ div.dataTables_wrapper div.dataTables_filter {
 }
 .container {
     max-width: 100%;
+}
+.pagination {
+    display: -webkit-box;
+    display: flex;
+    padding-left: 0;
+    list-style: none;
+    border-radius: 0.25rem;
+    margin: 10px 213px;
+}
+.justify-content-center {
+    -webkit-box-pack: center !important;
+    justify-content: center !important;
+}
+.mt-4, .my-4 {
+    margin-top: 1.5rem !important;
+}
+.footer {
+    padding-left: 15%;
+    background-color: #fff;
 }
 </style>
 

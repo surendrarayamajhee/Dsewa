@@ -9,7 +9,7 @@
                         <h3>Status change Log</h3>
                     </center>
                 </div>  
-                <div class="col-md-12">
+                <!-- <div class="col-md-12">
                     <div class="card-body" align="center">
                         <table class="table table-bordered col-md-6 table-style-vendor-status">
                             <thead>
@@ -44,12 +44,56 @@
                   <div id="pickuporder" tabindex="1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-label="true" class="modal fade bd-example-modal-lg">
                       
                   </div>
-                    </div>
+                </div> -->
+                <br>
+                <br>
+                <div class="row">
+                     <div class="col-sm-12">
+                        <table class="table table-striped table-bordered zero-configuration">
+                            <thead>
+                                  <tr>
+                                     <th>SN</th>
+                                     <th>Order Id</th>
+                                     <th>Product</th>
+                                     <th>Status</th>
+                                     <th>Comment</th>
+                                     <th>Action</th>
+                                    </tr>
+                             </thead>
+                                 <tbody>
+                                    <tr>
+                                       <td>Tiger Nixon</td>
+                                       <td>System Architect</td>
+                                       <td>Edinburgh</td>
+                                       <td>61</td>
+                                       <td>2011/04/25</td>
+                                       <td>$320,800</td>
+                                   </tr>                           
+                           </tbody>
+                        </table>
+                        <ul role="menubar" aria-disabled="false" aria-label="Pagination" class="pagination mt-4 b-pagination justify-content-center" pages="">
+                            <li role="presentation" aria-hidden="true" class="page-item disabled">
+                                <span role="menuitem" aria-label="Go to first page" aria-disabled="true" class="page-link">⏮</span>
+                            </li>
+                            <li role="presentation" aria-hidden="true" class="page-item disabled">
+                                <span role="menuitem" aria-label="Go to previous page" aria-disabled="true" class="page-link">⏪</span>
+                            </li>
+                            <li role="presentation" class="page-item active">
+                                <a role="menuitemradio" aria-label="Go to page 1" aria-checked="true" aria-posinset="1" aria-setsize="1" tabindex="0" target="_self" href="#" class="page-link">1</a>
+                                </li>
+                            <li role="presentation" aria-hidden="true" class="page-item disabled">
+                                <span role="menuitem" aria-label="Go to next page" aria-disabled="true" class="page-link">⏩</span>
+                            </li>
+                            <li role="presentation" aria-hidden="true" class="page-item disabled">
+                                <span role="menuitem" aria-label="Go to last page" aria-disabled="true" class="page-link">⏭</span>
+                            </li>
+                        </ul>
+                     </div>
+                  </div>
                 </div>
             </div>    
         </div>            
     </div>
-</div>
 </div>
 </template>
 <style>
@@ -71,5 +115,20 @@ max-width: 100%;
 .col-md-6{
     flex: 0 0 50%;
     width: 50%;
+}
+.pagination {
+    display: -webkit-box;
+    display: flex;
+    padding-left: 0;
+    list-style: none;
+    border-radius: 0.25rem;
+    margin: 10px 213px;
+}
+.justify-content-center {
+    -webkit-box-pack: center !important;
+    justify-content: center !important;
+}
+.mt-4, .my-4 {
+    margin-top: 1.5rem !important;
 }
 </style>

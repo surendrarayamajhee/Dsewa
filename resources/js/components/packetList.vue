@@ -19,7 +19,9 @@
                                             Create New Packet</button>
                                   </li>
                                    <li>
-                                      <button class="btn btn-success">Bulk Order List</button>
+                                      <button class="btn btn-success">Bulk Order List
+                                        <b-link href="./componets/bulkList"></b-link>
+                                      </button>
                                   </li>
                                   <li>
                                       <button class="btn btn-success">Bulk Order Upload</button>
