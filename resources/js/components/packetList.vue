@@ -98,8 +98,10 @@
                       </li>
                   </ul>
                   <div id="pickuporder" tabindex="1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-label="true" class="modal fade bd-example-modal-lg">  
-                                    <!-- {{--  second model start  --}}-->
-    <div class="model2">
+               </div>
+             </div>
+     
+      <div class="model2">
       <form
         @submit.prevent="onSubmitUserAddress"
         @keydown="address.errors.clear($event.target.name)"
@@ -207,8 +209,6 @@
                 </div>
             </div>
         </div>
-         </div>
-    </div>
 </template>
 <style scoped>
 
