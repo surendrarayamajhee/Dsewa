@@ -5,12 +5,12 @@
   <div class="container">
     <div class="card">
       <div class="card-header">
-        <h2>
+        <h4>
           <center>Create New Packet</center>
-        </h2>
+        </h4>
       </div>
       <div class="card-body">
-        <form
+        <!-- <form
           @submit.prevent="onsubmitpicup"
           @keydown="picup.errors.clear($event.target.name)"
           @click="picup.errors.clear($event.target.name)"
@@ -184,9 +184,161 @@
           <button class="btn btn-primary btn-load" :disabled="submit_loading">
             <span :class="{ 'spinner-border spinner-border-sm': submit_loading }"></span> Submit
           </button>
+        </form>-->
+        <form action="/action_page.php">
+          <div class="row"> 
+            <div class="col-md-3">             
+                <fieldset class="fieldset" style="height: 100%;width: 100%;">
+                  <legend class="w-auto">Customer info</legend>
+                  <div class="dowm" style="margin-left:85%;">
+                <button type="submit" class="btn btn-danger" style=" background-color: #ec1313;">X</button>
+                </div>
+                <br>
+                  <table>
+                      <tr>
+                          <th>Name</th>
+                     </tr>
+                     <tr>
+                          <td>Abhay Sharma</td>
+                      </tr>
+                      <br>
+                      <tr>
+                          <th>Contact</th>
+                     </tr>
+                     <tr>
+                          <td>9851225629</td>
+                    </tr>
+                        <tr>
+                          <td>9851225679</td>
+                      </tr>
+                      <br>
+                      <tr>
+                        <th>Address</th>
+                      <tr>
+                        <td>Address 1</td>
+                    </tr>
+                    <tr>
+                        <td> Address 1</td>
+                      </tr>
+                  </table>
+                </fieldset>
+              </div>
+              <div class="col-md-9"> 
+                             
+                <fieldset class="fieldset" style="width: 100%;">
+                  
+                        <legend class="w-auto">Order Identity:</legend>
+                    
+                  <form>
+                    <div class="row">
+                      <div class="col">
+                         <v-select style="width:55%;"
+                :options="usersphone"
+                label="phone1"
+                placeholder="Select Phone No"
+                v-model="selected"
+                multiple
+                @input="setuseraddressid($event)">
+                <template slot="selected-option" slot-scope="option">
+                  <div class="flex">
+                    <div class="col">
+                      <span>{{ option.phone1 }} -> {{ option.first_name }} {{ option.last_name }}</span>
+                    </div>
+                  </div>
+                </template>
+                <template slot="option" slot-scope="option">
+                  <span>{{ option.phone1 }} -> {{ option.first_name }} {{ option.last_name }}</span>
+                </template>
+              
+              <v-select style="width:55%;" multiple :options="usersphone" :reduce="country => country.phone1" label="phone1" /></v-select>
+                 <button style="margin-left:58%; margin-top:-17%;"
+                        type="button"
+                        class="btn btn-primary pickup-btn"
+                        data-toggle="modal"
+                        @click="newPickUp"
+                         >New Customer</button>
+                        <br>
+                        <br>
+                        <input type="text" class="form-control" placeholder="Vendor Order ID" style="width: 95%;margin-top:-5%;">
+                      </div>
+                      <div class="col">
+                        <date-picker
+                            name="expected_arrival_date"
+                            :config="options"
+                            placeholder="Customer Expected Date"
+                          ></date-picker>
+                          <br>
+                        <input type="text" class="form-control" placeholder="Branch" style="width: 95%;">
+                      </div>
+                    </div>
+                  </form>
+                </fieldset>
+                <fieldset style="width: 100%;">
+                  <legend class="w-auto">Order Attributes:</legend>
+                  <form>
+                    <table border="0" cellpadding="10">
+                        <tr>
+                            <th colspan="3" rowspan="2">
+                              <div class="form-group purple-border">
+                                <textarea class="form-control" id="exampleFormControlTextarea4" rows="3" placeholder="Address Description"></textarea>
+                              </div>
+                            </th>
+                            <th colspan="2">
+                              <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+                                <option selected>COD Value</option>
+                                <option value="1">One</option>
+                                <option value="2">Two</option>
+                                <option value="3">Three</option>
+                              </select>
+                            </th>
+                        </tr>
+                        <tr>
+                            
+                            <th colspan="2">
+                              <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+                                <option selected>COD Value</option>
+                                <option value="1">One</option>
+                                <option value="2">Two</option>
+                                <option value="3">Three</option>
+                              </select>
+                            </th>
+                        </tr>
+                        <tr>
+                            
+                            <th colspan="3" rowspan="2">
+                              <div class="form-group green-border-focus">
+                                <textarea class="form-control" id="exampleFormControlTextarea5" rows="3"  placeholder="Product Type"></textarea>
+                              </div>
+                            </th>
+                            <th colspan="2" style="border-left: 1px solid #fff;">
+                              <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+                                <option selected>COD Value</option>
+                                <option value="1">One</option>
+                                <option value="2">Two</option>
+                                <option value="3">Three</option>
+                              </select>
+                            </th>
+                        </tr>
+                            <!-- <td style="border-bottom: 1px solid #fff;border-left: 1px solid black;">
+                              <button>submit</button>
+                            </td>
+                            
+                            <td style="border-bottom: 1px solid #fff;border-left: 1px solid #fff;">
+                              <button>cancel</button>
+                            </td> -->
+                            <div class="down" style="margin-left:26%; margin-top:4%">
+                              <button type="submit" class="btn btn-primary pickup-btn">Submit</button>
+                                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                              <button type="submit" class="btn btn-danger" style=" background-color: #ec1313;">Cancel</button>
+                          </div>
+                    </table>
+                  </form>
+                </fieldset>
+              </div>
+          </div>
         </form>
       </div>
-    </div>
+    </div> 
 
     <!-- {{--  second model start  --}}-->
     <div class="model2">
@@ -211,238 +363,81 @@
                 </button>
               </div>
 
-              <div class="modal-body">
+              <div class="modal-body"> 
                 <div class="row">
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <label for="name">First Name</label>
-                      <input
-                        type="text"
-                        class="form-control"
-                        placeholder="First Name"
-                        name="first_name"
-                        v-model="address.first_name"
-                        :class="{ 'is-invalid': address.errors.has('first_name') }"
-                      />
-                      <span
-                        class="help is-danger"
-                        v-if="address.errors.has('first_name')"
-                        v-text="address.errors.get('first_name')"
-                      ></span>
+                  <form style="margin-left: 2%; width: 95%;">
+                  <fieldset class="scheduler-border">
+                    <legend  class="w-auto">Personal Information</legend>
+                  <div class="row">
+                    <div class="col">
+                      <input type="text" class="form-control" placeholder="First name">
+                      <br>
+                      <input type="text" class="form-control" placeholder="Contact Number 1">
                     </div>
+                    <div class="col">
+                      <input type="text" class="form-control" placeholder="Last Name">
+                      <br>
+                       <input type="text" class="form-control" placeholder="Contact Number 2">
                   </div>
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <label for="name">last Name</label>
-
-                      <input
-                        type="text"
-                        class="form-control"
-                        placeholder="last Name"
-                        name="last_name"
-                        v-model="address.last_name"
-                        :class="{ 'is-invalid': address.errors.has('last_name') }"
-                      />
-                      <span
-                        class="help is-danger"
-                        v-if="address.errors.has('last_name')"
-                        v-text="address.errors.get('last_name')"
-                      ></span>
-                    </div>
-                  </div>
-                  <div class="col-md-4">
-                    <div class="form-group">
-                      <label>State</label>
-                      <select
-                        class="form-control"
-                        v-model="address.state"
-                        @change="getAddressbyDistrict"
-                        :class="{ 'is-invalid': address.errors.has('state') }"
-                      >
-                        <option value>select</option>
-                        <option
-                          v-for="state in states"
-                          :key="state.id"
-                          :value="state.id"
-                        >{{ state.address }}</option>
-                      </select>
-                      <span
-                        class="help is-danger"
-                        v-if="address.errors.has('state')"
-                        v-text="address.errors.get('state')"
-                      ></span>
-                    </div>
-                  </div>
-                  <div class="col-md-4">
-                    <div class="form-group">
-                      <label for="district">District</label>
-                      <select
-                        class="form-control"
-                        id="district"
-                        name="district"
-                        v-model="address.district"
-                        @change="changeAddressMunicipality"
-                        :class="{ 'is-invalid': address.errors.has('district') }"
-                      >
-                        <option value>select</option>
-                        <option
-                          v-for="district in districts"
-                          :key="district.id"
-                          :value="district.id"
-                        >{{ district.address }}</option>
-                      </select>
-                      <span
-                        class="help is-danger"
-                        v-if="address.errors.has('district')"
-                        v-text="address.errors.get('district')"
-                      ></span>
-                    </div>
-                  </div>
-                  <div class="col-md-4">
-                    <div class="form-group">
-                      <label for="municipality">Municipality</label>
-                      <select
-                        class="form-control"
-                        id="municipality"
-                        name="municipality"
-                        v-model="address.municipality"
-                        @change="changeAddressWardno"
-                        :class="{ 'is-invalid': address.errors.has('municipality') }"
-                      >
-                        <option value>select</option>
-                        <option
-                          v-for="municipality in municipalitys"
-                          :key="municipality.id"
-                          :value="municipality.id"
-                        >{{ municipality.address }}</option>
-                      </select>
-                      <span
-                        class="help is-danger"
-                        v-if="address.errors.has('municipality')"
-                        v-text="address.errors.get('municipality')"
-                      ></span>
-                    </div>
-                  </div>
-                  <div class="col-md-4">
-                    <div class="form-group">
-                      <label for="municipality">Ward No</label>
-                      <select
-                        class="form-control"
-                        id="tole"
-                        name="ward_no"
-                        @change="changeAddressArea"
-                        v-model="address.ward_no"
-                        :class="{ 'is-invalid': address.errors.has('ward_no') }"
-                      >
-                        <option disabled value>select</option>
-                        <option
-                          v-for="ward in wards"
-                          :key="ward.id"
-                          :value="ward.id"
-                          :disabled="ward.name"
-                        >{{ ward.address }}</option>
-                      </select>
-                      <span
-                        class="help is-danger"
-                        v-if="address.errors.has('ward_no')"
-                        v-text="address.errors.get('ward_no')"
-                      ></span>
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <label for="area">Area</label>
-                      <div>
-                        <select
-                          class="form-control"
-                          id="tole"
-                          name="area"
-                          v-model="address.area"
-                          :class="{ 'is-invalid': address.errors.has('area') }"
-                        >
-                          <option value>select</option>
-                          <option
-                            v-for="area in areas"
-                            :key="area.id"
-                            :value="area.id"
-                          >{{ area.address }}</option>
-                        </select>
-                        <span
-                          class="help is-danger"
-                          v-if="address.errors.has('area')"
-                          v-text="address.errors.get('area')"
-                        ></span>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <label for="description">Description</label>
-                      <div>
-                        <input
-                          type="text"
-                          class="form-control"
-                          placeholder="Description/Street"
-                          name="description"
-                          v-model="address.description"
-                          :class="{ 'is-invalid': address.errors.has('description') }"
-                        />
-                        <span
-                          class="help is-danger"
-                          v-if="address.errors.has('description')"
-                          v-text="address.errors.get('description')"
-                        ></span>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <label for="mobile">Mobile Number</label>
-                      <div>
-                        <input
-                          type="number"
-                          class="form-control"
-                          placeholder="Mobile Number"
-                          name="phone1"
-                          v-model="address.phone1"
-                          :class="{ 'is-invalid': address.errors.has('phone1') }"
-                        />
-                        <span
-                          class="help is-danger"
-                          v-if="address.errors.has('phone1')"
-                          v-text="address.errors.get('phone1')"
-                        ></span>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <label for="mobile2">Mobile Number2</label>
-                      <div>
-                        <input
-                          type="number"
-                          class="form-control"
-                          placeholder="Mobile Number 2"
-                          name="phone2"
-                          v-model="address.phone2"
-                          :class="{ 'is-invalid': address.errors.has('phone2') }"
-                        />
-                        <span
-                          class="help is-danger"
-                          v-if="address.errors.has('phone2')"
-                          v-text="address.errors.get('phone2')"
-                        ></span>
-                      </div>
-                    </div>
-                  </div>
+               </div>
+                </fieldset>
+              
+    <fieldset class="scheduler-border" style="height: 67%;">
+      <legend  class="w-auto">Address Details</legend>
+	      <div class="row">
+          <div class="col">
+          <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+            <option selected>State</option>
+            <option value="1">One</option>
+            <option value="2">Two</option>
+            <option value="3">Three</option>
+          </select>
+      &nbsp;
+      <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+        <option selected>Municipality</option>
+        <option value="1">One</option>
+        <option value="2">Two</option>
+        <option value="3">Three</option>
+      </select>
+    </div>
+<br>
+    <div class="col">
+      <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+        <option selected>District</option>
+        <option value="1">One</option>
+        <option value="2">Two</option>
+        <option value="3">Three</option>
+      </select>
+      &nbsp;
+      <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+        <option selected>Ward Number</option>
+        <option value="1">One</option>
+        <option value="2">Two</option>
+        <option value="3">Three</option>
+      </select>
+    </div>
+	</div>
+    <br>  
+  <div class="row">
+	  <div class="col">
+      <textarea data-v-0f8ffe60="" rows="3" placeholder="Address Description" class="address" style="width: 100%;height: 120%;"></textarea>
+	  </div>
+    <div class="col">
+      <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+        <option selected>Area</option>
+        <option value="1">One</option>
+        <option value="2">Two</option>
+        <option value="3">Three</option>
+      </select>
+   </div>
+  </div>
+</fieldset>
+</form>
+<div class="down" style="margin-left:60%; margin-top:-5%;">
+<button type="submit" class="btn btn-primary">Submit</button>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<button data-v-174508b8="" type="submit" class="btn btn-danger" style=" background-color: #ec1313;">Cancel</button>
                 </div>
-
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-
-                  <button class="btn btn-primary" :disabled="submituser">
-                    <span :class="{ 'spinner-border spinner-border-sm': submituser }"></span>Submit
-                  </button>
                 </div>
               </div>
             </div>
@@ -459,10 +454,138 @@
 </template>
 
 <style scoped>
+
+.modal-content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    pointer-events: auto;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 0.3rem;
+    outline: 0;
+}
+.modal-body {
+    position: relative;
+    flex: 1 1 auto;
+    padding-bottom: 4%;
+}
 .select.form-control[size], select.form-control[multiple] {
     height: 20px;
 }
+fieldset[data-v-0f8ffe60] {
+    display: block;
+    -webkit-margin-start: 2px;
+    margin-inline-start: 2px;
+    -webkit-margin-end: 2px;
+    margin-inline-end: 2px;
+    -webkit-padding-before: 0.35em;
+    padding-block-start: 0.35em;
+    -webkit-padding-start: 0.75em;
+    padding-inline-start: 0.75em;
+    -webkit-padding-end: 0.75em;
+    padding-inline-end: 0.75em;
+    -webkit-padding-after: 0.625em;
+    padding-block-end: 0.625em;
+    min-inline-size: -webkit-min-content;
+    min-inline-size: -moz-min-content;
+    min-inline-size: min-content;
+    border-width: 2px;
+    border-style: groove;
+    border-color: threedface;
+    -webkit-border-image: initial;
+    -o-border-image: initial;
+    border-image: initial;
+    width: 100%;
+}
+.col[data-v-0f8ffe60] {
+    flex-basis: 0;
+    -webkit-box-flex: 1;
+    flex-grow: 1;
+    max-width: 68%;
+}
+legend[data-v-0f8ffe60][data-v-0f8ffe60] {
+    display: block;
+    width: 46%;
+    max-width: 100%;
+    padding: 0;
+    margin-bottom: .5rem;
+    font-size: 16px;
+    line-height: inherit;
+    color: inherit;
+    white-space: normal;
+}
+legend[data-v-0f8ffe60] {
+    display: block;
+    width: 41%;
+    max-width: 100%;
+    padding: 0;
+    margin-bottom: .5rem;
+    font-size: 16px;
+    line-height: inherit;
+    color: inherit;
+    white-space: normal;
+    font-weight: bold;
+}
+.form-control[data-v-0f8ffe60] {
+    border-radius: 10px;
+    box-shadow: none;
+    height: 45px;
+}
+.form-control[data-v-0f8ffe60][data-v-0f8ffe60][data-v-0f8ffe60] {
+    border-radius: 10px;
+    box-shadow: none;
+    height: 23%;
+    width: 95%;
+}
+.purple-border textarea {
+    border: 1px solid #ba68c8;
+}
+.purple-border .form-control:focus {
+    border: 1px solid #ba68c8;
+    box-shadow: 0 0 0 0.2rem rgba(186, 104, 200, .25);
+}
 
+.green-border-focus .form-control:focus {
+    border: 1px solid #8bc34a;
+    box-shadow: 0 0 0 0.2rem rgba(139, 195, 74, .25);
+}
+.form-control[data-v-0f8ffe60][data-v-0f8ffe60] {
+    border-radius: 10px;
+    box-shadow: none;
+    height: 40%;
+    width: 40%;
+}
+.card .card-body[data-v-0f8ffe60] {
+    padding: 0.88rem 0.81rem;
+}
+.fieldset{
+    display: block;
+    -webkit-margin-start: 2px;
+    margin-inline-start: 2px;
+    -webkit-margin-end: 2px;
+    margin-inline-end: 2px;
+    -webkit-padding-before: 0.35em;
+    padding-block-start: 0.35em;
+    -webkit-padding-start: 0.75em;
+    padding-inline-start: 0.75em;
+    -webkit-padding-end: 0.75em;
+    padding-inline-end: 0.75em;
+    -webkit-padding-after: 0.625em;
+    padding-block-end: 0.625em;
+    min-inline-size: -webkit-min-content;
+    min-inline-size: -moz-min-content;
+    min-inline-size: min-content;
+    border-width: 2px;
+    border-style: groove;
+    border-color: threedface;
+    -webkit-border-image: initial;
+    -o-border-image: initial;
+    border-image: initial;
+    width: 712px;
+}
 .content-body {
     margin-left: 15.1875rem;
     z-index: 0;
@@ -489,6 +612,15 @@
     border: 0px;
     border-radius: 0.625rem;
     box-shadow: 6px 11px 41px -28px #a99de7;
+}
+table {
+  				border-collapse: collapse;
+          width: 100%;
+}
+.form-group {
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    margin-left: 1rem;
 }
 .card {
     position: relative;
@@ -588,6 +720,12 @@ div.dataTables_wrapper div.dataTables_filter {
 export default {
   data() {
     return {
+      options: {
+        format: "YYYY-MM-DD h:mm:ss ",
+        useCurrent: true,
+        showClear: true,
+        showClose: true
+      },
       show: true,
       picup: new Form({
         useraddress_id: "",
@@ -613,7 +751,7 @@ export default {
         phone2: ""
       }),
       pickupaddresses: {},
-      usersphone: [],
+      usersphone: [{'first_name':'vjdi','last_name':'ivheifd','phone1':989979},{'first_name':'vjdi','last_name':'ivheifd','phone1':989979},{'first_name':'vjdi','last_name':'ivheifd','phone1':989979}],
       districts: {},
       municipalitys: {},
       wards: {},
@@ -658,7 +796,7 @@ export default {
       }
     },
     fetchall() {
-      this.fetchUsersphone();
+      // this.fetchUsersphone();
       this.getAddressbystate();
       this.getAddressbyDistrict();
       this.producttypebyvendor();
@@ -672,14 +810,14 @@ export default {
       $("#new_picup").modal("show");
     },
 
-    fetchUsersphone() {
-      axios
-        .get("api/getusersphone")
-        .then(({ data }) => (this.usersphone = data))
-        .catch(res => {
-          this.error(res.data.error);
-        });
-    },
+    // fetchUsersphone() {
+    //   axios
+    //     .get("api/getusersphone")
+    //     .then(({ data }) => (this.usersphone = data))
+    //     .catch(res => {
+    //       this.error(res.data.error);
+    //     });
+    // },
 
     onSubmitUserAddress() {
       this.submituser = true;
@@ -854,3 +992,7 @@ export default {
   }
 };
 </script>
+// Material Select Initialization
+$(document).ready(function() {
+$('.mdb-select').materialSelect();
+});

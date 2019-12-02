@@ -64,9 +64,9 @@ const routes = [{
                                             }, 
                                             {
                                                 //new order
-                                                    path: "/Deposit",
-                                                    name: "Deposit",
-                                                    component: require('./components/Deposit').default
+                                                    path: "/Statement",
+                                                    name: "Statement",
+                                                    component: require('./components/Statement').default
                                                 },
                                                 {
                                                     //new order
@@ -98,12 +98,12 @@ const routes = [{
                                                                         name: "Logout",
                                                                         component: require('./components/Logout').default
                                                                     },
-                                                                    // {
-                                                                    //     //new order
-                                                                    //         path: "/newcustomer",
-                                                                    //         name: "newcustomer",
-                                                                    //         component: require('./components/newcustomer').default
-                                                                    //     }                
+                                                                    {
+                                                                        //new order
+                                                                            path: "/newcustomer",
+                                                                            name: "newcustomer",
+                                                                            component: require('./components/newcustomer').default
+                                                                        },        
 
                                                                    //  {
                                                                        //new order
@@ -111,6 +111,18 @@ const routes = [{
                                                                          //    name: "popup",
                                                                        //      component: require('./components/popup').default
                                                                       //   },                 
+                                                                        {
+                                                                             //new order
+                                                                             path: "/OrderDetails",
+                                                                             name: "OrderDetails",
+                                                                             component: require('./components/OrderDetails').default
+                                                                        },
+                                                                        {
+                                                                            //new order
+                                                                            path: "/ReturnOrder",
+                                                                            name: "ReturnOrder",
+                                                                            component: require('./components/ReturnOrder').default
+                                                                       }
 
 
 

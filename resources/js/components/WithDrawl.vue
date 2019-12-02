@@ -1,11 +1,17 @@
 <template>
-    <div class="content-body">
-            <div class="container-fluid mt-3">
-
-                            <div class="card-body">
-                                <h3 class="card-title text-white">Withdrawl</h3>
-                               
-                            </div>
-            </div>
+<div class="content-body">
+    <div class="container-fluid mt-3">
+    <div class="row judtify-content-center">
+        <div class="container">
+            <div class="card-body">
+                <div class="card-header">
+                    <center>
+                        <h3>WithDrawl</h3>
+                    </center>
+                </div>  
+            </div>    
+        </div> 
+    </div>           
     </div>
+</div>
 </template>

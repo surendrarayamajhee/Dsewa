@@ -28,7 +28,8 @@ Vue.use(VeeValidate)
 // import { bulkList } from 'bootstrap-vue'
 // Vue.component('bulkList', require('./components/bulkList.vue').default);
 
-
+import { LinkPlugin } from 'bootstrap-vue'
+Vue.use(LinkPlugin)
 
 import BootstrapVue from 'bootstrap-vue'
 Vue.use(BootstrapVue)

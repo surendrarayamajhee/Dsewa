@@ -136,9 +136,8 @@
 
                   <li class="nav-item" style="float:right">
                     <form @submit.prevent="onSubmitCheckbox">
-                      <button class="btn btn-outline-primary btn-sm" :disabled="loading">
-                        <span :class="{ 'spinner-border spinner-border-sm': loading }"></span>
-                        <i class="far fa-paper-plane"></i>Create Packets
+                      <button class="btn btn-primary pickup-btn">
+                        <b-link target="_self" href="./packets">Create Packets</b-link>
                       </button>
                     </form>
                   </li>
@@ -565,6 +564,28 @@
   </div>
 </template>
 
+<style scoped>
+.btn-outline-danger {
+    color: #dc3545;
+    border-color: #dc3545;
+    margin-left: 10px;
+}
+li {
+  position: relative;
+  padding-left: 11px;
+}
+#btn {
+  margin-top: 32px;
+}
+.list {
+  max-width: 1250px;
+}
+a {
+    color: white;
+    text-decoration: none;
+    background-color: transparent;
+}
+</style>
 <script>
 export default {
   data() {
@@ -876,20 +897,4 @@ export default {
   }
 };
 </script>
-<style scoped>
-.btn-outline-danger {
-    color: #dc3545;
-    border-color: #dc3545;
-    margin-left: 10px;
-}
-li {
-  position: relative;
-  padding-left: 11px;
-}
-#btn {
-  margin-top: 32px;
-}
-.list {
-  max-width: 1250px;
-}
-</style>
+

@@ -13,18 +13,20 @@
                                    <li>
                                       <button
                                             type="button"
-                                            class="btn btn-success pickup-btn"
-                                            data-toggle="modal"
+                                            class="btn btn-primary pickup-btn"
+                                            data-toggle="modal2"
                                             @click="newPickUp">
                                             Create New Packet</button>
                                   </li>
                                    <li>
-                                      <button class="btn btn-success">Bulk Order List
-                                        <b-link href="./componets/bulkList"></b-link>
+                                      <button class="btn btn-primary pickup-btn">
+                                        <b-link target="_self" href="./bulkList">Bulk Order List</b-link>
                                       </button>
                                   </li>
                                   <li>
-                                      <button class="btn btn-success">Bulk Order Upload</button>
+                                      <button class="btn btn-primary pickup-btn">
+                                        <b-link target="_self" href="./bulkOrder">Bulk Order Upload</b-link>
+                                      </button>
                                   </li>
                                   <li class="nav-item">
                                       <div class="form-group">
@@ -37,21 +39,21 @@
                                       </div>
                                   </li>
                                    <li>
-                                      <button class="btn btn-success">Request</button>
+                                      <button class="btn btn-primary pickup-btn">Request</button>
                                   </li>
                                   <li>
                                       <button class="btn btn-danger">Delete All</button>
                                   </li>
                                   <li>
                                       <div class="form-group col-md-12">
-                                          <select id="phone-number" name="order_pickup_point"  class="form-control">
+                                          <select id="phone-number" name="order_pickup_point"  class="form-control" style="margin-left:61%;">
                                               <option value disabled="disabled">Select PickUp Location</option>
                                               <option value="16">Kathmandu Swapanita Sapkota</option>
                                               <option value="17">Kathmandu Suren R.M</option>
                                           </select>
                                       </div>
                                   </li>
-                                   <span style="float:right; right;padding-top: 1%;">*Mark checkbox to select packets to request pickup service</span>
+                                   <span style="float:right; right;padding-top: 1%;margin-left:19%;">*Mark checkbox to select packets to request pickup service</span>
                               </ul>
                           </div>
                       </div>
@@ -95,15 +97,182 @@
                           <span role="menubar" aria-label="Go to last page" aria-disabled="true" class="page-link">last-page</span>
                       </li>
                   </ul>
-                  <div id="pickuporder" tabindex="1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-label="true" class="modal fade bd-example-modal-lg">
-                      
+                  <div id="pickuporder" tabindex="1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-label="true" class="modal fade bd-example-modal-lg">  
+                                    <!-- {{--  second model start  --}}-->
+    <div class="model2">
+      <form
+        @submit.prevent="onSubmitUserAddress"
+        @keydown="address.errors.clear($event.target.name)"
+      >
+        <div
+          class="modal fade bd-example-modal-lg"
+          id="new_picup"
+          tabindex="-1"
+          role="dialog"
+          aria-labelledby="exampleModalScrollableTitle"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalScrollableTitle">Add New Customer</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+
+              <div class="modal-body"> 
+                <div class="row">
+                  <form style="margin-left: 2%; width: 95%;">
+                  <fieldset class="scheduler-border">
+                    <legend  class="w-auto">Personal Information</legend>
+                  <div class="row">
+                    <div class="col">
+                      <input type="text" class="form-control" placeholder="First name">
+                      <br>
+                      <input type="text" class="form-control" placeholder="Contact Number 1">
+                    </div>
+                    <div class="col">
+                      <input type="text" class="form-control" placeholder="Last Name">
+                      <br>
+                       <input type="text" class="form-control" placeholder="Contact Number 2">
+                  </div>
+               </div>
+                </fieldset>
+              
+    <fieldset class="scheduler-border" style="height: 70%;">
+      <legend  class="w-auto">Address Details</legend>
+	      <div class="row">
+          <div class="col">
+          <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+            <option selected>State</option>
+            <option value="1">One</option>
+            <option value="2">Two</option>
+            <option value="3">Three</option>
+          </select>
+      &nbsp;
+      <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+        <option selected>Municipality</option>
+        <option value="1">One</option>
+        <option value="2">Two</option>
+        <option value="3">Three</option>
+      </select>
+    </div>
+<br>
+    <div class="col">
+      <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+        <option selected>District</option>
+        <option value="1">One</option>
+        <option value="2">Two</option>
+        <option value="3">Three</option>
+      </select>
+      &nbsp;
+      <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+        <option selected>Ward Number</option>
+        <option value="1">One</option>
+        <option value="2">Two</option>
+        <option value="3">Three</option>
+      </select>
+    </div>
+	</div>
+    <br>  
+  <div class="row">
+	  <div class="col">
+      <textarea class="address" rows='3' placeholder="Address Description"></textarea>
+	  </div>
+    <div class="col">
+      <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+        <option selected>Area</option>
+        <option value="1">One</option>
+        <option value="2">Two</option>
+        <option value="3">Three</option>
+      </select>
+   </div>
+  </div>
+</fieldset>
+</form>
+<div class="down" style="margin-left:60%; margin-top:-3%;">
+<button type="submit" class="btn btn-primary">Submit</button>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<button data-v-174508b8="" type="submit" class="btn btn-danger" style=" background-color: #ec1313;">Cancel</button>
+                </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+<!-- {{ --2ndmodelend-- }} -->
                 </div>
             </div>
         </div>
          </div>
     </div>
 </template>
-<style>
+<style scoped>
+
+.modal-content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    pointer-events: auto;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 0.3rem;
+    outline: 0;
+}
+.modal-body {
+    position: relative;
+    flex: 1 1 auto;
+    padding-bottom: 5%;
+}
+.address {
+    border-radius: 1%;
+    box-shadow: none;
+    height: 150%;
+    width: -webkit-fill-available;
+}
+.form-control {
+    display: block;
+    width: 100%;
+    height: calc(1.5em + 0.75rem + 2px);
+    padding: 2%;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+fieldset.scheduler-border {
+    border: 1px groove #ddd !important;
+    padding: 2% !important;
+    -webkit-box-shadow:  0px 0px 0px 0px #000;
+            box-shadow:  0px 0px 0px 0px #000;
+            
+}
+legend.scheduler-border {
+    font-size: 16px !important;
+    font-weight: bold !important;
+    text-align: left !important;  
+}
+legend {
+    display: block;
+    max-width: 100%;
+    padding: 0;
+    margin-bottom: .5rem;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: inherit;
+    color: inherit;
+    white-space: normal;
+}
 #phone-number{
     border-radius: 4px;
 }
@@ -124,6 +293,11 @@ li{
 .justify-content-center {
     width: auto;
     height: 700px;
+}
+a {
+    color: white;
+    text-decoration: none;
+    background-color: transparent;
 }
 </style>
 

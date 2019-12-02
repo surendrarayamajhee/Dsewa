@@ -8,7 +8,10 @@
      
         <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
-
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
  <style>
 
@@ -168,7 +171,7 @@ element.style {
 }
 .header .header-content {
     height: 80%;
-    background-color: royalblue;
+    background-color: darkblue;
 }
 [data-headerbg="color_1"] .header {
     background-color: royalblue;
@@ -483,7 +486,7 @@ element.style {
                         <ul aria-expanded="false">
                             <li><router-link :to="{ name: 'pacekts' }">New Packet</router-link></li>
                             <li><router-link :to="{ name: 'pacektList' }">Packet List</router-link></li>
-                            <li><router-link :to="{ name: 'bulkList' }">Bulk Packet List</router-link></li>
+                            <li><router-link :to="{ name: 'bulkList' }">Bulk List</router-link></li>
                             
                         </ul>
                     </li>
@@ -493,9 +496,9 @@ element.style {
                         </a>
                         <ul aria-expanded="false">
                         <li><router-link :to="{ name: 'OrderList' }">Order List</router-link></li>
-                        <li><router-link :to="{ name: 'OrderStatus' }">Order Status</router-link></li>
-                        <li><router-link :to="{ name: 'StatuschangeLog' }">Status Change log</router-link></li>
-                            
+                        <li><router-link :to="{ name: 'OrderStatus' }">Exchange Order</router-link></li>
+                        <li><router-link :to="{ name: 'OrderDetails' }">OrderDetails</router-link></li>  
+                        <li><router-link :to="{ name: 'ReturnOrder' }">ReturnOrder</router-link></li>
                         </ul>
                     </li>
                     <li class="mega-menu mega-menu-sm">
@@ -514,8 +517,16 @@ element.style {
                         </a>
                         <ul aria-expanded="false">
                         <li><router-link :to="{ name: 'WithDrawl' }">WithDrawl</router-link></li>
-                        <li><router-link :to="{ name: 'Deposit' }">Deposit</router-link></li>
+                        <li><router-link :to="{ name: 'Statement' }">Statement</router-link></li>
                             
+                        </ul>
+                    </li>
+                    <li class="mega-menu mega-menu-sm">
+                        <a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                            <i class="icon-globe-alt menu-icon"></i><span class="nav-text">Log</span>
+                        </a>
+                        <ul aria-expanded="false">
+                            <li><router-link :to="{ name: 'StatuschangeLog' }">Status Change log</router-link></li>
                         </ul>
                     </li>
                     <li class="mega-menu mega-menu-sm">

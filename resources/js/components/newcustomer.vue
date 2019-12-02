@@ -1,131 +1,159 @@
 <template>
-    <div class="model2">
-                                <form>
-                                    <div id="new_picup" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" class="modal fade bd-example-modal-lg" style="display:none;" aria-hidden="true">
-                                        <div role="document" class="modal-dialog modal-lg">
-                                            <div class="modal-content">
-                                                <div class="modal-header">
-                                                <h5 id="exampleModalScrollableTitle" class="modal-title">Add  New Customer</h5>
-                                                <button type="button" data-dismiss="modal" aria-label="Close" class="close">
-                                                    <span aria-hidden="true">*</span>
-                                                </button>
-                                                </div>    
-                                                <div class="modal-body">
-                                                    <div class="row">
-                                                        <div class="col-md-4">
-                                                            <div class="form-group">
-                                                                <label for="name">First Name</label>
-                                                                <input type="text" placeholder="First Name" name="First_Name" class="form-control">
-                                                               
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-md-4">
-                                                            <div class="form-group">
-                                                                <label for="name">Last Name</label>
-                                                                <input type="text" placeholder="Last Name" name="last_Name" class="form-control">
-                                                            
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-md-4">
-                                                            <div class="form-group">
-                                                                <label>State</label>
-                                                                <select class="form-control">
-                                                                    <option value selected="selected" disabled="disabled">Select</option>
-                                                                    <option value="532">Gandaki</option>
-                                                                    <option >Karnali</option>
-                                                                    <option >Province1</option>
-                                                                    <option >Province2</option>
-                                                                    <option >Province3</option>
-                                                                    <option >Province5</option>
-                                                                    <option >Sudur Paschim</option>
-                                                                </select>
-                                                              
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-md-4">
-                                                            <div class="form-group">
-                                                                <label for="district">District</label>
-                                                                <select id="district" name="district" class="form-control">
-                                                                    <option>Select</option>
-                                                                    <option >Gandaki</option>
-                                                                    <option >Karnali</option>
-                                                                    <option >Province1</option>
-                                                                    <option >Province2</option>
-                                                                    <option >Province3</option>
-                                                                    <option >Province5</option>
-                                                                    <option >Sudur Paschim</option>
-                                                                </select>
-                                                               
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-md-4">
-                                                            <div class="form-group">
-                                                                <label for="municipality">municipality</label>
-                                                                <select id="municipality" name="municipality" class="form-control">
-                                                                    <option>Select</option>
-                                                                    
-                                                                </select>
-                                                               
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-md-4">
-                                                            <div class="form-group">
-                                                                <label for="municipality">Ward_No</label>
-                                                                <select id="tole" name="Ward-No" class="form-control">
-                                                                    <option>Select</option>
-                                                                    
-                                                                </select>
-                                                               
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-md-4">
-                                                            <div class="form-group">
-                                                                <label for="area">Area</label>
-                                                                <div>
-                                                                <select id="tole" name="area" class="form-control">
-                                                                    <option>Select</option>
-                                                                    
-                                                                </select>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-md-4">
-                                                            <div class="form-group">
-                                                                <label for="discription">Discription</label>
-                                                                <div>
-                                                                <input type="text" placeholder="Discription/state" name="discription" class="form-control">
-                                                              
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-md-4">
-                                                            <div class="form-group">
-                                                                <label for="mobile">Mobile Number</label>
-                                                                <div>
-                                                                <input type="number" placeholder="Mobile Number" name="phone1" class="form-control">
-                                                               
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-md-4">
-                                                            <div class="form-group">
-                                                                 <label for="mobile2">Mobile Number 2</label>
-                                                                <div>
-                                                                <input type="number" placeholder="Mobile Number 2" name="phone2" class="form-control">
-                                                              
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="modal-footer">
-                                                        <button type="button" data-dismiss="modal" class="btn btn-secondary">Close</button>
-                                                        <button class="btn btn-primary">
-                                                            "Submit"
-                                                        </button>
-                                                    </div>   
-                                                  </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                     </form>
+     <div class="model2">
+             
+<div class="modal-content" style="margin-left:35%">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalScrollableTitle">Add New Customer</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+
+              <div class="modal-body"> 
+                <div class="row">
+                  <form style="margin-left: 2%; width: 95%;">
+                  <fieldset class="scheduler-border">
+                    <legend  class="w-auto">Personal Information</legend>
+                  <div class="row">
+                    <div class="col">
+                      <input type="text" class="form-control" placeholder="First name">
+                      <br>
+                      <input type="text" class="form-control" placeholder="Contact Number 1">
+                    </div>
+                    <div class="col">
+                      <input type="text" class="form-control" placeholder="Last Name">
+                      <br>
+                       <input type="text" class="form-control" placeholder="Contact Number 2">
+                  </div>
+               </div>
+                </fieldset>
+              
+    <fieldset class="scheduler-border" style="height: 70%;">
+      <legend  class="w-auto">Address Details</legend>
+	      <div class="row">
+          <div class="col">
+          <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+            <option selected>State</option>
+            <option value="1">One</option>
+            <option value="2">Two</option>
+            <option value="3">Three</option>
+          </select>
+      &nbsp;
+      <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+        <option selected>Municipality</option>
+        <option value="1">One</option>
+        <option value="2">Two</option>
+        <option value="3">Three</option>
+      </select>
+    </div>
+<br>
+    <div class="col">
+      <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+        <option selected>District</option>
+        <option value="1">One</option>
+        <option value="2">Two</option>
+        <option value="3">Three</option>
+      </select>
+      &nbsp;
+      <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+        <option selected>Ward Number</option>
+        <option value="1">One</option>
+        <option value="2">Two</option>
+        <option value="3">Three</option>
+      </select>
+    </div>
+	</div>
+    <br>  
+  <div class="row">
+	  <div class="col">
+      <textarea class="address" rows='3' placeholder="Address Description"></textarea>
+	  </div>
+    <div class="col">
+      <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+        <option selected>Area</option>
+        <option value="1">One</option>
+        <option value="2">Two</option>
+        <option value="3">Three</option>
+      </select>
+   </div>
+  </div>
+</fieldset>
+</form>
+<div class="down" style="margin-left:57%; margin-top:-3%;">
+<button type="submit" class="btn btn-primary">Submit</button>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<button data-v-174508b8="" type="submit" class="btn btn-danger" style=" background-color: #ec1313;">Cancel</button>
+                </div>
+                </div>
+              </div>
+          </div>
+     </div>
 </template>
+
+<style scoped>
+.modal-content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 42%;
+    pointer-events: auto;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 0.3rem;
+    outline: 0;
+}
+.modal-body {
+    position: relative;
+    flex: 1 1 auto;
+    padding-bottom: 5%;
+}
+fieldset.scheduler-border {
+    border: 1px groove #ddd !important;
+    padding: 0 1.4em 1.4em 1.4em !important;
+    margin: 0 0 1.5em 0 !important;
+    -webkit-box-shadow:  0px 0px 0px 0px #000;
+            box-shadow:  0px 0px 0px 0px #000;
+            
+}
+
+legend.scheduler-border {
+    font-size: 16px !important;
+    font-weight: bold !important;
+    text-align: left !important;
+    
+}
+legend {
+    display: block;
+    max-width: 100%;
+    padding: 0;
+    margin-bottom: .5rem;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: inherit;
+    color: inherit;
+    white-space: normal;
+}
+.address {
+    border-radius: 1%;
+    box-shadow: none;
+    height: 150%;
+    width: -webkit-fill-available;
+}
+.form-control {
+    display: block;
+    width: 100%;
+    height: calc(1.5em + 0.75rem + 2px);
+    padding: 2%;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+</style>

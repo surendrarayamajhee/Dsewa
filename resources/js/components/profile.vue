@@ -6,54 +6,103 @@
                 <div class="card">
                     <!--  for header  -->
                     <div class="card-header">
-                        <h3 class="order-inline">Profile</h3>
+                        <h4>
+                             <center>Edit Profile</center>
+                         </h4>
                     </div>
                     <!-- for body parts -->
                     <div class="card-body">
-                        <form>
-                            <div class="form-group-row">
-                                <div class="col-md-6">
-                                    <label for="name">Name</label>
-                                    <input type="text"  class="form-control">
-                                </div>
-                            </div>
-                            <div class="form-group-row">
-                                <div class="col-md-6">
-                                    <label for="email">Company email</label>
-                                    <input type="email" name="email" class="form-control">
-                            </div>
-                            </div>
-                            <div class="form-group-row">
-                                <div class="col-md-6">
-                                    <label for="Website">company Website</label>
-                                    <input type="text" name="email" class="form-control">
-                            </div>
-                            </div>
-                            <div class="form-group-row">
-                                <div class="col-md-6">
-                                    <label for="phone1">phone number 1</label>
-                                    <input type="number" name="phone1" class="form-control">
-                            </div>
-                            </div>
-                            <div class="form-group-row">
-                                <div class="col-md-6">
-                                    <label for="phone2">phone number 2</label>
-                                    <input type="number" name="phone2" class="form-control">
-                            </div>
-                            </div>
-                            <button class="btn btn-success">
-                                "Submit
-                                        "
-                            </button>
-                        </form>
+                        <div class="row"> 
+            <div class="col-md-5">             
+                <fieldset class="scheduler-border" style="height: 110%;width: 104%;">
+                  <legend class="w-auto">Profile</legend>
+                  <table style="width: 100%;">
+                      <tr>
+                          <td>Company Name</td>
+                     </tr>
+                     <tr>
+                          <td>ABC Store</td>
+                      </tr>
+                      <tr>
+                          <td>Company Email</td>
+                     </tr>
+                     <tr>
+                          <td>abc@dsewa.com.np</td>
+                    </tr>
+                      <tr>
+                        <td>Company Website</td>
+                      <tr>
+                        <td>www.abc.com.np</td>
+                    </tr>
+                    <tr>
+                        <td>Contact</td>
+                    </tr>
+                    <tr>
+                        <td>9841553383</td>
+                    </tr>
+                    <tr>
+                        <td>9841553383</td>
+                    </tr>
+                    <tr>
+                        <td>Address</td>
+                    </tr>
+                    <tr>
+                        <td>Address 1</td><br>
+                        
+                    </tr>
+                    <tr>
+                        <td>Address 2</td>
+                    </tr>
+                  </table>
+                </fieldset>
+          </div>
+          <div class="col-md-7">             
+                <fieldset class="scheduler-border" style="height: 93%;width: 100%;">
+                  <legend class="w-auto">Return</legend>
+                    <div class="row" style="margin:-2%;">
+                        <input type="text" class="form-control" placeholder="Company Name">
+                            <br>
+                            <br>
+                        <input type="text" class="form-control" placeholder="Company Email">
+                        <br>
+                        <br>
+                        <input type="text" class="form-control" placeholder="Company Website">
+                        <br>
+                        <br>
+                        <input type="text" class="form-control" placeholder="Contact Number">
+                        <br>
+                        <br>
+                        <input type="text" class="form-control" placeholder="Alternative Contact Number">
+                        <br>
+                        <br>
+                        <input type="text" class="form-control" placeholder="Address Details">
+                        <br>
+                        <br>
+                        <input type="text" class="form-control" placeholder="Complete Address">
                     </div>
-                </div>
+                </fieldset>
+            </div>
+            <div class="down" style="margin-left:62%;">
+                <button type="submit" class="btn btn-primary">Update</button>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <button type="submit" class="btn btn-danger" style=" background-color: #ec1313;">Cancel</button>
+            </div>
+                        </div>
+                    </div>
+                    </div>
             </div>
         </div>       
     </div>
     </div>
 </template>
-<style>
+<style scoped>
+.card-body[data-v-0f8ffe60] {
+    flex: 1 1 auto;
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: auto;
+    padding: 1.25rem;
+}
 body {
     margin: 0;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
@@ -93,26 +142,42 @@ body {
     background-color: rgba(0, 0, 0, 0.03);
     border-bottom: 1px solid rgba(0, 0, 0, 0.125);
 }
-.order-inline {
-    display: inline-block;
-}
-h3, .h3 {
-    font-size: 1.75rem;
-}
-.card-body {
-    flex: 1 1 auto;
-    padding: 1.25rem;
-}
 .form-group {
     margin-bottom: 1rem;
-}
-.col-md-6 {
-    flex: 0 0 50%;
-    max-width: 50%;
 }
 .btn-success {
     color: #fff;
     background-color: #28a745;
     border-color: #28a745;
 }
+fieldset.scheduler-border {
+    border: 1px groove #ddd !important;
+    padding: 0 1.4em 1.4em 1.4em !important;
+    margin: 0 0 1.5em 0 !important;
+	width: 80%;
+    -webkit-box-shadow:  0px 0px 0px 0px #000;
+            box-shadow:  0px 0px 0px 0px #000;
+            
+}
+
+legend.scheduler-border {
+    font-size: 16px !important;
+    font-weight: bold !important;
+    text-align: left !important;
+    
+}
+legend {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    padding: 0;
+    margin-bottom: .5rem;
+    font-size: 18px;
+    line-height: inherit;
+    color: inherit;
+    white-space: normal;
+}
+tr:nth-child(even) {background: #CCC}
+tr:nth-child(odd) {background: #FFF}
+</style>
 </style>
