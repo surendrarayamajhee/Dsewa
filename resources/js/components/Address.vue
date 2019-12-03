@@ -1,5 +1,5 @@
 <template>
-    <div class="content-body">
+    <div class="content-body" style="min-height:788px;">
         <div class="row justify-content-center">
             <div class="container">
                 <button type="button" data-toggle="modal" class="btn btn-primary vendor-address-btn">Add Address</button>

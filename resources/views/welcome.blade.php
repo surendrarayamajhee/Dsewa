@@ -486,7 +486,8 @@ element.style {
                         <ul aria-expanded="false">
                             <li><router-link :to="{ name: 'pacekts' }">New Packet</router-link></li>
                             <li><router-link :to="{ name: 'pacektList' }">Packet List</router-link></li>
-                            <li><router-link :to="{ name: 'bulkList' }">Bulk List</router-link></li>
+                            <li><router-link :to="{ name: 'bulkOrder' }">Bulk Order Upload</router-link></li>
+                            <li><router-link :to="{ name: 'bulkList' }">Bulk Packet List</router-link></li>
                             
                         </ul>
                     </li>

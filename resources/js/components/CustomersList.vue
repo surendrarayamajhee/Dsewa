@@ -1,5 +1,5 @@
 <template>
-    <div class="content-body">
+    <div class="content-body" style="min-height:788px;">
         <div class="container-fluid mt-3">
           
                 <div class="container">
@@ -110,24 +110,24 @@
                                     </thead>
                                     <tbody></tbody>
                                 </table>
-                                <ul role="menubar" aria-disabled="false" aria-label="pagination" class=" pagination mt-4 b-pagination justify-content-center" pages>
-                      <li role="none presentation" aria-hidden="true" class="page-item disabled">
-                          <span role="menubar" aria-label="Go to first page" aria-disabled="true" class="page-link">First-page</span>
-                      </li>
-                      <li role="none presentation" aria-hidden="true" class="page-item disabled">
-                          <span role="menubar" aria-label="Go to previous page" aria-disabled="true" class="page-link">prev</span>
-                      </li>
-                      <li role="none presentation" class="page-item">
-                          <span role="menubar" aria-label="Go to page 1" aria-checked="false" aria-posinset="1" aria-setsize="1" tabindex="0" target="_self" href="#" class="page-link">page no.1</span>
-                      </li>
-                       <li role="none presentation" aria-hidden="true" class="page-item disabled">
-                          <span role="menubar" aria-label="Go to next page" aria-disabled="true" class="page-link">next</span>
-                      </li>
-                       <li role="none presentation" aria-hidden="true" class="page-item disabled">
-                          <span role="menubar" aria-label="Go to last page" aria-disabled="true" class="page-link">last-page</span>
-                      </li>
-                  </ul>
-                  <div id="pickuporder" tabindex="1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-label="true" class="modal fade bd-example-modal-lg">
+                                <ul role="menubar" aria-disabled="false" aria-label="Pagination" class="pagination mt-4 b-pagination justify-content-center" pages="">
+                            <li role="presentation" aria-hidden="true" class="page-item disabled">
+                                <span role="menuitem" aria-label="Go to first page" aria-disabled="true" class="page-link">⏮</span>
+                            </li>
+                            <li role="presentation" aria-hidden="true" class="page-item disabled">
+                                <span role="menuitem" aria-label="Go to previous page" aria-disabled="true" class="page-link">⏪</span>
+                            </li>
+                            <li role="presentation" class="page-item active">
+                                <a role="menuitemradio" aria-label="Go to page 1" aria-checked="true" aria-posinset="1" aria-setsize="1" tabindex="0" target="_self" href="#" class="page-link">1</a>
+                                </li>
+                            <li role="presentation" aria-hidden="true" class="page-item disabled">
+                                <span role="menuitem" aria-label="Go to next page" aria-disabled="true" class="page-link">⏩</span>
+                            </li>
+                            <li role="presentation" aria-hidden="true" class="page-item disabled">
+                                <span role="menuitem" aria-label="Go to last page" aria-disabled="true" class="page-link">⏭</span>
+                            </li>
+                        </ul>
+                 
                       
                   </div>
                  </div>
@@ -243,7 +243,6 @@
                     </div>
                 </div>
             </div>
-    </div>
 </template>
 <style scoped>
 .modal-content {
@@ -365,6 +364,14 @@ legend {
     line-height: inherit;
     color: inherit;
     white-space: normal;
+}
+.pagination {
+    display: -webkit-box;
+    display: flex;
+    padding-left: 0;
+    list-style: none;
+    border-radius: 0.25rem;
+    margin: 10px 213px;
 }
 </style>
 

@@ -1,14 +1,31 @@
 <template>
-<div class="content-body">
+<div class="content-body" style="min-height:788px;">
         <div class="container-fluid mt-3">
             <div class="row justify-content-center">
   <div class="container">
     <div class="card">
-      <div class="card-header">
-        <ul class="nav order-nav">
-          <li class="nav-item">
-            <h2>Bulk List</h2>
-          </li>
+      <div class="card-header">  
+        <h3>
+          <center>Bulk Packets List</center>
+        </h3>
+       </div>
+      <div class="card-footer">
+              <div v-if="pagination.last_page==pagination.current_page">
+                <ul class="nav order-nav">
+                  <li class="nav-item" style="float:left">
+                    <h4>Create Packets</h4>
+                  </li>
+
+                  <li class="nav-item" style="float:right">
+                    <form @submit.prevent="onSubmitCheckbox">
+                      <button class="btn btn-primary pickup-btn">
+                        <b-link target="_self" href="./packets">Create Packets</b-link>
+                      </button>
+                    </form>
+                  </li>
+                </ul>
+              </div>
+           
           <!-- <li class="nav-item">
             <div class="form-group">
 
@@ -54,12 +71,10 @@
             </button>
           </form>
           </li>-->
-        </ul>
-      </div>
-      <br />
+         
       <div class="card-body">
         <div class="row">
-          <div class="table-responsive-md pickup-table">
+          <div class="table-responsive-md pickup-table" style="width:100%;">
             <table class="table table-bordered">
               <thead>
                 <tr>
@@ -127,23 +142,7 @@
                 </tr>
               </tbody>
             </table>
-            <div class="card-footer">
-              <div v-if="pagination.last_page==pagination.current_page">
-                <ul class="nav order-nav">
-                  <li class="nav-item" style="float:left">
-                    <h3>Create Packets</h3>
-                  </li>
-
-                  <li class="nav-item" style="float:right">
-                    <form @submit.prevent="onSubmitCheckbox">
-                      <button class="btn btn-primary pickup-btn">
-                        <b-link target="_self" href="./packets">Create Packets</b-link>
-                      </button>
-                    </form>
-                  </li>
-                </ul>
-              </div>
-            </div>
+            
           </div>
         </div>
         <b-pagination
@@ -561,6 +560,7 @@
     </div>
       <!-- {{ --2ndmodelend-- }} -->
     </div>
+     </div>
   </div>
 </template>
 

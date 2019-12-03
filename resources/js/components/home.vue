@@ -3,7 +3,7 @@
 
 
 <div>
-    <div class="content-body">
+    <div class="content-body" style="min-height:788px;">
         <div class="row justify-content-center">
             <div class="container-fluid mt-3">
                 <div class="row" style="padding-left: 12px">
@@ -15,7 +15,8 @@
                             </span>
                         </div>
                         <div class="headline">
-                            <span>Orders</span><br>
+                            <span>Orders</span>
+                            <br><br>
                             <span style="font-weight: bold;">100+</span>
                         </div>
                     </div>
@@ -200,7 +201,7 @@ element.style {
 .flex-container {
   display: flex;
   flex-wrap: nowrap;
-  background-color:white;
+  background-color:transparent;
   box-shadow: 3px 3px 5px 6px #ccc;
   margin: 10px;
   padding: 4px;
@@ -209,10 +210,10 @@ element.style {
 }
 
 .flex-container > div {
-  background-color: white;
-  width: 100px;
+  background-color: floralwhite;
+  width: 113px;
   height: 80px;
-  margin: 10px;
+  margin: 3px;
   text-align: center;
   box-decoration-break: clone;
 }

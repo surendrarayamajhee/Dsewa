@@ -1,5 +1,5 @@
 <template>
-    <div class="content-body">
+    <div class="content-body" style="min-height:788px;">
         <div class="container-fluid mt-3">
         <div class=" row justufy-content-center">
             <div class=" container">

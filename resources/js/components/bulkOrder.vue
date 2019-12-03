@@ -1,11 +1,99 @@
 <template>
-    <div class="content-body">
-            <div class="container-fluid mt-3">
-
-                            <div class="card-body">
-                                <h3 class="card-title text-white">bulk order upload</h3>
-                               
-                            </div>
-            </div>
+<div class="content-body" style="min-height:788px;">
+    <div class="container-fluid mt-3">
+    <div class="row judtify-content-center">
+        <div class="container">
+            <div class="card-body">
+                <div class="card-header">
+                    <center>
+                        <h3>Bulk Order Upload</h3>
+                    </center>
+                </div>  
+                <br>
+                <br>
+                <div class="row">
+                     <div class="col-sm-12">
+                        <table class="table table-striped table-bordered zero-configuration">
+                            <thead>
+                                  <tr>
+                                     <th>SN</th>
+                                     <th>Order Id</th>
+                                     <th>Product</th>
+                                     <th>Status</th>
+                                     <th>Comment</th>
+                                     <th>Action</th>
+                                    </tr>
+                             </thead>
+                                 <tbody>
+                                    <tr>
+                                       <td>Tiger Nixon</td>
+                                       <td>System Architect</td>
+                                       <td>Edinburgh</td>
+                                       <td>61</td>
+                                       <td>2011/04/25</td>
+                                       <td>$320,800</td>
+                                   </tr>                           
+                           </tbody>
+                        </table>
+                        <ul role="menubar" aria-disabled="false" aria-label="Pagination" class="pagination mt-4 b-pagination justify-content-center" pages="">
+                            <li role="presentation" aria-hidden="true" class="page-item disabled">
+                                <span role="menuitem" aria-label="Go to first page" aria-disabled="true" class="page-link">⏮</span>
+                            </li>
+                            <li role="presentation" aria-hidden="true" class="page-item disabled">
+                                <span role="menuitem" aria-label="Go to previous page" aria-disabled="true" class="page-link">⏪</span>
+                            </li>
+                            <li role="presentation" class="page-item active">
+                                <a role="menuitemradio" aria-label="Go to page 1" aria-checked="true" aria-posinset="1" aria-setsize="1" tabindex="0" target="_self" href="#" class="page-link">1</a>
+                                </li>
+                            <li role="presentation" aria-hidden="true" class="page-item disabled">
+                                <span role="menuitem" aria-label="Go to next page" aria-disabled="true" class="page-link">⏩</span>
+                            </li>
+                            <li role="presentation" aria-hidden="true" class="page-item disabled">
+                                <span role="menuitem" aria-label="Go to last page" aria-disabled="true" class="page-link">⏭</span>
+                            </li>
+                        </ul>
+                     </div>
+                  </div>
+                </div>
+            </div>    
+        </div>            
     </div>
+</div>
 </template>
+<style scoped>
+.con
+.col-md-12{
+flex: 0 0 100%;
+max-width: 100%;
+}
+.container{
+    max-width: 95%;
+}
+.table-bordered{
+    border: 1px solid #dee2e6;
+}
+.table{
+    width: 100%;
+    margin-bottom: 1rem;
+    color: #212529;
+}
+.col-md-6{
+    flex: 0 0 50%;
+    width: 50%;
+}
+.pagination {
+    display: -webkit-box;
+    display: flex;
+    padding-left: 0;
+    list-style: none;
+    border-radius: 0.25rem;
+    margin: 10px 213px;
+}
+.justify-content-center {
+    -webkit-box-pack: center !important;
+    justify-content: center !important;
+}
+.mt-4, .my-4 {
+    margin-top: 1.5rem !important;
+}
+</style>

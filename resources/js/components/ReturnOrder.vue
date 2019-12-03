@@ -1,5 +1,5 @@
 <template>
-    <div class="content-body">
+    <div class="content-body" style="min-height:788px;">
         <div class="container-fluid mt-3">
             <div class="row justify-content-center">
                 <div class="container">
@@ -66,7 +66,7 @@
                 </fieldset>
             </div>
             </div>
-            <div class="down" style="margin-left:36%; margin-top:-3%">
+            <div class="down" style="margin-left:50%; margin-top:-3%">
                 <button type="submit" class="btn btn-primary">Submit</button>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <button type="submit" class="btn btn-danger" style=" background-color: #ec1313;">Cancel</button>

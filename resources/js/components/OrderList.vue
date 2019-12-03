@@ -1,12 +1,11 @@
 <template>
-    <div class="content-body">
+<div class="content-body" style="min-height:788px;">
             <div class="row justify-content-center">
-                <div class="container">
                     <div class="row">
                         <div class="col-12">
                             <div class="card">
                                 <div class="card-body">
-                                    <h4 class="card-title">Order List</h4>
+                                    <h3 class="card-title">Order List</h3>
                                     <div class="table-responsive">
                                         <div id="DataTables_Table_0_wrapper" class="dataTables_wrapper container-fluid dt-bootstrap4">
                                             <div class="row">
@@ -65,12 +64,12 @@
                                                 </div>
                                             </div>
                                             <div class="row">
-                                                <div class="col-sm-12 col-md-5">
+                                                <div class="col-sm-12 col-md-5" style="margin-left:35%;">
                                                     <div class="dataTables-info" id="DataTables_table_0_info" role="status" aria-live="polite">
                                                         Showing 1 to 10 of 57 entries
                                                     </div>
                                                 </div>
-                                                    <div class="footer">
+                                                    <div class="footer" style="margin-left:1%">
                                                         <ul role="menubar" aria-disabled="false" aria-label="Pagination" class="pagination mt-4 b-pagination justify-content-center" pages="">
                                                             <li role="presentation" aria-hidden="true" class="page-item disabled">
                                                                 <span role="menuitem" aria-label="Go to first page" aria-disabled="true" class="page-link">⏮</span>
@@ -97,15 +96,9 @@
                         </div>
                     </div> 
                 </div>
-            </div>
-        
-    </div>            
+            </div>           
 </template>
 <style scoped>
-.content-body {
-    margin-left: 15.1875rem;
-    z-index: 0;
-}
 .container-fluid {
     width: 100%;
     padding-right: 15px;
@@ -116,8 +109,6 @@
 .row {
     display: flex;
     flex-wrap: wrap;
-    margin-right: -15px;
-    margin-left: -15px;
 }
 .col-12 {
     flex: 0 0 100%;

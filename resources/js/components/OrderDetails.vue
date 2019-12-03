@@ -1,5 +1,5 @@
 <template>
-    <div class="content-body">
+    <div class="content-body" style="min-height:788px;">
         <div class="container-fluid mt-3">
             <div class="row justify-content-center">
                 <div class="container">
@@ -58,35 +58,7 @@
                  </div>
             <div class="row">
             <div class="col-md-4">   
-                <fieldset class="scheduler-border" style="height: 109%;width: 110%;">
-                  <legend class="w-auto">Log</legend>
-                  <div class="ex2">
-                    <table style="width:100%;">
-                        <tr>
-                            <td>Order Created At</td>
-                        </tr>
-                        <tr>
-                            <th>2019 November 25 1:00:00</th>
-                        </tr>
-                        <tr>
-                            <td>Received By Kathmandu at</td>
-                        </tr>
-                        <tr>
-                            <th>2019 November 25 1:00:00</th>
-                        </tr>
-                        <tr>
-                            <td>Shipped From Kathmandu To Nepalgunj in</td>
-                        </tr>
-                        <tr>
-                            <th>2019 November 25 1:00:00</th>
-                        </tr>
-                        
-                    </table>
-                  </div>
-                </fieldset>          
-            </div>
-            <div class="col-md-4">             
-                <fieldset class="scheduler-border" style="height: 87%;width: 110%;">
+                <fieldset class="scheduler-border" style="height: 108%;width: 110%;">
                   <legend class="w-auto">Order Attributes</legend>
                   <div class="ex1">
                     <table style="width: 100%;">
@@ -121,22 +93,69 @@
                           <td>Navy Blue<br>Navy Blue</td>
                      </tr>
                   </table>
-                  </div>
-                </fieldset>
+                    </div>
+                </fieldset>          
             </div>
             <div class="col-md-4">             
-                <fieldset class="scheduler-border" style="height: 87%;width: 100%;">
-                  <legend class="w-auto">Comment</legend>
-                  <div class="ex3">
+                <fieldset class="scheduler-border" style="height: 92%;width: 110%;">
+                  <legend class="w-auto">Comment</legend> 
+                     <div class="ex3">
                        <input type="text" class="form-control" placeholder="Hello Every One....">
                  </div>
                  <div>
                        <input type="text" class="form-control" placeholder="Comment" style="width:85%;">
-                       <button type="submit" class="btn btn-success" style="margin-left:87%;margin-top:-25%">Add</button>
-                </div>
+                       <button type="submit" class="btn btn-success" style="margin-left:87%;margin-top:-22%">Add</button>
+                </div>                     
                 </fieldset>
             </div>
-            <table style="border: 1px solid black;width: 33%;margin-left:35%;margin-top:-3%">
+            <div class="col-md-4">  
+                <fieldset class="scheduler-border" style="height: 42%;width: 100%;">
+                    <legend class="w-auto">Sender</legend>
+                    <div class="ex2">
+                    <table style="width:100%;">
+                        <tr>
+                            <th>Name</th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <th>Easy Shop</th>
+                        </tr>
+                       <tr>
+                          <td>Contact</td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                          <td>9841553383<br>9841553383</td>
+                     </tr>
+                       <tr>
+                          <td>Address</td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                          <td>Address 1<br>Address 2</td>
+                     </tr>
+                    </table>
+                    </div>
+                </fieldset>          
+                <fieldset class="scheduler-border" style="height: 50%;width: 100%;">
+                  <legend class="w-auto">Log</legend>
+                    <div class="ex2">
+                     <table style="width:100%;">
+                        <tr>
+                            <td>Order Created At</td>
+                        </tr>
+                        <tr>
+                            <th>2019 November 25 1:00:00</th>
+                        </tr>
+                        <tr>
+                            <td>Received By Kathmandu at</td>
+                        </tr>
+                        <tr>
+                            <th>2019 November 25 1:00:00</th>
+                        </tr>
+                        <tr>
+                            <td>Shipped From Kathmandu To Nepalgunj in</td>
+                        </tr>
+                        <tr>
+                            <th>2019 November 25 1:00:00</th>
+                        </tr>
+                    </table>   
+                    </div>
+                 
+                </fieldset>
+            </div>
+            <table style="border: 1px solid black;width: 33%;margin-left:35%;margin-top:-25px;">
                 <tr style="text-align:center;font-size: 40px;font-weight:bold;">
                     Branch Name
                 </tr>
@@ -160,7 +179,6 @@
 fieldset.scheduler-border {
     border: 1px groove #ddd !important;
     padding: 0 1.4em 1.4em 1.4em !important;
-    margin: 0 0 1.5em 0 !important;
 	width: 80%;
     -webkit-box-shadow:  0px 0px 0px 0px #000;
             box-shadow:  0px 0px 0px 0px #000;
@@ -206,13 +224,13 @@ div.ex1 {
 div.ex2 {
   background-color: #f8f9fa;
   width: 108%;
-  height: 96%;
+  height: 93%;
   overflow: scroll;
 }
 div.ex3 {
   background-color: #f8f9fa;
-  width: 108%;
-  height: 80%;
+  width: 107%;
+  height: 86%;
   overflow: scroll;
 }
 tr:nth-child(even) {background: #CCC}
