@@ -211,7 +211,7 @@ element.style {
 
 .flex-container > div {
   background-color: floralwhite;
-  width: 113px;
+  width: 136px;
   height: 80px;
   margin: 3px;
   text-align: center;

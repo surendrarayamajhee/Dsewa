@@ -33,11 +33,7 @@
                                     </li>
                                     <li class="nav-item">
                                         <div class="form-group">
-                                        <label for="municipality">
-                                            <span class></span>
-                                            "Municipality"
-                                            
-                                        </label>
+                                        <label for="municipality">"Municipality"</label>
                                         <select id="municipality" name="municipality" class="form-control" style="width;19px;">
                                             <option value selected="selected" disabled="disabled">select</option>
                                         </select>

@@ -1,17 +1,28 @@
 <template>
 <div class="content-body" style="min-height:788px;">
-    <div class="container-fluid mt-3">
-    <div class="row judtify-content-center">
+  <div class="container-fluid mt-3">      
+    <div class="row justify-content-center">
         <div class="container">
-            <div class="card-body">
+            <div class="card">
                 <div class="card-header">
-                    <center>
-                        <h3>WithDrawl</h3>
-                    </center>
-                </div>  
-            </div>    
+                 <h4>
+                    <center>WithDrawl</center>
+                 </h4>
+                </div>
+
+                <div class="card-body">
+                    <img src="images/card.png">
+                </div>
+            </div>  
         </div> 
     </div>           
-    </div>
+  </div>
 </div>
 </template>
+
+<style scoped>
+.card .card-body {
+    padding: 1.88rem 1.81rem;
+    text-align: center;
+}
+</style>

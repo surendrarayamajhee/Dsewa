@@ -431,7 +431,11 @@ element.style {
                 </div>
                 <div class="header-right">
                      <div class="input-group icons">
-                         <input type="search" class="form-control" placeholder="Search Dashboard" aria-label="Search Dashboard" style="border-radius:4px;">
+                     <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+                         <!-- <input type="search" class="form-control" placeholder="Search Dashboard" aria-label="Search Dashboard" style="border-radius:4px;"> -->
                         <div class="input-group-prepend">
                             <!-- <button>
                             <span class="input-group-text bg-transparent border-0 pr-2 pr-sm-3" id="basic-addon1"><i class="mdi mdi-magnify"></i></span>
@@ -620,6 +624,10 @@ element.style {
     </body>
 </html>
 
+
+
+
+ 
 
 
 

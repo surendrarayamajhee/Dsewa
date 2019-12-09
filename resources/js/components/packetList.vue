@@ -3,7 +3,7 @@
         <div class="container-fluid mt-3">
             <div class="row justify-content-center">
                <div class="container">
-                  <div class="card-bady">
+                  <div class="card-body">
                       <div class="card-header">
                           <div class="row">
                               <ul class="nav order-nav">
