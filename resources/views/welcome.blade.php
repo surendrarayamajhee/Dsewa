@@ -246,8 +246,9 @@ element.style {
         <!--**********************************
             Nav header start
         ***********************************-->
-        <div class="nav-header">
-        <img src="images/D-sewa.png" style="width:243px; height:50px;">
+        <div class="nav-header" style="display: flex;">
+        <img src="images/43.png" style="width:40px; height:50px;">
+        <img src="images/sewa.png" style="width:200px; height:50px;">
             <!-- <div class="brand-logo">
                 <a href="index.html"> 
                
@@ -433,7 +434,7 @@ element.style {
                      <div class="input-group icons">
                      <form class="form-inline my-2 my-lg-0">
       <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit" style="color: black; background-color: floralwhite">Search</button>
     </form>
                          <!-- <input type="search" class="form-control" placeholder="Search Dashboard" aria-label="Search Dashboard" style="border-radius:4px;"> -->
                         <div class="input-group-prepend">
@@ -547,7 +548,7 @@ element.style {
                             
                         </ul>
                     </li>
-                    <li>
+                    {{-- <li>
                         <a class="has-arrow" href="javascript:void()" aria-expanded="false">
                             <i class="icon-envelope menu-icon"></i> <span class="nav-text">Email</span>
                         </a>
@@ -565,7 +566,7 @@ element.style {
                             <li><a href="./app-profile.html">Profile</a></li>
                             <li><a href="./app-calender.html">Calender</a></li>
                         </ul>
-                    </li>
+                    </li> --}}
                     
                     
                    

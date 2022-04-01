@@ -105,7 +105,7 @@
                             </span>
                         </div>
                         <div class="headline">
-                            <span>Order</span><br>
+                            <span>Pending COD Amount</span><br>
                             <span style="font-weight: bold;">100+</span>
                         </div>
                     </div>
@@ -117,7 +117,7 @@
                             </span>
                         </div>
                         <div class="headline">
-                            <span>Order Delivered</span>
+                            <span>Last COD Date</span>
                         </div>
                     </div>
                         <!-- 11-Box -->
@@ -128,7 +128,7 @@
                             </span>
                         </div>
                         <div class="headline">
-                            <span>Orders In Delivery Process</span>
+                            <span>Last COD Amount</span>
                         </div>
                     </div>
                         <!-- 12-Box -->
@@ -139,51 +139,7 @@
                             </span>
                         </div>
                         <div class="headline">
-                            <span>Order In Return Process</span>
-                        </div>
-                    </div>
-                    <!-- 13-box -->
-                    <div class="flex-container">
-                        <div class="Cart">
-                            <span style="font-size:3em; color: green;">
-                           <i class="fas fa-people-carry"></i>
-                            </span>
-                        </div>
-                        <div class="headline">
-                            <span>Return Order Delivered</span>
-                        </div>
-                    </div>
-                    <!-- 14-Box -->
-                    <div class="flex-container">
-                        <div class="Cart">
-                            <span style="font-size:3em; color: skyblue;">
-                            <i class="fas fa-exchange-alt"></i>
-                            </span>
-                        </div>
-                        <div class="headline">
-                            <span>Exchange Order</span>
-                        </div>
-                    </div>
-                    <!-- 15-Box -->
-                    <div class="flex-container">
-                        <div class="Cart">
-                            <span style="font-size:3em; color: grey;">
-                            <i class="fas fa-hand-holding-usd"></i>
-                            </span>
-                        </div>
-                        <div class="headline">
-                            <span>Refund Order</span>
-                        </div>
-                    </div>
-                    <!-- 16-Box -->
-                    <div class="flex-container">
-                        <div class="Cart">
-                            <span style="font-size:3em; color: red;">
-                            <i class="far fa-times-circle"></i>
-                            </span>
-                        </div>
-                        <div class="headline">
-                            <span>Canceled</span>
+                            <span>Received Amount</span>
                         </div>
                     </div>
                 </div>

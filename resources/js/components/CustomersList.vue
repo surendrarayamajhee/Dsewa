@@ -128,7 +128,7 @@
                   </div>
                  </div>
                  
-                 <!-- {{--  second model start  --}}-->
+               <!-- {{--  second model start  --}}-->
     <div class="model2">
       <form
         @submit.prevent="onSubmitUserAddress"
@@ -158,73 +158,204 @@
                     <legend  class="w-auto">Personal Information</legend>
                   <div class="row">
                     <div class="col">
-                      <input type="text" class="form-control" placeholder="First name">
+                      <input
+                        type="text"
+                        class="form-control"
+                        placeholder="First Name"
+                        name="first_name"
+                        v-model="address.first_name"
+                        :class="{ 'is-invalid': address.errors.has('first_name') }"
+                      />
+                      <span
+                        class="help is-danger"
+                        v-if="address.errors.has('first_name')"
+                        v-text="address.errors.get('first_name')"
+                      ></span>
                       <br>
-                      <input type="text" class="form-control" placeholder="Contact Number 1">
+                      <input
+                          type="number"
+                          class="form-control"
+                          placeholder="Contact Number 1"
+                          name="phone1"
+                          v-model="address.phone1"
+                          :class="{ 'is-invalid': address.errors.has('phone1') }"
+                        />
+                        <span
+                          class="help is-danger"
+                          v-if="address.errors.has('phone1')"
+                          v-text="address.errors.get('phone1')"
+                        ></span>
                     </div>
                     <div class="col">
-                      <input type="text" class="form-control" placeholder="Last Name">
+                      <input
+                        type="text"
+                        class="form-control"
+                        placeholder="last Name"
+                        name="last_name"
+                        v-model="address.last_name"
+                        :class="{ 'is-invalid': address.errors.has('last_name') }"
+                      />
+                      <span
+                        class="help is-danger"
+                        v-if="address.errors.has('last_name')"
+                        v-text="address.errors.get('last_name')"
+                      ></span>
                       <br>
-                       <input type="text" class="form-control" placeholder="Contact Number 2">
+                       <input
+                          type="number"
+                          class="form-control"
+                          placeholder="Contact Number 2"
+                          name="phone2"
+                          v-model="address.phone2"
+                          :class="{ 'is-invalid': address.errors.has('phone2') }"
+                        />
+                        <span
+                          class="help is-danger"
+                          v-if="address.errors.has('phone2')"
+                          v-text="address.errors.get('phone2')"
+                        ></span>
                   </div>
                </div>
                 </fieldset>
               
-    <fieldset class="scheduler-border" style="height: 70%;">
+    <fieldset class="scheduler-border" style="height: 75%;">
       <legend  class="w-auto">Address Details</legend>
 	      <div class="row">
           <div class="col">
-          <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
-            <option selected>State</option>
-            <option value="1">One</option>
-            <option value="2">Two</option>
-            <option value="3">Three</option>
-          </select>
+           <select
+                        class="form-control"
+                        v-model="address.state"
+                        @change="getAddressbyDistrict"
+                        :class="{ 'is-invalid': address.errors.has('state') }"
+                      >
+                        <option value>Select State</option>
+                        <option
+                          v-for="state in states"
+                          :key="state.id"
+                          :value="state.id"
+                        >{{ state.address }}</option>
+                      </select>
+                      <span
+                        class="help is-danger"
+                        v-if="address.errors.has('state')"
+                        v-text="address.errors.get('state')"
+                      ></span>
       &nbsp;
-      <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
-        <option selected>Municipality</option>
-        <option value="1">One</option>
-        <option value="2">Two</option>
-        <option value="3">Three</option>
-      </select>
+      <select
+                        class="form-control"
+                        id="municipality"
+                        name="municipality"
+                        v-model="address.municipality"
+                        @change="changeAddressWardno"
+                        :class="{ 'is-invalid': address.errors.has('municipality') }"
+                      >
+                        <option value>Select Municipality</option>
+                        <option
+                          v-for="municipality in municipalitys"
+                          :key="municipality.id"
+                          :value="municipality.id"
+                        >{{ municipality.address }}</option>
+                      </select>
+                      <span
+                        class="help is-danger"
+                        v-if="address.errors.has('municipality')"
+                        v-text="address.errors.get('municipality')"
+                      ></span>
     </div>
 <br>
     <div class="col">
-      <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
-        <option selected>District</option>
-        <option value="1">One</option>
-        <option value="2">Two</option>
-        <option value="3">Three</option>
-      </select>
+      <select
+                        class="form-control"
+                        id="district"
+                        name="district"
+                        v-model="address.district"
+                        @change="changeAddressMunicipality"
+                        :class="{ 'is-invalid': address.errors.has('district') }"
+                      >
+                        <option value>Select District</option>
+                        <option
+                          v-for="district in districts"
+                          :key="district.id"
+                          :value="district.id"
+                        >{{ district.address }}</option>
+                      </select>
+                      <span
+                        class="help is-danger"
+                        v-if="address.errors.has('district')"
+                        v-text="address.errors.get('district')"
+                      ></span>
       &nbsp;
-      <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
-        <option selected>Ward Number</option>
-        <option value="1">One</option>
-        <option value="2">Two</option>
-        <option value="3">Three</option>
-      </select>
+      <select
+                        class="form-control"
+                        id="tole"
+                        name="ward_no"
+                        @change="changeAddressArea"
+                        v-model="address.ward_no"
+                        :class="{ 'is-invalid': address.errors.has('ward_no') }"
+                      >
+                        <option disabled value>Select Ward No</option>
+                        <option
+                          v-for="ward in wards"
+                          :key="ward.id"
+                          :value="ward.id"
+                          :disabled="ward.name"
+                        >{{ ward.address }}</option>
+                      </select>
+                      <span
+                        class="help is-danger"
+                        v-if="address.errors.has('ward_no')"
+                        v-text="address.errors.get('ward_no')"
+                      ></span>
     </div>
 	</div>
     <br>  
   <div class="row">
 	  <div class="col">
-      <textarea class="address" rows='3' placeholder="Address Description"></textarea>
+      <input
+                          type="text"
+                          class="address"
+                          placeholder="Description/Street"
+                          name="description"
+                          style="width: 100%;height: 120%;"
+                          v-model="address.description"
+                          :class="{ 'is-invalid': address.errors.has('description') }"
+                        />
+                        <span
+                          class="help is-danger"
+                          v-if="address.errors.has('description')"
+                          v-text="address.errors.get('description')"
+                        ></span>
 	  </div>
     <div class="col">
-      <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
-        <option selected>Area</option>
-        <option value="1">One</option>
-        <option value="2">Two</option>
-        <option value="3">Three</option>
-      </select>
+      <select
+                          class="form-control"
+                          id="tole"
+                          name="area"
+                          v-model="address.area"
+                          :class="{ 'is-invalid': address.errors.has('area') }"
+                        >
+                          <option value>Select Area</option>
+                          <option
+                            v-for="area in areas"
+                            :key="area.id"
+                            :value="area.id"
+                          >{{ area.address }}</option>
+                        </select>
+                        <span
+                          class="help is-danger"
+                          v-if="address.errors.has('area')"
+                          v-text="address.errors.get('area')"
+                        ></span>
    </div>
   </div>
 </fieldset>
 </form>
-<div class="down" style="margin-left:60%; margin-top:-3%;">
-<button type="submit" class="btn btn-primary">Submit</button>
+<div class="down" style="margin-left:60%;">
+<button class="btn btn-primary" :disabled="submituser">
+                    <span :class="{ 'spinner-border spinner-border-sm': submituser }"></span>Submit
+                  </button>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<button data-v-174508b8="" type="submit" class="btn btn-danger" style=" background-color: #ec1313;">Cancel</button>
+<button type="button" class="btn btn-danger" style=" background-color: #ec1313;" data-dismiss="modal">Close</button>
                 </div>
                 </div>
               </div>

@@ -1,8 +1,8 @@
 <template>
     <div class="content-body" style="min-height:788px;">
         <div class="row justify-content-center">
-            <div class="container">
-                <button type="button" data-toggle="modal" class="btn btn-primary vendor-address-btn">Add Address</button>
+            <div class="container" style="margin-top:4%;">
+                <button type="button" data-toggle="modal" class="btn btn-primary vendor-address-btn" style="margin-left:1%;">Add Address</button>
                 <div id="pickupaddress" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true" class="modal fade bd-example-modal-lg">
                    <div role="document" class="modal-dialog modal-lg">
                        <div class="modal-content">

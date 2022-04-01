@@ -64,33 +64,33 @@
                     <table style="width: 100%;">
                       <tr >
                           <td>Handling</td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                          <td>Non-Fragile</td>
+                          <td>{{ detail.handling }}</td>
                      </tr>
                      <tr>
                           <td>Payment<br>Type</td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                          <td>Cash On Delivery</td>
+                          <td>{{ detail.payment_type }}</td>
                       </tr>
                       <tr>
                           <td>COD<br>Amount</td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                          <th>Rs 1498.00</th>
+                          <th>{{ detail.cod }}</th>
                      </tr>
                      <tr>
                           <td>Delivery Fee</td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                          <td>Rs 0.00</td>
+                          <td>{{ detail.hubCharge }}</td>
                      </tr>
                      <tr>
                           <td>Weight</td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                          <td>1 KG</td>
+                          <td>{{ detail.weight }}</td>
                      </tr>
                      <tr>
                           <td>Product<br>Type</td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                          <td>1. Wind Cheater
-                              <br>2. Vest
-                          </td>
+                            <ol>
+                              <li v-for="(type,i) in detail.product_type" :key="i">{{ type }}</li>
+                            </ol>
                      </tr>
                      <tr>
                           <td>Description</td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                          <td>Navy Blue<br>Navy Blue</td>
+                          <td>{{ detail.order_description}}</td>
                      </tr>
                   </table>
                     </div>
@@ -100,13 +100,32 @@
                 <fieldset class="scheduler-border" style="height: 92%;width: 110%;">
                   <legend class="w-auto">Comment</legend> 
                      <div class="ex3">
-                       <input type="text" class="form-control" placeholder="Hello Every One....">
-                 </div>
-                 <div>
-                       <input type="text" class="form-control" placeholder="Comment" style="width:85%;">
-                       <button type="submit" class="btn btn-success" style="margin-left:87%;margin-top:-22%">Add</button>
-                </div>                     
+                       <ol class="card card-body scroll order-comment">
+                          <li
+                           v-for="comment in comments" 
+                           :key="comment.id"
+                           >{{ comment.user_name }}->{{ comment.comment }}
+                          </li>
+                        </ol>
+                     </div>
+                       <input type="text" 
+                       class="form-control" 
+                       placeholder="Add a Comment" 
+                       name="comment"
+                       style="width:85%;"
+                       list="comment_id"
+                        id="comment-input"
+                        :class="{ 'is-invalid': comment.errors.has('comment') }"
+
+                       />
+                       <button 
+                       id="submit-btn" 
+                       class="btn btn-success" 
+                       style="margin-left:87%;margin-top:-22%;"
+                       @click="storeOrderComment(details.id)"
+                       >Add</button>                    
                 </fieldset>
+                </div>
             </div>
             <div class="col-md-4">  
                 <fieldset class="scheduler-border" style="height: 42%;width: 100%;">
@@ -170,7 +189,6 @@
     </div>
  </div>
 </div>
-    </div>
 </template>
 <style scoped>
 .content-body .container-fluid {

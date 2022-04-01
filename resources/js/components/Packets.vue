@@ -10,181 +10,6 @@
         </h4>
       </div>
       <div class="card-body">
-        <!-- <form
-          @submit.prevent="onsubmitpicup"
-          @keydown="picup.errors.clear($event.target.name)"
-          @click="picup.errors.clear($event.target.name)"
-        >
-          <div class="row">
-            <div class="form-group col-md-6">
-              <label for="phone-number">Phone Number</label>
-              <v-select
-                :options="usersphone"
-                label="phone1"
-                placeholder="Select Phone No"
-                v-model="selected"
-                @input="setuseraddressid($event)"
-              >
-                <template slot="selected-option" slot-scope="option">
-                  <div class="flex">
-                    <div class="col">
-                      <span>{{ option.phone1 }} -> {{ option.first_name }} {{ option.last_name }}</span>
-                    </div>
-                  </div>
-                </template>
-                <template slot="option" slot-scope="option">
-                  <span>{{ option.phone1 }} -> {{ option.first_name }} {{ option.last_name }}</span>
-                </template>
-              </v-select>
-
-              <span
-                class="help is-danger"
-                v-if="picup.errors.has('useraddress_id')"
-                v-text="picup.errors.get('useraddress_id')"
-              ></span>
-              <button
-                type="button"
-                class="btn btn-primary pickup-btn"
-                data-toggle="modal"
-                @click="newPickUp"
-              >New Customer</button>
-            </div>
-
-            <hr />
-            <h6></h6>
-            <div class="form-group col-md-6">
-              <label for="mobile2">Product Description</label>
-
-              <textarea
-                type="text"
-                class="form-control"
-                placeholder="Description"
-                rows="4"
-                name="description"
-                v-model="picup.description"
-                :class="{ 'is-invalid': picup.errors.has('description') }"
-              ></textarea>
-              <span
-                class="help is-danger"
-                v-if="picup.errors.has('description')"
-                v-text="picup.errors.get('description')"
-              ></span>
-            </div>
-
-            <div class="form-group col-md-6">
-              <label for="municipality">Handling</label>
-              <select
-                class="form-control"
-                name="handling"
-                v-model="picup.handling"
-                :class="{ 'is-invalid': picup.errors.has('handling') }"
-              >
-                <option value disabled>Select</option>
-                <option value="NON_FRAGILE" selected>Non-Fragile</option>
-
-                <option value="FRAGILE">Fragile</option>
-              </select>
-              <span
-                class="help is-danger"
-                v-if="picup.errors.has('handling')"
-                v-text="picup.errors.get('handling')"
-              ></span>
-            </div>
-
-            <div class="form-group col-md-6">
-              <label for="mobile2">COD Value</label>
-
-              <input
-                type="number"
-                class="form-control"
-                placeholder="COD Value"
-                name="cod"
-                min="0"
-                v-model="picup.cod"
-                :class="{ 'is-invalid': picup.errors.has('cod') }"
-              />
-              <span
-                class="help is-danger"
-                v-if="picup.errors.has('cod')"
-                v-text="picup.errors.get('cod')"
-              ></span>
-            </div>
-            <div class="form-group col-md-6">
-              <label for="mobile2">Unit/Weight (In Kg)</label>
-
-              <input
-                type="number"
-                class="form-control"
-                placeholder="Unit/Weight"
-                name="weight"
-                min="1"
-                v-model="picup.weight"
-                :class="{ 'is-invalid': picup.errors.has('weight') }"
-              />
-              <span
-                class="help is-danger"
-                v-if="picup.errors.has('weight')"
-                v-text="picup.errors.get('weight')"
-              ></span>
-            </div>
-
-            <div class="form-group col-md-6" style="position: relative">
-              <label for="mobile2">Customer's Expected Delivery date</label>
-
-              <date-picker
-                name="expected_date"
-                v-model="picup.expected_date"
-                :config="options"
-                :class="{ 'is-invalid': picup.errors.has('expected_date') }"
-              ></date-picker>
-              <span
-                class="help is-danger"
-                v-if="picup.errors.has('expected_date')"
-                v-text="picup.errors.get('expected_date')"
-              ></span>
-            </div>
-            <div class="form-group col-md-6">
-              <label for="municipality">Product Type</label>
-              <select
-                class="form-control"
-                name="product_type"
-                multiple="multiple"
-                v-model="picup.product_type"
-              >
-                <option value disabled>Select</option>
-                <option
-                  v-for="product in products"
-                  :value="product.name"
-                  :key="product.id"
-                >{{ product.name }}</option>
-              </select>
-              <span
-                class="help is-danger"
-                v-if="picup.errors.has('product_type')"
-                v-text="picup.errors.get('product_type')"
-              ></span>
-            </div>
-            <div class="form-group col-md-6">
-              <label for="mobile2">Vendor Order Id</label>
-
-              <input
-                type="text"
-                class="form-control"
-                placeholder="Vendor Order Id"
-                v-model="picup.vendor_order_id"
-                :class="{ 'is-invalid': picup.errors.has('vendor_order_id') }"
-              />
-              <span
-                class="help is-danger"
-                v-if="picup.errors.has('vendor_order_id')"
-                v-text="picup.errors.get('vendor_order_id')"
-              ></span>
-            </div>
-          </div>
-          <button class="btn btn-primary btn-load" :disabled="submit_loading">
-            <span :class="{ 'spinner-border spinner-border-sm': submit_loading }"></span> Submit
-          </button>
-        </form>-->
         <form action="/action_page.php">
           <div class="row"> 
             <div class="col-md-3">             
@@ -237,8 +62,8 @@
                 label="phone1"
                 placeholder="Select Phone No"
                 v-model="selected"
-                multiple
-                @input="setuseraddressid($event)">
+                @input="setuseraddressid($event)"
+                >
                 <template slot="selected-option" slot-scope="option">
                   <div class="flex">
                     <div class="col">
@@ -249,8 +74,13 @@
                 <template slot="option" slot-scope="option">
                   <span>{{ option.phone1 }} -> {{ option.first_name }} {{ option.last_name }}</span>
                 </template>
+                </v-select>
               
-              <v-select style="width:55%;" multiple :options="usersphone" :reduce="country => country.phone1" label="phone1" /></v-select>
+                <span
+                class="help is-danger"
+                v-if="picup.errors.has('useraddress_id')"
+                v-text="picup.errors.get('useraddress_id')"
+              ></span>
                  <button style="margin-left:58%; margin-top:-17%;"
                         type="button"
                         class="btn btn-primary pickup-btn"
@@ -259,7 +89,18 @@
                          >New Customer</button>
                         <br>
                         <br>
-                        <input type="text" class="form-control" placeholder="Vendor Order ID" style="width: 95%;margin-top:-5%;">
+                        <input type="text" 
+                        class="form-control" 
+                        placeholder="Vendor Order ID" 
+                        style="width: 95%;margin-top:-5%;"
+                         v-model="picup.vendor_order_id"
+                        :class="{ 'is-invalid': picup.errors.has('vendor_order_id') }"
+                        />
+                        <span
+                          class="help is-danger"
+                          v-if="picup.errors.has('vendor_order_id')"
+                          v-text="picup.errors.get('vendor_order_id')"
+                        ></span>
                       </div>
                       <div class="col">
                         <date-picker
@@ -280,43 +121,125 @@
                         <tr>
                             <th colspan="3" rowspan="2">
                               <div class="form-group purple-border">
-                                <textarea class="form-control" id="exampleFormControlTextarea4" rows="3" placeholder="Address Description"></textarea>
+                                <textarea 
+                                type="text"
+                                class="form-control" 
+                                id="exampleFormControlTextarea4" 
+                                rows="3" 
+                                name="description"
+                                placeholder="Address Description"
+                                v-model="picup.description"
+                                :class="{ 'is-invalid': picup.errors.has('description') }"
+                                ></textarea>
+                                <span
+                                  class="help is-danger"
+                                  v-if="picup.errors.has('description')"
+                                  v-text="picup.errors.get('description')"
+                                ></span>
                               </div>
                             </th>
-                            <th colspan="2">
-                              <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
-                                <option selected>COD Value</option>
-                                <option value="1">One</option>
-                                <option value="2">Two</option>
-                                <option value="3">Three</option>
-                              </select>
+                            <th colspan="2" style="padding-top: 3.5%;">
+                              <input
+                                  type="number"
+                                  class="form-control"
+                                  placeholder="COD Value"
+                                  name="cod"
+                                  min="0"
+                                  v-model="picup.cod"
+                                  :class="{ 'is-invalid': picup.errors.has('cod') }"
+                                />
+                                <span
+                                  class="help is-danger"
+                                  v-if="picup.errors.has('cod')"
+                                  v-text="picup.errors.get('cod')"
+                                ></span>
                             </th>
                         </tr>
+                        
                         <tr>
                             
-                            <th colspan="2">
-                              <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
-                                <option selected>COD Value</option>
-                                <option value="1">One</option>
-                                <option value="2">Two</option>
-                                <option value="3">Three</option>
-                              </select>
+                            <th colspan="2" style="padding-top: 4.5%;">
+                              <select
+                                  class="form-control"
+                                  placeholder="Handling"
+                                  name="handling"
+                                  v-model="picup.handling"
+                                  :class="{ 'is-invalid': picup.errors.has('handling') }"
+                                >
+                                  <option value disabled>Select</option>
+                                  <option value="NON_FRAGILE" selected>Non-Fragile</option>
+
+                                  <option value="FRAGILE">Fragile</option>
+                                </select>
+                                <span
+                                  class="help is-danger"
+                                  v-if="picup.errors.has('handling')"
+                                  v-text="picup.errors.get('handling')"
+                                ></span>
                             </th>
                         </tr>
+                        <br>
+                        
+                         <!-- <tr>
+                            <th colspan="2">
+                               <input
+                                  type="number"
+                                  class="form-control"
+                                  placeholder="Unit/Weight"
+                                  name="weight"
+                                  min="1"
+                                  v-model="picup.weight"
+                                  :class="{ 'is-invalid': picup.errors.has('weight') }"
+                                />
+                                <span
+                                  class="help is-danger"
+                                  v-if="picup.errors.has('weight')"
+                                  v-text="picup.errors.get('weight')"
+                                ></span>
+                            </th>
+                        </tr> -->
                         <tr>
                             
-                            <th colspan="3" rowspan="2">
+                            <th colspan="3" rowspan="3">
                               <div class="form-group green-border-focus">
-                                <textarea class="form-control" id="exampleFormControlTextarea5" rows="3"  placeholder="Product Type"></textarea>
+                                  <select
+                                    class="form-control"
+                                    name="product_type"
+                                    multiple="multiple"
+                                    v-model="picup.product_type"
+                                  >
+                                    <option value disabled>Product Type</option>
+                                    <option
+                                      v-for="product in products"
+                                      :value="product.name"
+                                      :key="product.id"
+                                    >{{ product.name }}</option>
+                                  </select>
+                                  <span
+                                    class="help is-danger"
+                                    v-if="picup.errors.has('product_type')"
+                                    v-text="picup.errors.get('product_type')"
+                                  ></span>
                               </div>
                             </th>
-                            <th colspan="2" style="border-left: 1px solid #fff;">
-                              <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
-                                <option selected>COD Value</option>
-                                <option value="1">One</option>
-                                <option value="2">Two</option>
-                                <option value="3">Three</option>
-                              </select>
+                           
+                        </tr>
+                        <tr>
+                            <th colspan="2" style="padding-top: 1.5%;">
+                               <input
+                                  type="number"
+                                  class="form-control"
+                                  placeholder="Unit/Weight"
+                                  name="weight"
+                                  min="1"
+                                  v-model="picup.weight"
+                                  :class="{ 'is-invalid': picup.errors.has('weight') }"
+                                />
+                                <span
+                                  class="help is-danger"
+                                  v-if="picup.errors.has('weight')"
+                                  v-text="picup.errors.get('weight')"
+                                ></span>
                             </th>
                         </tr>
                             <!-- <td style="border-bottom: 1px solid #fff;border-left: 1px solid black;">
@@ -326,11 +249,15 @@
                             <td style="border-bottom: 1px solid #fff;border-left: 1px solid #fff;">
                               <button>cancel</button>
                             </td> -->
+                            <tr>
                             <div class="down" style="margin-left:26%; margin-top:4%">
-                              <button type="submit" class="btn btn-primary pickup-btn">Submit</button>
+                              <button class="btn btn-primary btn-load" :disabled="submit_loading">
+                                <span :class="{ 'spinner-border spinner-border-sm': submit_loading }"></span> Submit
+                              </button>
                                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                               <button type="submit" class="btn btn-danger" style=" background-color: #ec1313;">Cancel</button>
                           </div>
+                            </tr>
                     </table>
                   </form>
                 </fieldset>
@@ -370,73 +297,204 @@
                     <legend  class="w-auto">Personal Information</legend>
                   <div class="row">
                     <div class="col">
-                      <input type="text" class="form-control" placeholder="First name">
+                      <input
+                        type="text"
+                        class="form-control"
+                        placeholder="First Name"
+                        name="first_name"
+                        v-model="address.first_name"
+                        :class="{ 'is-invalid': address.errors.has('first_name') }"
+                      />
+                      <span
+                        class="help is-danger"
+                        v-if="address.errors.has('first_name')"
+                        v-text="address.errors.get('first_name')"
+                      ></span>
                       <br>
-                      <input type="text" class="form-control" placeholder="Contact Number 1">
+                      <input
+                          type="number"
+                          class="form-control"
+                          placeholder="Contact Number 1"
+                          name="phone1"
+                          v-model="address.phone1"
+                          :class="{ 'is-invalid': address.errors.has('phone1') }"
+                        />
+                        <span
+                          class="help is-danger"
+                          v-if="address.errors.has('phone1')"
+                          v-text="address.errors.get('phone1')"
+                        ></span>
                     </div>
                     <div class="col">
-                      <input type="text" class="form-control" placeholder="Last Name">
+                      <input
+                        type="text"
+                        class="form-control"
+                        placeholder="last Name"
+                        name="last_name"
+                        v-model="address.last_name"
+                        :class="{ 'is-invalid': address.errors.has('last_name') }"
+                      />
+                      <span
+                        class="help is-danger"
+                        v-if="address.errors.has('last_name')"
+                        v-text="address.errors.get('last_name')"
+                      ></span>
                       <br>
-                       <input type="text" class="form-control" placeholder="Contact Number 2">
+                       <input
+                          type="number"
+                          class="form-control"
+                          placeholder="Contact Number 2"
+                          name="phone2"
+                          v-model="address.phone2"
+                          :class="{ 'is-invalid': address.errors.has('phone2') }"
+                        />
+                        <span
+                          class="help is-danger"
+                          v-if="address.errors.has('phone2')"
+                          v-text="address.errors.get('phone2')"
+                        ></span>
                   </div>
                </div>
                 </fieldset>
               
-    <fieldset class="scheduler-border" style="height: 67%;">
+    <fieldset class="scheduler-border" style="height: 75%;">
       <legend  class="w-auto">Address Details</legend>
 	      <div class="row">
           <div class="col">
-          <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
-            <option selected>State</option>
-            <option value="1">One</option>
-            <option value="2">Two</option>
-            <option value="3">Three</option>
-          </select>
+           <select
+                        class="form-control"
+                        v-model="address.state"
+                        @change="getAddressbyDistrict"
+                        :class="{ 'is-invalid': address.errors.has('state') }"
+                      >
+                        <option value>Select State</option>
+                        <option
+                          v-for="state in states"
+                          :key="state.id"
+                          :value="state.id"
+                        >{{ state.address }}</option>
+                      </select>
+                      <span
+                        class="help is-danger"
+                        v-if="address.errors.has('state')"
+                        v-text="address.errors.get('state')"
+                      ></span>
       &nbsp;
-      <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
-        <option selected>Municipality</option>
-        <option value="1">One</option>
-        <option value="2">Two</option>
-        <option value="3">Three</option>
-      </select>
+      <select
+                        class="form-control"
+                        id="municipality"
+                        name="municipality"
+                        v-model="address.municipality"
+                        @change="changeAddressWardno"
+                        :class="{ 'is-invalid': address.errors.has('municipality') }"
+                      >
+                        <option value>Select Municipality</option>
+                        <option
+                          v-for="municipality in municipalitys"
+                          :key="municipality.id"
+                          :value="municipality.id"
+                        >{{ municipality.address }}</option>
+                      </select>
+                      <span
+                        class="help is-danger"
+                        v-if="address.errors.has('municipality')"
+                        v-text="address.errors.get('municipality')"
+                      ></span>
     </div>
 <br>
     <div class="col">
-      <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
-        <option selected>District</option>
-        <option value="1">One</option>
-        <option value="2">Two</option>
-        <option value="3">Three</option>
-      </select>
+      <select
+                        class="form-control"
+                        id="district"
+                        name="district"
+                        v-model="address.district"
+                        @change="changeAddressMunicipality"
+                        :class="{ 'is-invalid': address.errors.has('district') }"
+                      >
+                        <option value>Select District</option>
+                        <option
+                          v-for="district in districts"
+                          :key="district.id"
+                          :value="district.id"
+                        >{{ district.address }}</option>
+                      </select>
+                      <span
+                        class="help is-danger"
+                        v-if="address.errors.has('district')"
+                        v-text="address.errors.get('district')"
+                      ></span>
       &nbsp;
-      <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
-        <option selected>Ward Number</option>
-        <option value="1">One</option>
-        <option value="2">Two</option>
-        <option value="3">Three</option>
-      </select>
+      <select
+                        class="form-control"
+                        id="tole"
+                        name="ward_no"
+                        @change="changeAddressArea"
+                        v-model="address.ward_no"
+                        :class="{ 'is-invalid': address.errors.has('ward_no') }"
+                      >
+                        <option disabled value>Select Ward No</option>
+                        <option
+                          v-for="ward in wards"
+                          :key="ward.id"
+                          :value="ward.id"
+                          :disabled="ward.name"
+                        >{{ ward.address }}</option>
+                      </select>
+                      <span
+                        class="help is-danger"
+                        v-if="address.errors.has('ward_no')"
+                        v-text="address.errors.get('ward_no')"
+                      ></span>
     </div>
 	</div>
     <br>  
   <div class="row">
 	  <div class="col">
-      <textarea data-v-0f8ffe60="" rows="3" placeholder="Address Description" class="address" style="width: 100%;height: 120%;"></textarea>
+      <input
+                          type="text"
+                          class="address"
+                          placeholder="Description/Street"
+                          name="description"
+                          style="width: 100%;height: 120%;"
+                          v-model="address.description"
+                          :class="{ 'is-invalid': address.errors.has('description') }"
+                        />
+                        <span
+                          class="help is-danger"
+                          v-if="address.errors.has('description')"
+                          v-text="address.errors.get('description')"
+                        ></span>
 	  </div>
     <div class="col">
-      <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
-        <option selected>Area</option>
-        <option value="1">One</option>
-        <option value="2">Two</option>
-        <option value="3">Three</option>
-      </select>
+      <select
+                          class="form-control"
+                          id="tole"
+                          name="area"
+                          v-model="address.area"
+                          :class="{ 'is-invalid': address.errors.has('area') }"
+                        >
+                          <option value>Select Area</option>
+                          <option
+                            v-for="area in areas"
+                            :key="area.id"
+                            :value="area.id"
+                          >{{ area.address }}</option>
+                        </select>
+                        <span
+                          class="help is-danger"
+                          v-if="address.errors.has('area')"
+                          v-text="address.errors.get('area')"
+                        ></span>
    </div>
   </div>
 </fieldset>
 </form>
-<div class="down" style="margin-left:60%; margin-top:-5%;">
-<button type="submit" class="btn btn-primary">Submit</button>
+<div class="down" style="margin-left:60%;">
+<button class="btn btn-primary" :disabled="submituser">
+                    <span :class="{ 'spinner-border spinner-border-sm': submituser }"></span>Submit
+                  </button>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<button data-v-174508b8="" type="submit" class="btn btn-danger" style=" background-color: #ec1313;">Cancel</button>
+<button type="button" class="btn btn-danger" style=" background-color: #ec1313;" data-dismiss="modal">Close</button>
                 </div>
                 </div>
               </div>

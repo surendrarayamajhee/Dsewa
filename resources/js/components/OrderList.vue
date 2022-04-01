@@ -230,6 +230,540 @@
                         </div>
                     </div>
 
+                     <div
+        class="modal fade bd-example-modal-lg"
+        id="order"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="exampleModalScrollableTitle"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-lg" role="document">
+          <div class="modal-content">
+            <form @submit.prevent="StoreOrder">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalScrollableTitle">Order Item</h5>
+              </div>
+              <div class="modal-body">
+                <div class="row">
+                  <div class="col-md-6" :class="{ 'col-md-12': add }">
+                    <div class="form-group">
+                      <label for="tracking_id">Traching Id</label>
+                      <input
+                        type="text"
+                        disabled
+                        class="form-control"
+                        placeholder
+                        name="tracking_id"
+                        v-model="order.tracking_id"
+                        :class="{ 'is-invalid': order.errors.has('tracking_id') }"
+                      />
+                      <has-error :form="order" field="tracking_id"></has-error>
+                    </div>
+                  </div>
+                  <div class="col-md-6" v-if="add==false">
+                    <div class="form-group">
+                      <label for="order_id">Order Id</label>
+                      <input
+                        type="text"
+                        disabled
+                        class="form-control"
+                        placeholder
+                        name="order_id"
+                        v-model="order.order_id"
+                        :class="{ 'is-invalid': order.errors.has('order_id') }"
+                      />
+                      <has-error :form="order" field="order_id"></has-error>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="order_description">Description</label>
+                      <textarea
+                        type="text"
+                        class="form-control"
+                        placeholder="Description"
+                        name="order_description"
+                        v-model="order.order_description"
+                        rows="3"
+                        :class="{ 'is-invalid': order.errors.has('order_description') }"
+                      ></textarea>
+                      <has-error :form="order" field="order_description"></has-error>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div
+                      class="form-group"
+                      :class="{ 'is-invalid': order.errors.has('instruction') }"
+                    >
+                      <label for="instruction">Instruction to logistic officier</label>
+                      <textarea
+                        type="text"
+                        class="form-control"
+                        placeholder="Instruction to logistic officier"
+                        name="instruction"
+                        v-model="order.instruction"
+                        rows="3"
+                        :class="{ 'is-invalid': order.errors.has('order_created_as') }"
+                      ></textarea>
+                      <has-error :form="order" field="instruction"></has-error>
+                    </div>
+                  </div>
+
+                  <div class="col-md-4">
+                    <div
+                      class="form-group"
+                      :class="{ 'is-invalid': order.errors.has('order_created_as') }"
+                    >
+                      <label for="order_created_as">Order Created As</label>
+                      <select
+                        class="form-control"
+                        name="order_created_as"
+                        disabled
+                        v-model="order.order_created_as"
+                        :class="{ 'is-invalid': order.errors.has('order_created_as') }"
+                      >
+                        <option value>Select</option>
+                        <option value="NEW" selected>New</option>
+                        <option value="EXCHANGE">Exchange</option>
+                        <option value="REFUND">Refund</option>
+                      </select>
+                      <has-error :form="order" field="order_created_as"></has-error>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="form-group">
+                      <label for="Handling">Handling</label>
+                      <select
+                        :disabled="!isDisabled"
+                        class="form-control"
+                        name="handling"
+                        v-model="order.handling"
+                        @change="getShipmentPrice"
+                      >
+                        <option value disabled>Select</option>
+                        <option value="FRAGILE">Fragile</option>
+                        <option value="NON_FRAGILE">Non-Fragile</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="form-group">
+                      <label for="municipality">product Type</label>
+                      <select
+                        class="form-control"
+                        name="product_type"
+                        v-model="order.product_type"
+                        multiple
+                        :disabled="!isDisabled"
+                      >
+                        <option value disabled>Select</option>
+                        <option
+                          v-for="product in products"
+                          :value="product.name"
+                          :key="product.id"
+                        >{{ product.name }}</option>
+                      </select>
+                      <has-error :form="order" field="product_type"></has-error>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="sender_id">Sender</label>
+
+                      <div v-if="order.order_created_as == 'RETURN'">
+                        <select disabled class="form-control">
+                          <option disabled>{{ customer_name }}</option>
+                        </select>
+                      </div>
+                      <div v-else>
+                        <select class="form-control" disabled>
+                          <option selected disabled>{{ vendor_name }}</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="receiver_id">Receiver</label>
+
+                      <div v-if="order.order_created_as == 'RETURN'">
+                        <select class="form-control" :disabled="!isDisabled">
+                          <option selected disabled>{{ vendor_name }}</option>
+                        </select>
+                      </div>
+                      <div v-else>
+                        <select :disabled="!isDisabled" class="form-control">
+                          <option selected disabled>{{ customer_name }}</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="shipment_charge">Shipping Charge</label>
+                      <input
+                        :disabled="isshipping"
+                        type="text"
+                        class="form-control"
+                        name="shipment_charge"
+                        v-model="order.shipment_charge"
+                      />
+                      <has-error :form="order" field="shipment_charge"></has-error>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="mobile2">Unit/Weight</label>
+
+                      <input
+                        type="number"
+                        class="form-control"
+                        placeholder="Unit/Weight"
+                        name="weight"
+                        min="1"
+                        :disabled="order.order_created_as == 'RETURN' || isunit"
+                        @blur="getShipmentPrice()"
+                        v-model="order.weight"
+                      />
+                      <has-error :form="order" field="weight"></has-error>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="payment_type">Payment Collection</label>
+
+                      <select
+                        class="form-control"
+                        name="payment_type"
+                        :disabled="ispayment"
+                        v-model="order.payment_type"
+                      >
+                        <option value>Select</option>
+                        <option value="COD" selected>Cash on Delivery</option>
+                        <option value="COC">Cash On Counter</option>
+                      </select>
+                      <has-error :form="order" field="payment_type"></has-error>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="cod">Cash on Delivery Amount</label>
+                      <input
+                        :class="{ 'is-invalid': order.errors.has('cod') }"
+                        type="number"
+                        class="form-control"
+                        placeholder="Cash on Delivery Amount"
+                        name="cod"
+                        :disabled="!isDisabled"
+                        v-model="order.cod"
+                      />
+                      <has-error :form="order" field="cod"></has-error>
+                    </div>
+                  </div>
+
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="expected_date">Expected delivery Date</label>
+                      <date-picker
+                        name="expected_date"
+                        v-model="order.expected_date"
+                        :config="options"
+                        :class="{ 'is-invalid': order.errors.has('expected_date') }"
+                      ></date-picker>
+
+                      <has-error :form="order" field="expected_date"></has-error>
+                    </div>
+                  </div>
+                  <!-- <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="order_date">Order Date</label>
+                      <date-picker
+                        disabled
+                        name="order_date"
+                        v-model="order.order_date"
+                        :config="options"
+                        :class="{ 'is-invalid': order.errors.has('order_date') }"
+                      ></date-picker>
+                      <has-error :form="order" field="order_date"></has-error>
+                    </div>
+                  </div>-->
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="phone-number">PickUp Address</label>
+                      <select
+                        disabled
+                        class="form-control"
+                        v-model="order.order_pickup_point"
+                        name="order_pickup_point"
+                        :class="{ 'is-invalid': order.errors.has('order_pickup_point') }"
+                      >
+                        <option value disabled>PickUp Address</option>
+                        <option
+                          v-for="address in pickupaddresses"
+                          :key="address.id"
+                          :value="address.id"
+                        >{{ address.district }},{{ address.area }} ,{{ address.description }}</option>
+                      </select>
+                      <span
+                        class="help is-danger"
+                        v-if="order.errors.has('order_pickup_point')"
+                        v-text="order.errors.get('order_pickup_point')"
+                      ></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button class="btn btn-primary" :disabled="submit_loading">
+                  <span :class="{ 'spinner-border spinner-border-sm': submit_loading }"></span>Submit
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+       <div class="model3">
+        <form
+          @submit.prevent="useraddressupdate"
+          @keydown="address.errors.clear($event.target.name)"
+        >
+          <div
+            class="modal fade bd-example-modal-lg"
+            id="useraddress"
+            tabindex="-1"
+            role="dialog"
+            aria-labelledby="exampleModalScrollableTitle"
+            aria-hidden="true"
+          >
+            <div class="modal-dialog modal-lg" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalScrollableTitle">Add User</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label for="name">First Name</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          placeholder="First Name"
+                          name="first_name"
+                          v-model="address.first_name"
+                          :class="{ 'is-invalid': address.errors.has('first_name') }"
+                        />
+                        <span
+                          class="help is-danger"
+                          v-if="address.errors.has('first_name')"
+                          v-text="address.errors.get('first_name')"
+                        ></span>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label for="name">last Name</label>
+
+                        <input
+                          type="text"
+                          class="form-control"
+                          placeholder="last Name"
+                          name="last_name"
+                          v-model="address.last_name"
+                          :class="{ 'is-invalid': address.errors.has('last_name') }"
+                        />
+                        <span
+                          class="help is-danger"
+                          v-if="address.errors.has('last_name')"
+                          v-text="address.errors.get('last_name')"
+                        ></span>
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="form-group">
+                        <label for="district">District</label>
+                        <select
+                          class="form-control"
+                          id="district"
+                          name="district"
+                          v-model="address.district"
+                          @change="changeAddressMunicipality_a"
+                          :class="{ 'is-invalid': address.errors.has('district') }"
+                        >
+                          <option value>select</option>
+                          <option
+                            v-for="district in districts"
+                            :key="district.id"
+                            :value="district.id"
+                          >{{ district.address }}</option>
+                        </select>
+                        <span
+                          class="help is-danger"
+                          v-if="address.errors.has('district')"
+                          v-text="address.errors.get('district')"
+                        ></span>
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="form-group">
+                        <label for="municipality">Municipality</label>
+                        <select
+                          class="form-control"
+                          id="municipality"
+                          name="municipality"
+                          v-model="address.municipality"
+                          @change="changeAddressWardno_a"
+                          :class="{ 'is-invalid': address.errors.has('municipality') }"
+                        >
+                          <option value>select</option>
+                          <option
+                            v-for="municipality in municipalitys"
+                            :key="municipality.id"
+                            :value="municipality.id"
+                          >{{ municipality.address }}</option>
+                        </select>
+                        <span
+                          class="help is-danger"
+                          v-if="address.errors.has('municipality')"
+                          v-text="address.errors.get('municipality')"
+                        ></span>
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="form-group">
+                        <label for="municipality">Ward No</label>
+                        <select
+                          class="form-control"
+                          id="tole"
+                          name="ward_no"
+                          @change="changeAddressArea_a"
+                          v-model="address.ward_no"
+                          :class="{ 'is-invalid': address.errors.has('ward_no') }"
+                        >
+                          <option value>select</option>
+                          <option
+                            v-for="ward in wards"
+                            :key="ward.id"
+                            :value="ward.id"
+                          >{{ ward.address }}</option>
+                        </select>
+                        <span
+                          class="help is-danger"
+                          v-if="address.errors.has('ward_no')"
+                          v-text="address.errors.get('ward_no')"
+                        ></span>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label for="area">Area</label>
+                        <div>
+                          <select
+                            class="form-control"
+                            id="tole"
+                            name="area"
+                            v-model="address.area"
+                            :class="{ 'is-invalid': address.errors.has('area') }"
+                          >
+                            <option value>select</option>
+                            <option
+                              v-for="area in areas"
+                              :key="area.id"
+                              :value="area.id"
+                            >{{ area.address }}</option>
+                          </select>
+                          <span
+                            class="help is-danger"
+                            v-if="address.errors.has('area')"
+                            v-text="address.errors.get('area')"
+                          ></span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label for="description">Description</label>
+                        <div>
+                          <input
+                            type="text"
+                            class="form-control"
+                            placeholder="Description/Street"
+                            name="description"
+                            v-model="address.description"
+                            :class="{ 'is-invalid': address.errors.has('description') }"
+                          />
+                          <span
+                            class="help is-danger"
+                            v-if="address.errors.has('description')"
+                            v-text="address.errors.get('description')"
+                          ></span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label for="mobile">Mobile Number</label>
+                        <div>
+                          <input
+                            type="number"
+                            class="form-control"
+                            placeholder="Mobile Number"
+                            name="phone1"
+                            v-model="address.phone1"
+                            :class="{ 'is-invalid': address.errors.has('phone1') }"
+                          />
+                          <span
+                            class="help is-danger"
+                            v-if="address.errors.has('phone1')"
+                            v-text="address.errors.get('phone1')"
+                          ></span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label for="mobile2">Mobile Number2</label>
+                        <div>
+                          <input
+                            type="number"
+                            class="form-control"
+                            placeholder="Mobile Number 2"
+                            name="phone2"
+                            v-model="address.phone2"
+                            :class="{ 'is-invalid': address.errors.has('phone2') }"
+                          />
+                          <span
+                            class="help is-danger"
+                            v-if="address.errors.has('phone2')"
+                            v-text="address.errors.get('phone2')"
+                          ></span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+                    <button class="btn btn-primary" :disabled="submit_loading">
+                      <span :class="{ 'spinner-border spinner-border-sm': submit_loading }"></span> Submit
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+
+      
 
 
                  </div>

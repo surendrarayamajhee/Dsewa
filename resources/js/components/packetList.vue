@@ -31,26 +31,48 @@
                                   <li class="nav-item">
                                       <div class="form-group">
                                           <select type="number" placeholder="pagination" class="form-control" style="float: right;">
-                                              <option  value selected="selected">select</option>
-                                              <option value="10">10</option>
-                                              <option value="25">25</option>
-                                              <option value="50">50</option>
+                                              <option  value selected="selected">50</option>
+                                              <option value="100">100</option>
+                                              <option value="150">150</option>
+                                              <option value="200">200</option>
                                           </select>
                                       </div>
                                   </li>
-                                   <li>
-                                      <button class="btn btn-primary pickup-btn">Request</button>
+                                   <li class="nav-item">
+                                     <a
+                                      @click="onSubmitCheckbox"
+                                      class="btn btn-outline-success btn-sm"
+                                      data-toggle="tooltip"
+                                      title="Click here to Request Pickup Service"
+                                      :disabled="submit_loading"
+                                      style="height: 83%;font-size: 16px;font-weight: 450; color: aliceblue; background-color: green;"                                             
+                                      >
+                                         Request
+                                        <span :class="{ 'spinner-border spinner-border-sm': submit_loading }"></span>
+                                      </a>
+                                      <span class="tooltiptext"></span>
+                                      <!-- <button class="btn btn-primary pickup-btn">Request</button> -->
                                   </li>
                                   <li>
-                                      <button class="btn btn-danger">Delete All</button>
+                                      <button class="btn btn-danger" @click="bulkdelete">Delete All</button>
                                   </li>
                                   <li>
                                       <div class="form-group col-md-12">
-                                          <select id="phone-number" name="order_pickup_point"  class="form-control" style="margin-left:61%;">
-                                              <option value disabled="disabled">Select PickUp Location</option>
-                                              <option value="16">Kathmandu Swapanita Sapkota</option>
-                                              <option value="17">Kathmandu Suren R.M</option>
-                                          </select>
+                                          <select 
+                                              id="phone-number" 
+                                              class="form-control" 
+                                              placeholder="Select PickUp"
+                                              style="margin-left:81%;"
+                                              name="order_pickup_point" 
+                                               :class="{ 'is-invalid': check.errors.has('order_pickup_point') }"
+                                                >
+                                             <option>Select PickUp Location</option>
+                                              <option
+                                                v-for="address in pickupaddresses"
+                                                :key="address.id"
+                                                :value="address.id"
+                                              >{{ address.district}} {{ address.area}} {{ address.description }}</option>
+                                            </select>
                                       </div>
                                   </li>
                                    <span style="float:right; right;padding-top: 1%;margin-left:19%;">*Mark checkbox to select packets to request pickup service</span>
@@ -101,7 +123,8 @@
                </div>
              </div>
      
-      <div class="model2">
+       <!-- {{--  second model start  --}}-->
+    <div class="model2">
       <form
         @submit.prevent="onSubmitUserAddress"
         @keydown="address.errors.clear($event.target.name)"
@@ -130,73 +153,204 @@
                     <legend  class="w-auto">Personal Information</legend>
                   <div class="row">
                     <div class="col">
-                      <input type="text" class="form-control" placeholder="First name">
+                      <input
+                        type="text"
+                        class="form-control"
+                        placeholder="First Name"
+                        name="first_name"
+                        v-model="address.first_name"
+                        :class="{ 'is-invalid': address.errors.has('first_name') }"
+                      />
+                      <span
+                        class="help is-danger"
+                        v-if="address.errors.has('first_name')"
+                        v-text="address.errors.get('first_name')"
+                      ></span>
                       <br>
-                      <input type="text" class="form-control" placeholder="Contact Number 1">
+                      <input
+                          type="number"
+                          class="form-control"
+                          placeholder="Contact Number 1"
+                          name="phone1"
+                          v-model="address.phone1"
+                          :class="{ 'is-invalid': address.errors.has('phone1') }"
+                        />
+                        <span
+                          class="help is-danger"
+                          v-if="address.errors.has('phone1')"
+                          v-text="address.errors.get('phone1')"
+                        ></span>
                     </div>
                     <div class="col">
-                      <input type="text" class="form-control" placeholder="Last Name">
+                      <input
+                        type="text"
+                        class="form-control"
+                        placeholder="last Name"
+                        name="last_name"
+                        v-model="address.last_name"
+                        :class="{ 'is-invalid': address.errors.has('last_name') }"
+                      />
+                      <span
+                        class="help is-danger"
+                        v-if="address.errors.has('last_name')"
+                        v-text="address.errors.get('last_name')"
+                      ></span>
                       <br>
-                       <input type="text" class="form-control" placeholder="Contact Number 2">
+                       <input
+                          type="number"
+                          class="form-control"
+                          placeholder="Contact Number 2"
+                          name="phone2"
+                          v-model="address.phone2"
+                          :class="{ 'is-invalid': address.errors.has('phone2') }"
+                        />
+                        <span
+                          class="help is-danger"
+                          v-if="address.errors.has('phone2')"
+                          v-text="address.errors.get('phone2')"
+                        ></span>
                   </div>
                </div>
                 </fieldset>
               
-    <fieldset class="scheduler-border" style="height: 70%;">
+    <fieldset class="scheduler-border" style="height: 75%;">
       <legend  class="w-auto">Address Details</legend>
 	      <div class="row">
           <div class="col">
-          <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
-            <option selected>State</option>
-            <option value="1">One</option>
-            <option value="2">Two</option>
-            <option value="3">Three</option>
-          </select>
+           <select
+                        class="form-control"
+                        v-model="address.state"
+                        @change="getAddressbyDistrict"
+                        :class="{ 'is-invalid': address.errors.has('state') }"
+                      >
+                        <option value>Select State</option>
+                        <option
+                          v-for="state in states"
+                          :key="state.id"
+                          :value="state.id"
+                        >{{ state.address }}</option>
+                      </select>
+                      <span
+                        class="help is-danger"
+                        v-if="address.errors.has('state')"
+                        v-text="address.errors.get('state')"
+                      ></span>
       &nbsp;
-      <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
-        <option selected>Municipality</option>
-        <option value="1">One</option>
-        <option value="2">Two</option>
-        <option value="3">Three</option>
-      </select>
+      <select
+                        class="form-control"
+                        id="municipality"
+                        name="municipality"
+                        v-model="address.municipality"
+                        @change="changeAddressWardno"
+                        :class="{ 'is-invalid': address.errors.has('municipality') }"
+                      >
+                        <option value>Select Municipality</option>
+                        <option
+                          v-for="municipality in municipalitys"
+                          :key="municipality.id"
+                          :value="municipality.id"
+                        >{{ municipality.address }}</option>
+                      </select>
+                      <span
+                        class="help is-danger"
+                        v-if="address.errors.has('municipality')"
+                        v-text="address.errors.get('municipality')"
+                      ></span>
     </div>
 <br>
     <div class="col">
-      <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
-        <option selected>District</option>
-        <option value="1">One</option>
-        <option value="2">Two</option>
-        <option value="3">Three</option>
-      </select>
+      <select
+                        class="form-control"
+                        id="district"
+                        name="district"
+                        v-model="address.district"
+                        @change="changeAddressMunicipality"
+                        :class="{ 'is-invalid': address.errors.has('district') }"
+                      >
+                        <option value>Select District</option>
+                        <option
+                          v-for="district in districts"
+                          :key="district.id"
+                          :value="district.id"
+                        >{{ district.address }}</option>
+                      </select>
+                      <span
+                        class="help is-danger"
+                        v-if="address.errors.has('district')"
+                        v-text="address.errors.get('district')"
+                      ></span>
       &nbsp;
-      <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
-        <option selected>Ward Number</option>
-        <option value="1">One</option>
-        <option value="2">Two</option>
-        <option value="3">Three</option>
-      </select>
+      <select
+                        class="form-control"
+                        id="tole"
+                        name="ward_no"
+                        @change="changeAddressArea"
+                        v-model="address.ward_no"
+                        :class="{ 'is-invalid': address.errors.has('ward_no') }"
+                      >
+                        <option disabled value>Select Ward No</option>
+                        <option
+                          v-for="ward in wards"
+                          :key="ward.id"
+                          :value="ward.id"
+                          :disabled="ward.name"
+                        >{{ ward.address }}</option>
+                      </select>
+                      <span
+                        class="help is-danger"
+                        v-if="address.errors.has('ward_no')"
+                        v-text="address.errors.get('ward_no')"
+                      ></span>
     </div>
 	</div>
     <br>  
   <div class="row">
 	  <div class="col">
-      <textarea class="address" rows='3' placeholder="Address Description"></textarea>
+      <input
+                          type="text"
+                          class="address"
+                          placeholder="Description/Street"
+                          name="description"
+                          style="width: 100%;height: 120%;"
+                          v-model="address.description"
+                          :class="{ 'is-invalid': address.errors.has('description') }"
+                        />
+                        <span
+                          class="help is-danger"
+                          v-if="address.errors.has('description')"
+                          v-text="address.errors.get('description')"
+                        ></span>
 	  </div>
     <div class="col">
-      <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
-        <option selected>Area</option>
-        <option value="1">One</option>
-        <option value="2">Two</option>
-        <option value="3">Three</option>
-      </select>
+      <select
+                          class="form-control"
+                          id="tole"
+                          name="area"
+                          v-model="address.area"
+                          :class="{ 'is-invalid': address.errors.has('area') }"
+                        >
+                          <option value>Select Area</option>
+                          <option
+                            v-for="area in areas"
+                            :key="area.id"
+                            :value="area.id"
+                          >{{ area.address }}</option>
+                        </select>
+                        <span
+                          class="help is-danger"
+                          v-if="address.errors.has('area')"
+                          v-text="address.errors.get('area')"
+                        ></span>
    </div>
   </div>
 </fieldset>
 </form>
-<div class="down" style="margin-left:60%; margin-top:-3%;">
-<button type="submit" class="btn btn-primary">Submit</button>
+<div class="down" style="margin-left:60%;">
+<button class="btn btn-primary" :disabled="submituser">
+                    <span :class="{ 'spinner-border spinner-border-sm': submituser }"></span>Submit
+                  </button>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<button data-v-174508b8="" type="submit" class="btn btn-danger" style=" background-color: #ec1313;">Cancel</button>
+<button type="button" class="btn btn-danger" style=" background-color: #ec1313;" data-dismiss="modal">Close</button>
                 </div>
                 </div>
               </div>
@@ -204,9 +358,10 @@
           </div>
         </div>
       </form>
+
+      <!-- {{ --2ndmodelend-- }} -->
+      </div>
     </div>
-<!-- {{ --2ndmodelend-- }} -->
-                </div>
             </div>
         </div>
 </template>
@@ -302,40 +457,29 @@ a {
 </style>
 
 <script>
-// import pickup from "./PickUpOrder";
 export default {
   data() {
     return {
-      show: true,
-      picup: new Form({
-        useraddress_id: "",
+      paginate: "",
+      pagination: {},
+
+      orders: {},
+      order: {},
+      check: new Form({
+        checkbox: [],
+        order_pickup_point: ""
+      }),
+      editorder: new Form({
+        phone: "",
         description: "",
-        handling: "NON_FRAGILE",
+        handling: "",
         product_type: [],
         cod: "",
         expected_date: "",
         order_pickup_point: "",
-        weight: 1,
-        vendor_order_id: ""
+        weight: ""
       }),
-      address: new Form({
-        first_name: "",
-        last_name: "",
-        state: "",
-        district: "",
-        municipality: "",
-        area: "",
-        ward_no: "",
-        description: "",
-        phone1: "",
-        phone2: ""
-      }),
-      pickupaddresses: {},
-      usersphone: [],
-      districts: {},
-      municipalitys: {},
-      wards: {},
-      areas: {},
+      OrderId: "",
       options: {
         format: "YYYY-MM-DD h:mm:ss",
         useCurrent: true,
@@ -344,106 +488,152 @@ export default {
       },
       products: {},
       submit_loading: false,
-      submituser: false,
-      edit: false,
-      selected: "",
-      states: {}
+      pickupaddresses: {},
+      address: new Form({
+        first_name: "",
+        last_name: "",
+        district: "",
+        municipality: "",
+        area: "",
+        ward_no: "",
+        description: "",
+        phone1: "",
+        phone2: ""
+      }),
+      districts: {},
+      municipalitys: {},
+      wards: {},
+      areas: {},
+      useraddressId: "",
+      i: "",
+      pickupaddresses: {},
+      currentpage: 1
     };
+  },
+
+  computed: {
+    selectAll: {
+      get: function() {
+        return this.orders
+          ? this.check.checkbox.length == this.orders.length
+          : false;
+      },
+      set: function(value) {
+        var checkbox = [];
+        if (value) {
+          this.orders.forEach(function(address) {
+            checkbox.push(address.id);
+          });
+        }
+        this.check.checkbox = checkbox;
+      }
+    }
   },
 
   created() {
     this.$root["loading"] = true;
+    this.getdefaultpicupaddress();
 
-    this.fetchall();
+    this.getPicupOrder();
+    // this.UpdateOrder();
+    this.getVendorpicupaddress();
+
+    this.producttypebyvendor();
     this.$root["loading"] = false;
   },
   methods: {
-    rrreset() {
-      console.log("sdcsd");
-      // this.picup.order_pickup_point = e.id;
-      this.selected = {
-        id: 1,
-        phone1: "9801907043",
-        first_name: "Sisam",
-        last_name: "Kc"
-      };
-    },
-    setuseraddressid(e) {
-      if (e) {
-        this.picup.useraddress_id = e.id;
-      } else {
-        this.picup.useraddress_id = "";
-      }
-    },
-    fetchall() {
-      this.fetchUsersphone();
-      this.getAddressbystate();
+    edituseraddress(i, useraddress) {
+      this.i = i;
+      this.address.fill(useraddress);
+      this.useraddressId = useraddress.id;
       this.getAddressbyDistrict();
-      this.producttypebyvendor();
-      this.getVendorpicupaddress();
+      this.changeAddressMunicipality_a();
+      this.changeAddressWardno_a();
+      this.changeAddressArea_a();
+      $("#useraddress").modal("show");
     },
-    newPickUp() {
-      this.address.reset();
-      this.picup.reset();
-      this.edit = false;
-      this.address.errors.clear();
-      $("#new_picup").modal("show");
-    },
-
-    fetchUsersphone() {
+    getdefaultpicupaddress() {
+      let default_location = "";
       axios
-        .get("api/getusersphone")
-        .then(({ data }) => (this.usersphone = data))
-        .catch(res => {
-          this.error(res.data.error);
-        });
-    },
-
-    onSubmitUserAddress() {
-      this.submituser = true;
-      var submit = "";
-      if (this.edit) {
-        submit = this.address.put(
-          "/api/useraddressupdate/" + this.picup.useraddress_id
-        );
-      } else {
-        submit = this.address.post("/api/useraddress/store");
-      }
-      submit
+        .get("api/get-default-vendoraddress")
         .then(res => {
-          if (res.status == 200) {
-            $("#new_picup").modal("hide");
-            this.success(res.data.success);
-            if (!this.edit) {
-              this.selected = res.data.id;
-              this.picup.useraddress_id = res.data.id.id;
+          res.data.map(function(value, key) {
+            if (value.is_default) {
+              default_location = value.id;
             }
-            this.fetchall();
-            this.address.reset();
-          }
-          if (res.data.error) {
-            this.error(res.data.error);
-          }
-          this.submituser = false;
+          });
+          this.check.order_pickup_point = default_location;
         })
-        .catch(res => {
-          this.submituser = false;
+
+        .catch(res => {});
+    },
+    getPicupOrder(page) {
+      if (typeof page === undefined) {
+        page = 1;
+      }
+      this.currentpage = page;
+      axios
+        .get("/api/getpicuporder", {
+          params: { paginate: this.paginate, page: page }
+        })
+        .then(response => {
+          this.orders = response.data.data;
+          // console.log(response.data)
+          this.pagination = response.data;
         });
     },
-    onsubmitpicup() {
+    onSubmitCheckbox() {
       this.submit_loading = true;
-      this.picup
-        .post("/api/pickupStore")
+
+      this.check
+        .post("/api/sendpicorderrequest")
         .then(res => {
           if (res.status == 200) {
-            $("#exampleModalScrollable").modal("hide");
-
-            this.picup.reset();
-            this.picup.useraddress_id = null;
-            this.selected = null;
-            // console.log(res.data.success)
+            this.check.reset();
+            this.getPicupOrder();
             this.success(res.data.success);
-            this.fetchall();
+          }
+          if (res.data.error) {
+            this.error(res.data.error);
+          }
+          this.getdefaultpicupaddress();
+          this.submit_loading = false;
+        })
+        .catch(res => {
+          this.submit_loading = false;
+        });
+    },
+    producttypebyvendor() {
+      axios
+        .get("api/producttypebyvendor")
+        .then(res => {
+          this.products = res.data;
+        })
+        .catch(res => {
+          this.error(res.data.error);
+        });
+    },
+
+    OnEditOrder(i, order) {
+      this.i = i;
+      this.OrderId = order.id;
+      this.getVendorpicupaddress();
+      this.editorder.fill(order);
+      $("#picuporder").modal("show");
+    },
+    UpdateOrder() {
+      this.submit_loading = true;
+
+      this.editorder
+        .put("/api/updatepicuporder/" + this.OrderId)
+        .then(res => {
+          if (res.status == 200) {
+            this.check.reset();
+            this.success(res.data.success);
+            this.orders.splice(this.i,1, res.data.order);
+            console.log(res.data.order);
+            // this.getPicupOrder();
+            $("#picuporder").modal("hide");
           }
           if (res.data.error) {
             this.error(res.data.error);
@@ -454,90 +644,65 @@ export default {
           this.submit_loading = false;
         });
     },
-    fillUserAddress() {
-      this.edit = true;
-
-      axios
-        .get("api/useraddress", {
-          params: { id: this.picup.useraddress_id }
+    bulkdelete() {
+      this.check
+        .post("/api/drop-all")
+        .then(res => {
+          if (res.status == 200) {
+            this.check.reset();
+            this.success(res.data.success);
+            this.getPicupOrder();
+          }
+          if (res.data.error) {
+            this.error(res.data.error);
+          }
         })
-        .then(data => {
-          this.address.fill(data.data);
-
-          this.getAddressbyDistrict();
-          this.getAddressbyDistrict();
-          this.changeAddressMunicipality();
-          this.changeAddressWardno();
-          this.changeAddressArea();
-          $("#new_picup").modal("show");
-        })
-        .catch(res => {
-          this.error(res.data.error);
+        .catch(err => {
+            console.log(err);
         });
     },
-    updateComponent() {
-      var self = this;
-      self.show = false;
-
-      Vue.nextTick(function() {
-        self.show = true;
-      });
-    },
-    getAddressbystate() {
-      axios
-        .get("api/getaddressbystate")
-        .then(res => {
-          this.states = res.data;
+    pickupdelete(index, id) {
+      swalWithBootstrapButtons
+        .fire({
+          title: "Are you sure?",
+          text: "You won't be able to revert this!",
+          type: "warning",
+          showCancelButton: true,
+          confirmButtonText: "Yes, delete it!",
+          cancelButtonText: "No, cancel!",
+          reverseButtons: true
         })
-        .catch(res => {
-          this.error(res.data.error);
-        });
-    },
-    getAddressbyDistrict() {
-      axios
-        .get("api/changeaddress/" + this.address.state)
-
-        .then(res => {
-          this.districts = res.data;
-        })
-        .catch(res => {
-          this.error(res.data.error);
-        });
-    },
-    changeAddressMunicipality() {
-      axios
-        .get("api/changeaddress/" + this.address.district)
-        .then(res => {
-          this.municipalitys = res.data;
-          // console.log(this.municipalitys)
-        })
-        .catch(res => {
-          this.error(res.data.error);
-        });
-    },
-    changeAddressWardno() {
-      axios
-        .get("api/changeaddress2/" + this.address.municipality)
-        .then(res => {
-          this.wards = res.data;
-        })
-        .catch(res => {
-          this.error(res.data.error);
-        });
-    },
-    changeAddressArea() {
-      axios
-        .get("api/changeaddress/" + this.address.ward_no)
-        .then(res => {
-          this.areas = res.data;
-        })
-        .catch(res => {
-          this.error(res.data.error);
+        .then(result => {
+          if (result.value) {
+            axios
+              .get("api/droppickup/" + id)
+              .then(res => {
+                if (res.status == 200) {
+                  this.$delete(this.orders, index);
+                  swalWithBootstrapButtons.fire(res.data.success);
+                }
+                if (res.data.error) {
+                  this.error(res.data.error);
+                }
+              })
+              .catch(res => {
+                this.error(res.data.error);
+              });
+          } else if (
+            // Read more about handling dismissals
+            result.dismiss === Swal.DismissReason.cancel
+          ) {
+            swalWithBootstrapButtons.fire(
+              "Cancelled",
+              "Your imaginary file is safe :)",
+              "error"
+            );
+          }
         });
     },
     getVendorpicupaddress() {
       axios
-        .get("api/get-default-vendoraddress")
+        .get("api/getvendoraddress")
         .then(res => {
           this.pickupaddresses = res.data;
         })
@@ -559,17 +724,78 @@ export default {
         timer: 1500
       });
     },
-    producttypebyvendor() {
+    getAddressbyDistrict() {
       axios
-        .get("api/producttypebyvendor")
+        .get("api/getaddressbydistrict")
         .then(res => {
-          this.products = res.data;
+          this.districts = res.data;
         })
         .catch(res => {
           this.error(res.data.error);
+        });
+    },
+    changeAddressMunicipality_a() {
+      axios
+        .get("api/changeaddress/" + this.address.district)
+        .then(res => {
+          this.municipalitys = res.data;
+        })
+        .catch(res => {
+          this.error(res.data.error);
+        });
+    },
+    changeAddressWardno_a() {
+      axios
+        .get("api/changeaddress/" + this.address.municipality)
+        .then(res => {
+          this.wards = res.data;
+        })
+        .catch(res => {
+          this.error(res.data.error);
+        });
+    },
+    changeAddressArea_a() {
+      axios
+        .get("api/changeaddress/" + this.address.ward_no)
+        .then(res => {
+          this.areas = res.data;
+        })
+        .catch(res => {
+          this.error(res.data.error);
+        });
+    },
+    useraddressupdate() {
+      this.address
+        .put("/api/useraddressupdate/" + this.useraddressId)
+        .then(res => {
+          if (res.status == 200) {
+            this.address.reset();
+            $("#useraddress").modal("hide");
+            this.success(res.data.success);
+            this.getPicupOrder();
+          }
+          if (res.data.error) {
+            this.error(res.data.error);
+          }
+          this.submit_loading = false;
+        })
+        .catch(err => {
+          this.submit_loading = false;
         });
     }
   }
 };
 </script>
+<style>
+li {
+  position: relative;
+  padding-left: 11px;
+}
+#btn {
+  margin-top: 32px;
+}
+.list {
+  max-width: 1250px;
+}
+</style>
 

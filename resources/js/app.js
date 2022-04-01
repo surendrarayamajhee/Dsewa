@@ -9,7 +9,7 @@ import {
   AlertErrors
 } from 'vform'
 Vue.component(HasError.name, HasError)
-
+Vue.component('OderDetails', require('./components/OrderDetails.vue').default);
 
 import datePicker from 'vue-bootstrap-datetimepicker';
 import 'pc-bootstrap4-datetimepicker/build/css/bootstrap-datetimepicker.css';
@@ -36,7 +36,7 @@ Vue.use(BootstrapVue)
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 // Import Helpers for filters
-Vue.component(HasError.name, HasError)
+
 
 // Import Views - Top level
 window.Form = Form;
@@ -60,3 +60,4 @@ new Vue({
   el: '#app',
   router: router,
 })
+
